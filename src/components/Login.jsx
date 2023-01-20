@@ -7,9 +7,9 @@ const Login = () => {
   return (
     <>
       <div className='login-box'>
+      <h1 className='card-title'>Welcome</h1>
         <div className='login-form card p-4'>
-          <h1 className='card-title'>Nice to meet you</h1>
-          <form>
+         <form>
             <label type="text">
               Email:
             </label>

@@ -1,9 +1,4 @@
 
-
-
-
-
-
 .login-button {
     width: 100%;
     background-color: #0A4B59;
@@ -25,12 +20,17 @@
   .card-title {
     font-size: 1.5rem;
     font-weight: bold;
-    background-color: orangered;
+    background-color: rgb(182, 9, 9);
     color: rgb(255, 255, 255) !important;
     max-width: max-content;
-    padding: 7px 15px;
-    margin-left: -50px;
+    padding: 6px 15px;
     border-bottom-left-radius: 10px;
+    margin-block-start: -380px;
+    margin-inline: -70px;
+    z-index: 10;
+  
+  
+
     
   }
   
@@ -97,3 +97,31 @@
   .social-icons {
     margin-right: 7%;
   }
+
+
+
+
+
+  /* --MEDIA QUERIES (MEDIUM DEVICES)-- */
+@media screen and (max-width: 1024px) {
+  header {
+      height: 68vh;
+  }
+  }
+  
+
+/* --MEDIA QUERIES (SMALL DEVICES)-- */
+@media screen and (max-width: 600px) {
+  header {
+      height: 100vh;
+
+  }
+
+  .social-icons,
+  .socials-box {
+    margin-top: 20px;
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;
+  }
+}
