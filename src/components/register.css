@@ -1,5 +1,5 @@
 
-.login-button {
+.register-button {
     width: 100%;
     background-color: #0A4B59;
     color: rgb(245, 244, 244);
@@ -7,7 +7,7 @@
     font-size: 16px;
 }
 
-.login-form {
+.register-form {
     width: 400px;
    
   }
@@ -25,7 +25,7 @@
     max-width: max-content;
     padding: 6px 15px;
     border-bottom-left-radius: 10px;
-    margin-block-start: -380px;
+    margin-block-start: -455px;
     margin-inline: -70px;
     z-index: 10;
   }
@@ -64,7 +64,7 @@
   
   }
   
-  .login-box {
+  .register-box {
     height: 100vh;
     display: flex;
     align-items: center;
@@ -76,7 +76,7 @@
   
  
 
-  .login-box {
+  .register-box {
     background-color: #0A4B59;
     
   }
@@ -92,7 +92,7 @@
  
   .social-icons {
     margin-right: 7%;
-    margin-top: 1%;
+    margin-top: 6%;
     margin-left: 7%;
   }
 
@@ -119,5 +119,6 @@
     margin-left: auto;
     margin-right: auto;
     width: 50%;
+    margin-top: 10%;
   }
 }
