@@ -16,3 +16,14 @@
 .header p {
     font-size: 20px;
 }
+
+@media screen and (max-width: 600px) {
+    .header{
+        margin-left: 3%;
+    }
+    .header p{
+        margin-top: 2%;
+        font-size: 21.5%;
+        font-weight: bold;
+    }
+    }

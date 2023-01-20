@@ -112,14 +112,15 @@
 
 /* --MEDIA QUERIES (SMALL DEVICES)-- */
 @media screen and (max-width: 600px) {
-  header {
-      height: 100vh;
+  .card-title {
+      max-width: 100%;
+      max-height: 100%;
+      display:inline-block; 
 
   }
 
   .social-icons,
   .socials-box {
-    margin-top: 20px;
     margin-left: auto;
     margin-right: auto;
     width: 50%;
