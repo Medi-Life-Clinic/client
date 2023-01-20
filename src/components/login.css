@@ -38,6 +38,9 @@
     border-radius: 0;
     border: 1px solid rgba(128, 128, 128, 0.438);
     height: 40px;
+    text-indent: 10px;
+    border-radius: 5px;
+    
   }
 
   input:focus {
@@ -58,12 +61,26 @@
     display: flex;
     align-items: center;
     justify-content: center;
+    margin-bottom: -26vh;
+    margin-top: -20vh;
   }
   
-  .background {
-    background-color: #9AD9C7;
-  }
+ 
 
   .login-box {
-    background-color: #74CAC0;
+    background-color: #0A4B59;
+    
+  }
+
+  .socials-box {
+    color: #9DD9C8;
+    font-size: 40px;
+    background-color: #0A4B59;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+  }
+ 
+  .social-icons {
+    margin-right: 7%;
   }
