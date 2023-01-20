@@ -1,3 +1,9 @@
+
+
+
+
+
+
 .login-button {
     width: 100%;
     background-color: #0A4B59;
@@ -8,6 +14,7 @@
 
 .login-form {
     width: 400px;
+   
   }
   
  .anchor {
@@ -24,6 +31,7 @@
     padding: 7px 15px;
     margin-left: -50px;
     border-bottom-left-radius: 10px;
+    
   }
   
   label {
@@ -31,6 +39,7 @@
     font-size: 16px;
     color: black;
     margin-bottom: 10px;
+  
   }
 
   input {
@@ -53,7 +62,10 @@
   }
   
   .card {
-    box-shadow: 0 0 2px gray;
+    box-shadow: 0 0 10px gray;
+    border: .8rem solid !important;
+    border-color: #74CAC0 !important;
+  
   }
   
   .login-box {
@@ -63,6 +75,7 @@
     justify-content: center;
     margin-bottom: -26vh;
     margin-top: -20vh;
+    border-style: solid
   }
   
  
