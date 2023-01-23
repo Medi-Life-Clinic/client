@@ -7,6 +7,10 @@
     font-size: 16px;
 }
 
+.login-button:hover {
+  background-color: #073d19;
+}
+
 .login-form {
     width: 400px;
    
@@ -17,17 +21,19 @@
     text-decoration: underline;
     font-size: 16px;
  }
-  .card-title {
+
+  .card-title-login {
     font-size: 1.5rem;
     font-weight: bold;
     background-color: rgb(182, 9, 9);
     color: rgb(255, 255, 255) !important;
     max-width: max-content;
     padding: 6px 15px;
-    border-bottom-left-radius: 10px;
-    margin-block-start: -380px;
-    margin-inline: -70px;
+    border-bottom-left-radius: 20px;
+    margin-block-start: -370px;
+    margin-inline: -55px;
     z-index: 10;
+
   }
   
   label {
@@ -71,7 +77,6 @@
     justify-content: center;
     margin-bottom: -26vh;
     margin-top: -20vh;
-    border-style: solid
   }
   
  
@@ -109,10 +114,20 @@
 /* --MEDIA QUERIES (SMALL DEVICES)-- */
 @media screen and (max-width: 600px) {
   .card-title { 
-    /*TO DO > Center the box without losing the welcome*/
    margin-left: 1%;
 
   }
+  
+  .login-form {
+    width: 300px;
+    margin-left: 1.8rem;
+  }
+
+  .card-title-login {
+    font-size: 1.2rem;
+    width: 100%;
+  }
+
 
   .social-icons,
   .socials-box {

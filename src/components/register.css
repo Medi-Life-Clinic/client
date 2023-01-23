@@ -7,6 +7,10 @@
     font-size: 16px;
 }
 
+.register-button:hover {
+  background-color: #073d19;
+}
+
 .register-form {
     width: 400px;
    
@@ -17,7 +21,7 @@
     text-decoration: underline;
     font-size: 16px;
  }
-  .card-title {
+  .card-title-register {
     font-size: 1.5rem;
     font-weight: bold;
     background-color: rgb(182, 9, 9);
@@ -25,10 +29,9 @@
     max-width: max-content;
     padding: 6px 15px;
     border-bottom-left-radius: 10px;
-    margin-block-start: -455px;
+    margin-block-start: -470px;
     margin-inline: -70px;
     z-index: 10;
-
   }
   
   label {
@@ -72,7 +75,7 @@
     justify-content: center;
     margin-bottom: -26vh;
     margin-top: -20vh;
-    border-style: solid
+  
   }
   
  
@@ -115,6 +118,16 @@
 
   }
 
+
+  .register-form {
+    width: 300px;
+    margin-left: 1.8rem;
+  }
+
+  .card-title-register {
+    font-size: 1.2rem;
+  }
+  
   .social-icons,
   .socials-box {
     margin-left: auto;

@@ -8,7 +8,7 @@ const Register = () => {
   return (
     <>
       <div className='register-box'>
-      <h1 className='card-title'>Register</h1>
+      <h1 className='card-title-register'>Register</h1>
         <div className='register-form card p-4'>
          <form>
             <label type="text">
@@ -24,6 +24,7 @@ const Register = () => {
             </label>
             <input className='mb-4' type="text" name="password" placeholder='Password' />
             <input className='mb-3 register-button' type="submit" value="REGISTER" />
+            <Link to='/' className='anchor'>Already Registered? Click Here</Link>
           </form>
         </div>
       </div>

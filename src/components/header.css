@@ -7,7 +7,9 @@
     align-items: center;
     flex-basis: 1;
     padding-top: 2%;
+    margin-right: 2rem;
 }
+
 
 .header h1 {
     padding-left: 1rem;
@@ -26,4 +28,4 @@
         font-size: 21.5%;
         font-weight: bold;
     }
-    }
+}
