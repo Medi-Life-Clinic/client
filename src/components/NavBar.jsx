@@ -14,23 +14,23 @@ const NavBar = () => {
             <div className='col-auto'>
                 <div className='col-auto min-vh-100 '>
                     <ul>
-                        <li>
-                            <a className='nav-link px-2 '>
-                                <i className='bi bi-house-door-fill' /> <Link to='/' className='ms-1 d-none d-sm-inline'>Home</Link>
+                        <ul>
+                            <a className='nav-link px-1 m-3 p-3'>
+                                <i className='bi bi-house-door-fill' /> <Link to='/' className='ms-1 d-none d-sm-inline '>Home</Link>
                             </a>
-                        </li> 
-                        <li>
-                            <a className='nav-link px-2'>
+                        </ul> 
+                        <ul>
+                            <a className='nav-link px-1 m-3 p-3'>
                                 <i className='bi-table' /> <Link to='/appointments' className='ms-1 d-none d-sm-inline'>Appointment</Link>
                             </a>
-                        </li> 
-                        <li>
+                        </ul> 
+                        <ul>
                       
-                            <a className='nav-link px-2'>
+                            <a className='nav-link px-1 m-3 p-3'>
                                 <i className='bi bi-box-arrow-right' /> <Link to='/logout' className='ms-1 d-none d-sm-inline'>Logout</Link>
                                
                             </a>
-                        </li> 
+                        </ul> 
                      </ul>
                 </div>
             </div>
