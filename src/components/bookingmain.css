@@ -1,0 +1,21 @@
+.container {
+    background-color: red;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+
+.box {
+    display: flex;
+    width: 100px;
+    height: 100px;
+}
+
+.main-nav {
+    display: flex;
+    flex-direction: row;
+    width: 120%;
+    height: 1000vh;
+    margin-left: 11rem;
+}
+

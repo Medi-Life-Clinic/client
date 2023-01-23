@@ -7,8 +7,8 @@ import './App.css'
 import './components/login.css'
 import Socials from './components/Socials'
 import Header from './components/Header'
+import BookingHeader from './components/BookingHeader.jsx'
 import NavBar from './components/NavBar'
-
 
 const App = () => {
   return (
@@ -16,6 +16,7 @@ const App = () => {
     <Routes>
       <Route path='/' element={<><Header /> <Login /> <Socials /></>}/>
       <Route path='/register' element={<><Header /> <Register /> <Socials /></>}/>
+      <Route path='/home' element={<BookingHeader />}/>
       <Route path='/bookings' element={<><Bookings /> <NavBar /> </>}/>
     </Routes>
   </BrowserRouter>
