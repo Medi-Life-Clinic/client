@@ -15,7 +15,7 @@ const NavBar = () => {
             <div className='col-auto'>
                 <div className='col-auto min-vh-100 '>
                     <div classname='header'>
-                           <GiHospitalCross className='header-img'/>
+                           <GiHospitalCross className='header-img m-4'/>
                         <h3>Medi-Life</h3>
                     </div>
                     <ul>
