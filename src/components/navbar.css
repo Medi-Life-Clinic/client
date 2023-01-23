@@ -1,0 +1,25 @@
+/*Navbar Styling*/
+
+ul {
+    margin: 0;
+    padding: 0;
+}
+
+ul li a:hover {
+    cursor: pointer;
+}
+
+.container-fluid{
+    background-color:  #0A4B59 ;
+    ;
+}
+
+.col-auto{
+    background-color: #74CAC0;
+}
+
+.header-img{
+    width: 100px;
+    height: 45px
+}
+
