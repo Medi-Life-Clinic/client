@@ -6,6 +6,8 @@ import './App.css'
 import './components/login.css'
 import Socials from './components/Socials'
 import Header from './components/Header'
+import BookingHeader from './components/BookingHeader.jsx'
+
 
 
 
@@ -15,7 +17,7 @@ const App = () => {
     <Routes>
       <Route path='/' element={<><Header /> <Login /> <Socials /></>}/>
       <Route path='/register' element={<><Header /> <Register /> <Socials /></>}/>
-      
+      <Route path='/home' element={<BookingHeader />}/>
     </Routes>
   </BrowserRouter>
    )
