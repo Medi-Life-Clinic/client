@@ -1,11 +1,13 @@
 import React from 'react'
-import 'bootstrap/dist/css/bootstrap.css'
+import 'bootstrap/dist/css/bootstrap.min.css'
 import 'bootstrap-icons/font/bootstrap-icons.css'
-import '/navbar.css'
+import './navbar.css'
+import { Link } from 'react-router-dom'
+
 
 
 // Navbar Component
-const SideNav = () => {
+const NavBar = () => {
   return (
     <div className='container-fluid'>
         <div className='row'>
@@ -35,4 +37,4 @@ const SideNav = () => {
              )
 }
 
-export default SideNav;
+export default NavBar;
