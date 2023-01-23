@@ -8,3 +8,12 @@ ul {
 ul li a:hover {
     cursor: pointer;
 }
+
+.container-fluid{
+    background-color:  #0A4B59 ;
+    ;
+}
+
+.col-auto{
+    background-color: #9DD9C8;
+}

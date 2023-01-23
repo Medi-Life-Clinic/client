@@ -6,9 +6,11 @@ import './bookings.css'
 
 const Bookings = () => {
   return (
+<>
 
-  <div className='background '></div>
+  
 
+</>
   )
 }
 
