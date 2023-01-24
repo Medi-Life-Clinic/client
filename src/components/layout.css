@@ -18,6 +18,10 @@
     width: 300px;
 }
 
+.sidebar-header h1 {
+    padding-left: 0.7rem;
+}
+
 .layout-header {
     color: black;
     padding-top: 2rem;
