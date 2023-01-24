@@ -1,7 +1,7 @@
 import React from 'react'
-import './bookings.css'
+import './doctors.css'
 
-const Bookings = () => {
+const Doctors = () => {
   return (
     <>
       <section className='doctors'>
@@ -20,9 +20,15 @@ const Bookings = () => {
           </div>
           <p>Doctor3</p>
         </div>
+        <div className='box'>
+        <div className='imgBx'>
+          </div>
+          <p>Doctor3</p>
+        </div>
+        
       </section>
     </>
   )
 }
 
-export default Bookings
+export default Doctors

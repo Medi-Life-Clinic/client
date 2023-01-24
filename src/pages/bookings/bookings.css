@@ -1,0 +1,6 @@
+.bookings-layout {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    background-color: #0A4B59;
+}
