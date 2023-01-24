@@ -1,23 +1,19 @@
 import React from 'react'
 import { BrowserRouter, Routes, Route } from 'react-router-dom'
-import Login from './components/Login.jsx'
-import Register from './components/Register.jsx'
-import Bookings from './components/Bookings.jsx'
-import './App.css'
-import './components/login.css'
-import Socials from './components/Socials'
-import Header from './components/Header'
-import BookingHeader from './components/BookingHeader.jsx'
-import NavBar from './components/NavBar'
+import Login from './pages/login/Login.jsx'
+import Register from './pages/register/Register.jsx'
+import Socials from './components/Socials.jsx'
+import Header from './components/Header.jsx'
+import Bookings from './pages/bookings/Bookings.jsx'
+import Layout from './components/Layout.jsx'
 
 const App = () => {
   return (
     <BrowserRouter>
     <Routes>
-      <Route path='/' element={<><Header /> <Login /> <Socials /></>}/>
+      <Route path='/' element={<><Header /> <Login /><Socials /> </>}/>
       <Route path='/register' element={<><Header /> <Register /> <Socials /></>}/>
-      <Route path='/home' element={<BookingHeader />}/>
-      <Route path='/bookings' element={<><Bookings /> <NavBar /> </>}/>
+      <Route path='/bookings' element={<><Layout /></>}/>
     </Routes>
   </BrowserRouter>
    )
