@@ -1,13 +1,10 @@
-div {
-    display: flex;
-    height: 5vh;
-    background-color: #0A4B59;
-    font-size: 16px;
-}
+
 
 .title {
-    position: absolute;
-    display: flex;
-    margin-left: 25rem;
-    font-size: 50px;
+    background-color: white;
+    border-radius: 5px;
+    box-shadow: 0 0 2px gray;
+    margin-bottom: 20px;
+    height: 10vh;
+    width: 165vh;
 }

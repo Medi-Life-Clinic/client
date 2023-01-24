@@ -1,0 +1,69 @@
+.menu {
+    margin-top: 100px;
+}
+
+.main {
+    padding: 20px;
+    height: 100vh;
+    background-color: #0A4B59;
+}
+
+.sidebar {
+    background-color: #74cac0;
+    border-radius: 5px;
+    box-shadow: 0 0 2px gray;
+    margin-right: 20px;
+    min-height: 100%;
+    padding: 10px;
+    width: 300px;
+}
+
+.layout-header {
+    color: black;
+    padding-top: 2rem;
+    padding-left: 5rem;
+    margin-bottom: 20px;
+    height: 10vh;
+    width: 100%;
+    background-color: #0A4B59;
+}
+
+.body {
+    border-radius: 5px;
+    box-shadow: 0 0 4px #74cac0;
+    height: 82vh;
+    width: 100%;
+}
+
+.content {
+    width: 100%;
+    height: 100%;
+}
+
+.menu-item {
+    margin-top: 30px;
+
+}
+
+.menu-item a {
+    color: white;
+    text-decoration: none;
+    font-size: 18px;
+}
+
+.menu-item i {
+    color: white;
+    text-decoration: none;
+    font-size: 18px;
+    margin: 0 15px;
+}
+
+.active-menu-item {
+    color: white;
+    background-color: #355c57;
+}
+
+.doctors {
+    width: 100%;
+    height: 100%;
+}

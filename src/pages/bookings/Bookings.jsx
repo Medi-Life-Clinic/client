@@ -10,7 +10,7 @@ const Bookings = () => {
     <section className='bookings-layout'>
         <>
         <NavBar />
-        
+        <Heading />
         <Doctors />
         </>
     </section>
