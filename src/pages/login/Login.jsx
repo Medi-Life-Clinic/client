@@ -33,9 +33,13 @@ export const Login = () => {
     })
       .then(res => res.json()) // this converts the response to json
       .then(data => {
-        console.log(data) // this returns the message from the server
+        console.log(data)// this returns the message from the server
+      if (data.success === true){
         navigate('/bookings') // this navigates to the bookings page
-      })
+      } else {
+        console.log('error')
+      }
+    })
     }
 
   return (
