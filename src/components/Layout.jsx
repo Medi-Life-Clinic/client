@@ -1,15 +1,15 @@
 import React from 'react'
 import './layout.css'
-import { Link } from 'react-router-dom'
+import { Link, useLocation } from 'react-router-dom'
 import { GiHospitalCross } from 'react-icons/gi'
 
 
 const Layout = () => {
-
+    const location = useLocation()
     const userMenu = [
         {
             name: 'Home',
-            path: '/',
+            path: '/bookings',
             icon: 'ri-home-4-line'
         },
         {
@@ -37,7 +37,8 @@ const Layout = () => {
                     </div>
                     <div className="menu">
                         {menuToBeRendered.map((menu) => {
-                            return <div className="d-flex menu-item">
+                            const isActive = location.pathname === menu.path
+                            return <div className={`d-flex menu-item ${isActive && 'active-menu-item'}`}>
                                 <i className={menu.icon}></i>
                                 <Link to={menu.path}>{menu.name}</Link>
                             </div>
