@@ -10,19 +10,17 @@ import Header from './components/Header'
 import BookingHeader from './components/BookingHeader.jsx'
 import NavBar from './components/NavBar'
 
-const App = () => {
+function App() {
   return (
     <BrowserRouter>
     <Routes>
       <Route path='/' element={<><Header /> <Login /> <Socials /></>}/>
-      <Route path='/register' element={<><Header /> <Register /> <Socials /></>}/>
+      <Route path='/register' element={<><Header /> <Register/> <Socials /></>}/>
       <Route path='/home' element={<BookingHeader />}/>
-      <Route path='/bookings' element={<><Bookings /> <NavBar /> </>}/>
+    <Route path='/bookings' element={<><Bookings /> <NavBar /> </>}/>
     </Routes>
   </BrowserRouter>
    )
 }
 
 export default App
-
-
