@@ -1,20 +1,14 @@
 import React from 'react'
-import NavBar from './NavBar.jsx'
-import Doctors from './Doctors.jsx'
+import Layout from '../../components/MainLayout'
+import Socials from '../../components/Socials'
 import './bookings.css'
-import Heading from './Heading.jsx'
 
 const Bookings = () => {
   return (
     <>
-    <section className='bookings-layout'>
-        <>
-        <NavBar />
-        <Heading />
-        <Doctors />
-        </>
-    </section>
-    
+    <Layout />
+    <h1 className='social-heading'>Contact us on socials</h1>
+    <Socials />
     </>
   )
 }

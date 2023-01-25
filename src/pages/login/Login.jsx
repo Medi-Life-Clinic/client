@@ -1,10 +1,11 @@
 import React, { useState } from 'react'
 import { Link, useNavigate } from 'react-router-dom'
 import './login.css'
+import { ToastContainer, toast } from 'react-toastify'
+import 'react-toastify/dist/ReactToastify.css'
 
 
 export const Login = () => {
-
   // this is used to navigate to the bookings page
   const navigate = useNavigate()
 
@@ -14,36 +15,49 @@ export const Login = () => {
 
 
   //handleSubmit function is found in the <form> tag from the return() below
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
       e.preventDefault(); // this stops the page from refreshing
-      console.log(email); // this is just a test to check that the email is being passed through
-
-
+      
     // this is the fetch request to the server
-    fetch('http://localhost:4001/api/user/login', {
-      method: 'POST', // http method
-      headers: { // headers are used to tell the server what type of data we are sending
-        'Content-Type': 'application/json',
-        'Accept': 'application/json'
-      },
-      body: JSON.stringify({ // this is the data we are sending to the server
-        email: email,
-        password: password
+    try {
+      const response = await fetch('http://localhost:4001/api/user/login', {
+        method: 'POST', // http method
+        headers: { // headers are used to tell the server what type of data we are sending
+          'Content-Type': 'application/json',
+          'Accept': 'application/json'
+        },
+        body: JSON.stringify({ // this is the data we are sending to the server
+          email: email,
+          password: password
+        })
       })
-    })
-      .then(res => res.json()) // this converts the response to json
-      .then(data => {
-        console.log(data)// this returns the message from the server
-      if (data.success === true){
-        navigate('/bookings') // this navigates to the bookings page
-      } else {
-        console.log('error')
-      }
-    })
+      const result = await response.json()
+      if (result.success) {
+      localStorage.setItem('token', result.token)
+      navigate('/bookings')
+    } else {
+      toast.error(result.message)
     }
+
+    } catch (err) {
+      toast.error("Something went wrong")
+    }
+  }
 
   return (
     <>
+      <ToastContainer 
+      position="bottom-center"
+      autoClose={5000}
+      hideProgressBar={false}
+      newestOnTop={false}
+      closeOnClick
+      rtl={false}
+      pauseOnFocusLoss
+      draggable
+      pauseOnHover
+      theme="dark"
+      />
       <div className='login-box'>
       <h1 className='card-title-login'>Login</h1>
         <div className='login-form card p-4'>
