@@ -1,6 +1,16 @@
-.bookings-layout {
-    display: flex;
-    flex-wrap: wrap;
-    flex-direction: row;
-    background-color: #0A4B59;
+.socials-box {
+   font-size: 3rem;
+}
+
+.social-icons {
+    margin: 3rem;
+}
+
+.social-heading {
+    color: white;
+    padding-top: 2rem;
+    font-size: 3rem;
+    background-color: #0a4b59;
+    margin: 0;
+    text-align: center;
 }

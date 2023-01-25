@@ -1,5 +1,5 @@
 import React from 'react'
-import './layout.css'
+import './mainLayout.css'
 import { Link, useLocation } from 'react-router-dom'
 import { GiHospitalCross } from 'react-icons/gi'
 
