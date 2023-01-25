@@ -5,7 +5,8 @@ import Register from './pages/register/Register.jsx'
 import Socials from './components/Socials.jsx'
 import Header from './components/Header.jsx'
 import Bookings from './pages/bookings/Bookings.jsx'
-import Layout from './components/MainLayout.jsx'
+import ProtectedRoute from './components/ProtectedRoute.jsx'
+
 
 const App = () => {
   return (
@@ -13,7 +14,7 @@ const App = () => {
     <Routes>
       <Route path='/' element={<><Header /> <Login /><Socials /> </>}/>
       <Route path='/register' element={<><Header /> <Register /> <Socials /></>}/>
-      <Route path='/bookings' element={<><Bookings /></>}/>
+      <Route path='/bookings' element={<ProtectedRoute><Bookings /></ProtectedRoute>}/>
     </Routes>
   </BrowserRouter>
    )

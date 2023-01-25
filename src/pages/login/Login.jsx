@@ -33,6 +33,7 @@ export const Login = () => {
       })
       const result = await response.json()
       if (result.success) {
+      localStorage.setItem('token', result.token)
       navigate('/bookings')
     } else {
       toast.error(result.message)
