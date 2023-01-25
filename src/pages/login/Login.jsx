@@ -17,26 +17,31 @@ export const Login = () => {
   //handleSubmit function is found in the <form> tag from the return() below
   const handleSubmit = async (e) => {
       e.preventDefault(); // this stops the page from refreshing
-      console.log(email); // this is just a test to check that the email is being passed through
+      
 
     
     // this is the fetch request to the server
-    const response = await fetch('http://localhost:4001/api/user/login', {
-      method: 'POST', // http method
-      headers: { // headers are used to tell the server what type of data we are sending
-        'Content-Type': 'application/json',
-        'Accept': 'application/json'
-      },
-      body: JSON.stringify({ // this is the data we are sending to the server
-        email: email,
-        password: password
+    try {
+      const response = await fetch('http://localhost:4001/api/user/login', {
+        method: 'POST', // http method
+        headers: { // headers are used to tell the server what type of data we are sending
+          'Content-Type': 'application/json',
+          'Accept': 'application/json'
+        },
+        body: JSON.stringify({ // this is the data we are sending to the server
+          email: email,
+          password: password
+        })
       })
-    })
-    const result = await response.json()
-    if (result.success) {
+      const result = await response.json()
+      if (result.success) {
       navigate('/bookings')
     } else {
-      toast.error("Wrong email or password")
+      toast.error(result.message)
+    }
+
+    } catch (err) {
+      toast.error("Something went wrong")
     }
   }
 
