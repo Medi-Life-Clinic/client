@@ -18,8 +18,6 @@ export const Login = () => {
   const handleSubmit = async (e) => {
       e.preventDefault(); // this stops the page from refreshing
       
-
-    
     // this is the fetch request to the server
     try {
       const response = await fetch('http://localhost:4001/api/user/login', {
@@ -47,7 +45,18 @@ export const Login = () => {
 
   return (
     <>
-      <ToastContainer />
+      <ToastContainer 
+      position="bottom-center"
+      autoClose={5000}
+      hideProgressBar={false}
+      newestOnTop={false}
+      closeOnClick
+      rtl={false}
+      pauseOnFocusLoss
+      draggable
+      pauseOnHover
+      theme="dark"
+      />
       <div className='login-box'>
       <h1 className='card-title-login'>Login</h1>
         <div className='login-form card p-4'>

@@ -7,11 +7,13 @@
     align-items: center;
     flex-basis: 1;
     padding-top: 2%;
-    margin-right: 2rem;
+    padding-right: 2%;
+    width: 100%;
 }
 
 
 .header h1 {
+   
     padding-left: 1rem;
 }
 
