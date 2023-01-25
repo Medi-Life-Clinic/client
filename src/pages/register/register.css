@@ -135,4 +135,14 @@
     width: 50%;
     margin-top: 10%;
   }
+ 
+
+  
+}
+
+@media screen and (max-width: 400px){
+.register-box {
+  margin-left: -5px;
+
+}
 }
