@@ -4,13 +4,25 @@ import {RxTwitterLogo} from 'react-icons/rx'
 
 
 
+
+
 const Socials = () => {
   return (
+ 
     <div className='socials-box'>   
-    <AiOutlineFacebook className='social-icons' /> <AiOutlineInstagram className="social-icons"/> <RxTwitterLogo
-   className='social-icons'/>
+    <a href="https://facebook.com">
+    <AiOutlineFacebook className='social-icons' button type="button"  /> 
+    </a>
+    <a href="https://instagram.com">
+    <AiOutlineInstagram className="social-icons"/> 
+    </a>
+    <a href="https://twitter.com">
+    <RxTwitterLogo className='social-icons'/>
+    </a>
 </div>
   )
 }
 
 export default Socials
+
+onclick="window.location='http://example.com'"
