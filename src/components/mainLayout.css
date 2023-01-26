@@ -122,3 +122,54 @@
 .box p {
     text-align: center;
 }
+
+/* ======== MEDIA QUERIES (MEDIUM DEVICES) ======== */
+@media screen and (max-width: 1024px) {
+    
+}
+
+
+/* ======== MEDIA QUERIES (SMALL DEVICES) ======== */
+@media screen and (max-width: 500px) {
+    .sidebar-header {
+        text-align: center;
+    }
+   .main {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    flex: 100%;
+    padding-left: 2.2rem;
+   }
+   .layout {
+    display: flex;
+    flex-direction: column;
+    flex: 100%;
+   }
+   .layout-header {
+    display: none;
+    height: 2rem;
+   }
+   .body {
+    width: 95%;
+    margin-right: ;
+   }
+   .box {
+    margin-left: 2rem;
+   }
+
+   .doctors::-webkit-scrollbar {
+    display: none;
+   }
+   
+   .box {
+    width: 100%;
+    margin-left: 1rem;
+   }
+   .sidebar {
+    min-height: 40%;
+    flex: 95%;
+    width: 95%;
+    margin-bottom: 3rem;
+   }
+}

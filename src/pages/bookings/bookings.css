@@ -35,3 +35,25 @@
 body {
     background-color: #0a4b59 !important;
 }
+
+@media screen and (max-width: 500px) {
+    /* .socials-mainlayout {
+        margin-top: 25rem;
+    }
+    .socials-box {
+        display: none;
+    }
+    .social-heading {
+        margin-top: 20rem;
+    } */
+    .contact {
+        margin-top: 24rem;
+        width: 85%;
+        margin-left: 7.5%;
+    }
+    .socials-mainlayout {
+        display: flex;
+        
+    }
+    
+}
