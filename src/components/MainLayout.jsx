@@ -3,8 +3,6 @@ import './mainLayout.css'
 import { Link, useLocation } from 'react-router-dom'
 import { GiHospitalCross } from 'react-icons/gi'
 
-
-
 const Layout = () => {
     const fetchDoctors = async () => {
         try {
@@ -19,6 +17,7 @@ const Layout = () => {
             console.log(err);
         }
     };
+
     const [doctors, setDoctors] = useState([])
 
     useEffect(() => {
@@ -28,7 +27,6 @@ const Layout = () => {
                 doctors.push(doctor)
             })
             setDoctors(doctors)
-            
         })
     }, [])
 
@@ -82,12 +80,14 @@ const Layout = () => {
                     </div>
                     <div className="body">
                         <section className='doctors'>
-                            
                             {doctors.map((doctor) => {
                                 return <div className='box'>
                                 <div className='imgBx'>
+                                    <img className="doctor-image" src={doctor.image}></img>
                                 </div>
                                 <p>{doctor.name}</p>
+                                <p>{doctor.specialization}</p>
+                                <p className="bio">{doctor.bio}</p>
                             </div>
                             })}
                         </section>
