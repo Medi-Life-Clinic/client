@@ -19,7 +19,7 @@
 
 .main {
     padding: 20px;
-    height: 100vh;
+    height: 89vh;
     background-color: #0A4B59;
 }
 
@@ -45,6 +45,11 @@
     height: 10vh;
     width: 100%;
     background-color: #0A4B59;
+}
+
+.layout-header h1 {
+    color: white;
+    font-size: 2rem;
 }
 
 .body {
@@ -116,4 +121,54 @@
 
 .box p {
     text-align: center;
+}
+
+/* ======== MEDIA QUERIES (MEDIUM DEVICES) ======== */
+@media screen and (max-width: 1024px) {
+    
+}
+
+
+/* ======== MEDIA QUERIES (SMALL DEVICES) ======== */
+@media screen and (max-width: 500px) {
+    .sidebar-header {
+        text-align: center;
+    }
+   .main {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    flex: 100%;
+    padding-left: 2.2rem;
+   }
+   .layout {
+    display: flex;
+    flex-direction: column;
+    flex: 100%;
+   }
+   .layout-header {
+    display: none;
+    height: 2rem;
+   }
+   .body {
+    width: 95%;
+   }
+   .box {
+    margin-left: 2rem;
+   }
+
+   .doctors::-webkit-scrollbar {
+    display: none;
+   }
+   
+   .box {
+    width: 100%;
+    margin-left: 1rem;
+   }
+   .sidebar {
+    min-height: 32%;
+    flex: 95%;
+    width: 95%;
+    margin-bottom: 3rem;
+   }
 }
