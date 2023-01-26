@@ -1,10 +1,38 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import './mainLayout.css'
 import { Link, useLocation } from 'react-router-dom'
 import { GiHospitalCross } from 'react-icons/gi'
 
-
 const Layout = () => {
+    const fetchDoctors = async () => {
+        try {
+            const response = await fetch("http://localhost:4001/api/doctor/get-all", {
+                headers: {
+                    Authorization: "Bearer " + localStorage.getItem("token"),
+                },
+            });
+            const responseData = await response.json();
+            return responseData
+        } catch (err) {
+            console.log(err);
+        }
+    };
+
+    const [doctors, setDoctors] = useState([])
+
+    useEffect(() => {
+        fetchDoctors().then(result => {
+            const doctors = []
+            result.data.forEach(doctor => {
+                doctors.push(doctor)
+            })
+            setDoctors(doctors)
+        })
+    }, [])
+
+    
+    
+
     const location = useLocation()
     const userMenu = [
         {
@@ -23,10 +51,10 @@ const Layout = () => {
             path: '/logout',
             icon: 'ri-logout-circle-line'
         }
-
     ]
 
     const menuToBeRendered = userMenu
+
 
     return (
         <div className='main p-2'>
@@ -52,36 +80,16 @@ const Layout = () => {
                     </div>
                     <div className="body">
                         <section className='doctors'>
-                            <div className='box'>
+                            {doctors.map((doctor) => {
+                                return <div className='box'>
                                 <div className='imgBx'>
+                                    <img className="doctor-image" src={doctor.image}></img>
                                 </div>
-                                <p>Doctor1</p>
+                                <p>{doctor.name}</p>
+                                <p>{doctor.specialization}</p>
+                                <p className="bio">{doctor.bio}</p>
                             </div>
-                            <div className='box'>
-                                <div className='imgBx'>
-                                </div>
-                                <p>Doctor2</p>
-                            </div>
-                            <div className='box'>
-                                <div className='imgBx'>
-                                </div>
-                                <p>Doctor3</p>
-                            </div>
-                            <div className='box'>
-                                <div className='imgBx'>
-                                </div>
-                                <p>Doctor4</p>
-                            </div>
-                            <div className='box'>
-                                <div className='imgBx'>
-                                </div>
-                                <p>Doctor5</p>
-                            </div>
-                            <div className='box'>
-                                <div className='imgBx'>
-                                </div>
-                                <p>Doctor6</p>
-                            </div>
+                            })}
                         </section>
                     </div>
                 </div>

@@ -1,12 +1,15 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import Layout from '../../components/MainLayout'
 import Socials from '../../components/Socials'
 import './bookings.css'
 
+
+
 const Bookings = () => {
+ 
   return (
     <>
-    <Layout />
+    <Layout/>
     <h1 className='social-heading'>Contact us on socials</h1>
     <Socials />
     </>
