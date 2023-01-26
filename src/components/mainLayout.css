@@ -152,7 +152,6 @@
    }
    .body {
     width: 95%;
-    margin-right: ;
    }
    .box {
     margin-left: 2rem;
@@ -167,7 +166,7 @@
     margin-left: 1rem;
    }
    .sidebar {
-    min-height: 40%;
+    min-height: 32%;
     flex: 95%;
     width: 95%;
     margin-bottom: 3rem;
