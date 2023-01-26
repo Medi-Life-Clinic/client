@@ -57,7 +57,7 @@ const Layout = () => {
 
 
     return (
-        <div className='main p-2'>
+        <div className='main'>
             <div className='d-flex layout'>
                 <div className="sidebar">
                     <div className="sidebar-header">

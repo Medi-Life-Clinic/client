@@ -19,7 +19,7 @@
 
 .main {
     padding: 20px;
-    height: 100vh;
+    height: 89vh;
     background-color: #0A4B59;
 }
 
@@ -45,6 +45,11 @@
     height: 10vh;
     width: 100%;
     background-color: #0A4B59;
+}
+
+.layout-header h1 {
+    color: white;
+    font-size: 2rem;
 }
 
 .body {
