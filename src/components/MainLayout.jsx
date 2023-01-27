@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react'
 import './mainLayout.css'
 import { Link, useLocation } from 'react-router-dom'
 import { GiHospitalCross } from 'react-icons/gi'
+import { DatePicker } from "antd";
 
 const Layout = () => {
     const fetchDoctors = async () => {
@@ -56,7 +57,9 @@ const Layout = () => {
     // Adam testing booking backend
 
     const checkAvailability = async (eventObject, returnedId) => {
-       const date = "30-01-2023"
+
+    const convertedDate = date.format('DD-MM-YYYY')
+
         try {
             const response = await fetch("http://localhost:4001/api/appointment/check-availability", {
                 method: 'POST',
@@ -67,7 +70,7 @@ const Layout = () => {
                 },
                 body: JSON.stringify({
                     doctorId: returnedId,
-                    date: date
+                    date: convertedDate
                 })
             })
             const result = await response.json();
@@ -111,7 +114,14 @@ const Layout = () => {
                                 <p>{doctor.specialization}</p>
                                 <p className="bio">{doctor.bio}</p>
                                 <label for="datepicker">Please select an appointment date:</label>
-                                <input type="date" id="datepicker" name="trip-start" value="2018-07-22"min="2018-01-01" max="2018-12-31"></input>
+                                <div className='datepicker'><DatePicker
+                  format="DD-MM-YYYY"
+                  onChange={(value) => {
+                    setDate(value);
+                    // setIsAvailable(false);
+                  }}
+                /></div>
+                                {/* <input type="date" id="datepicker" name="trip-start" value="2018-07-22"min="2018-01-01" max="2018-12-31"></input> */}
                                 <button onClick={event => checkAvailability(event, doctor._id)} className="btn btn-primary">Check Appointment</button>
                                 <button className="btn btn-primary">Book Appointment</button>
                             </div>

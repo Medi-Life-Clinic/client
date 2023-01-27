@@ -172,3 +172,13 @@
     margin-bottom: 3rem;
    }
 }
+
+
+.datepicker {
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+}
