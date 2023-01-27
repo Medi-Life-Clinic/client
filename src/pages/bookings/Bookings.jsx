@@ -15,9 +15,8 @@ const Bookings = () => {
       <div className='contact'>
         <h1 className='social-heading'>Contact us on socials</h1>
         <div className='socials-mainlayout'>
-          <a href="https://facebook.com"><AiOutlineFacebook className='social-icons' /></a>
-          <AiOutlineInstagram className='social-icons' />
-          <AiOutlineTwitter className='social-icons' />
+          <Socials />
+      
         </div>
         </div>
     </>
