@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import './mainLayout.css'
-import { Link, useLocation } from 'react-router-dom'
+import { json, Link, useLocation } from 'react-router-dom'
 import { GiHospitalCross } from 'react-icons/gi'
 
 const Layout = () => {
@@ -29,10 +29,7 @@ const Layout = () => {
             setDoctors(doctors)
         })
     }, [])
-
     
-    
-
     const location = useLocation()
     const userMenu = [
         {
@@ -53,8 +50,35 @@ const Layout = () => {
         }
     ]
 
-    const menuToBeRendered = userMenu
 
+    const menuToBeRendered = userMenu
+    
+    // Adam testing booking backend
+
+    const checkAvailability = async () => {
+       const date = "30-01-2023"
+
+        try {
+            const response = await fetch("http://localhost:4001/api/appointment/check-availability", {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                    'Accept': 'application/json',
+                    'Authorization': `Bearer ${localStorage.getItem("token")}`
+                },
+                body: JSON.stringify({
+                    doctorId: doctors._id,
+                    date: date
+                })
+            })
+            console.log(doctors._id)
+            const result = await response.json();
+            console.log(result)
+            return result
+        } catch (err) {
+            console.log(err);
+        }
+    };
 
     return (
         <div className='main'>
@@ -88,8 +112,13 @@ const Layout = () => {
                                 <p>{doctor.name}</p>
                                 <p>{doctor.specialization}</p>
                                 <p className="bio">{doctor.bio}</p>
+                                <label for="datepicker">Please select an appointment date:</label>
+                                <input type="date" id="datepicker" name="trip-start" value="2018-07-22"min="2018-01-01" max="2018-12-31"></input>
+                                <button onClick={checkAvailability} className="btn btn-primary">Check Appointment</button>
+                                <button className="btn btn-primary">Book Appointment</button>
                             </div>
-                            })}
+                            }
+                            )} 
                         </section>
                     </div>
                 </div>
