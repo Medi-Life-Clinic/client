@@ -1,7 +1,8 @@
 import React, { useEffect, useState } from 'react'
 import './mainLayout.css'
-import { Link, useLocation } from 'react-router-dom'
+import { Link, Navigate, useLocation } from 'react-router-dom'
 import { GiHospitalCross } from 'react-icons/gi'
+import { DatePicker } from "antd";
 
 const Layout = () => {
     const fetchDoctors = async () => {
@@ -19,6 +20,7 @@ const Layout = () => {
     };
 
     const [doctors, setDoctors] = useState([])
+    const [date, setDate] = useState();
 
     useEffect(() => {
         fetchDoctors().then(result => {
@@ -29,10 +31,7 @@ const Layout = () => {
             setDoctors(doctors)
         })
     }, [])
-
     
-    
-
     const location = useLocation()
     const userMenu = [
         {
@@ -52,8 +51,61 @@ const Layout = () => {
             icon: 'ri-logout-circle-line'
         }
     ]
+    
+
+
 
     const menuToBeRendered = userMenu
+    
+    // Adam testing booking backend
+
+    const checkAvailability = async (event, returnedId) => {
+
+    const convertedDate = date.format('DD-MM-YYYY')
+
+        try {
+            const response = await fetch("http://localhost:4001/api/appointment/check-availability", {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                    'Accept': 'application/json',
+                    'Authorization': `Bearer ${localStorage.getItem("token")}`
+                },
+                body: JSON.stringify({
+                    doctorId: returnedId,
+                    date: convertedDate
+                })
+            })
+            const result = await response.json();
+            console.log(result)
+            return result
+        } catch (err) {
+            console.log(err);
+        }
+    };
+
+    const makeBooking = async (event, returnedId) => {
+        const convertedDate = date.format('DD-MM-YYYY')
+        try {
+            const response = await fetch("http://localhost:4001/api/appointment/book-appointment", {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                    'Accept': 'application/json',
+                },
+                body: JSON.stringify({
+                    doctorId: returnedId,
+                    userId: localStorage.getItem("userId"),
+                    date: convertedDate
+                })
+            })
+            const result = await response.json();
+            console.log(result)
+            return result
+        } catch (err) {
+            console.log(err);
+        }
+    };
 
 
     return (
@@ -88,8 +140,13 @@ const Layout = () => {
                                 <p>{doctor.name}</p>
                                 <p>{doctor.specialization}</p>
                                 <p className="bio">{doctor.bio}</p>
+                                <label for="datepicker">Please select an appointment date:</label>
+                                <div className='datepicker'><DatePicker format="DD-MM-YYYY" onChange={(value) => {setDate(value)}}/></div>
+                                <button onClick={event => checkAvailability(event, doctor._id)} className="btn btn-primary">Check Appointment</button>
+                                <button onClick={event => makeBooking(event, doctor._id)} className="btn btn-primary">Book Appointment</button>
                             </div>
-                            })}
+                            }
+                            )} 
                         </section>
                     </div>
                 </div>
@@ -99,3 +156,8 @@ const Layout = () => {
 }
 
 export default Layout
+
+
+
+// logout arrow functions
+{/* <button onClick={logout => localStorage.removeItem('token') } className="btn btn-primary">Logout</button> */}

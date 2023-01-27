@@ -103,7 +103,7 @@
 .box {
     margin: 2rem;
     margin-top: 3rem;
-    height: 38rem;
+    /* height: 38rem; */
     width: 24rem;
     background-color: #74cac0;
     display: flex;
@@ -171,4 +171,14 @@
     width: 95%;
     margin-bottom: 3rem;
    }
+}
+
+
+.datepicker {
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
 }
