@@ -19,8 +19,7 @@ const Bookings = () => {
           <AiOutlineInstagram className='social-icons' />
           <AiOutlineTwitter className='social-icons' />
         </div>
-
-      </div>
+        </div>
     </>
   )
 }
