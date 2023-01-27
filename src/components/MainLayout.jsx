@@ -5,6 +5,8 @@ import { GiHospitalCross } from 'react-icons/gi'
 import PopoutApp from '../components/PopoutApp.jsx'
 import { AiOutlineMenuFold } from 'react-icons/ai'
 
+
+// Fetch call to retrieve doctors from the API.
 const Layout = () => {
     const fetchDoctors = async () => {
         try {
@@ -34,7 +36,7 @@ const Layout = () => {
 
     
     
-
+//Navigation side bar with links to re route.
     const location = useLocation()
     const userMenu = [
         {
@@ -62,6 +64,8 @@ const Layout = () => {
     //     localStorage.removeItem('token')
     // }
 
+
+    //Nav bar logo with nested navigation tools.
     return (
         <div className='main'>
             <div className='d-flex layout'>

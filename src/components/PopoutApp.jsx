@@ -3,6 +3,7 @@ import Popup from './Popup.jsx'
 import { useState } from 'react'
 
 
+// Popup Application Component
 
 const PopoutApp = () => {
   const [buttonPopup, setButtonPopup] = useState(false);

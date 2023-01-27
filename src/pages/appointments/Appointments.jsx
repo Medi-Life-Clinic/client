@@ -7,7 +7,7 @@ import Socials from '../../components/Socials'
 import './appointments.css'
 import { AiOutlineFacebook, AiOutlineInstagram, AiOutlineTwitter } from 'react-icons/ai'
 
-
+//Appointments page with social icons.
 
 const Appointments = () => {
 

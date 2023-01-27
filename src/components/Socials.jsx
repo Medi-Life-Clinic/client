@@ -3,7 +3,7 @@ import { AiOutlineFacebook, AiOutlineInstagram } from 'react-icons/ai'
 import { RxTwitterLogo } from 'react-icons/rx'
 import './socials.css'
 
-
+//Social Icons with links.
 
 const Socials = () => {
   return (

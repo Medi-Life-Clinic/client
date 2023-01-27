@@ -8,6 +8,7 @@ import Bookings from './pages/bookings/Bookings.jsx'
 import Appointments from './pages/appointments/Appointments.jsx'
 import ProtectedRoute from './components/ProtectedRoute.jsx'
 
+//Main App function with routes
 
 const App = () => {
   return (

@@ -1,6 +1,9 @@
 import React from 'react'
 import './popup.css'
 
+
+//Function for the popup menu in bookings.
+
 function Popup(props) {
   return (props.trigger) ? (
     <div className="popup">
