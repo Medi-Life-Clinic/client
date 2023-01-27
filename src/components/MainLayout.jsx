@@ -109,6 +109,7 @@ const Layout = () => {
     };
 
 
+    //Nav bar layout and icons
     return (
         <div className='main'>
             <div className='d-flex layout'>
@@ -117,7 +118,7 @@ const Layout = () => {
                         <h1><GiHospitalCross />Medi-Life</h1>
                     </div>
                     <div className="menu">
-                    <Link to='/'><button>Home</button></Link>
+                    <Link to='/'><button >Home</button></Link>
                     <Link to='/appointments'><button>Appointments</button></Link>
                         <Link to='/'><button onClick={()=>localStorage.removeItem('token')}>logout</button></Link>
                         {/* {menuToBeRendered.map((menu) => {
