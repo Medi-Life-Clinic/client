@@ -117,9 +117,9 @@ const Layout = () => {
                         <h1><GiHospitalCross />Medi-Life</h1>
                     </div>
                     <div className="menu">
-                        <a><i Link to='/'>Home</i></a>
-                        <a>Appointments</a>
-                        <a>Logout</a>
+                    <Link to='/'><button>Home</button></Link>
+                    <Link to='/appointments'><button>Appointments</button></Link>
+                        <Link to='/'><button onClick={()=>localStorage.removeItem('token')}>logout</button></Link>
                         {/* {menuToBeRendered.map((menu) => {
                             const isActive = location.pathname === menu.path
                             return <div className={`d-flex menu-item ${isActive && 'active-menu-item'}`}>
@@ -129,6 +129,7 @@ const Layout = () => {
                         })} */}
                     </div>
                 </div>
+
 
                 <div className='content'>
                     <div className="layout-header">
