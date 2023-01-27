@@ -2,6 +2,8 @@ import React, { useEffect, useState } from 'react'
 import './mainLayout.css'
 import { Link, useLocation } from 'react-router-dom'
 import { GiHospitalCross } from 'react-icons/gi'
+import PopoutApp from '../components/PopoutApp.jsx'
+import { AiOutlineMenuFold } from 'react-icons/ai'
 
 const Layout = () => {
     const fetchDoctors = async () => {
@@ -48,13 +50,17 @@ const Layout = () => {
         },
         {
             name: 'Logout',
-            path: '/logout',
+            path: '/',
             icon: 'ri-logout-circle-line'
         }
     ]
-
+    
     const menuToBeRendered = userMenu
 
+    // const logOut = location.name === 'Logout'
+    // if (logOut === false) {
+    //     localStorage.removeItem('token')
+    // }
 
     return (
         <div className='main'>
@@ -66,6 +72,21 @@ const Layout = () => {
                     <div className="menu">
                         {menuToBeRendered.map((menu) => {
                             const isActive = location.pathname === menu.path
+                            useEffect(() => {
+                                if(location.pathname === '/'){
+                                    // localStorage.removeItem('token')
+                                    console.log('hello')
+                                }
+                            }, [location.pathname])
+                            
+                            
+                            // const logOut = location.pathname
+                            // if (logOut === false) {
+                            //     console.log("hello")
+                            // }
+                            
+                            
+                            
                             return <div className={`d-flex menu-item ${isActive && 'active-menu-item'}`}>
                                 <i className={menu.icon}></i>
                                 <Link to={menu.path}>{menu.name}</Link>
@@ -88,6 +109,7 @@ const Layout = () => {
                                 <p>{doctor.name}</p>
                                 <p>{doctor.specialization}</p>
                                 <p className="bio">{doctor.bio}</p>
+                                <PopoutApp />
                             </div>
                             })}
                         </section>
