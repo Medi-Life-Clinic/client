@@ -1,4 +1,10 @@
 .social-link{
     color:  #74CAC0;
     text-decoration: none;
+   
 }
+
+a :hover{
+    color:#000;
+    color: #2c6f66
+    }
