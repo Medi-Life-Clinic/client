@@ -3,8 +3,10 @@ import './mainLayout.css'
 import { Link, Navigate, useLocation } from 'react-router-dom'
 import { GiHospitalCross } from 'react-icons/gi'
 import { DatePicker } from "antd";
-import PopoutApp from './popupFeature/PopoutApp';
+import { AiOutlineMenuFold } from 'react-icons/ai'
 
+
+// Fetch call to retrieve doctors from the API.
 const Layout = () => {
     const fetchDoctors = async () => {
         try {
@@ -32,7 +34,10 @@ const Layout = () => {
             setDoctors(doctors)
         })
     }, [])
+
     
+    
+
     const location = useLocation()
     const userMenu = [
         {
@@ -48,68 +53,14 @@ const Layout = () => {
         },
         {
             name: 'Logout',
-            path: '/logout',
+            path: '/',
             icon: 'ri-logout-circle-line'
         }
     ]
-    
-
-
 
     const menuToBeRendered = userMenu
-    
-    // Adam testing booking backend
-
-    const checkAvailability = async (event, returnedId) => {
-
-    const convertedDate = date.format('DD-MM-YYYY')
-
-        try {
-            const response = await fetch("http://localhost:4001/api/appointment/check-availability", {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json',
-                    'Accept': 'application/json',
-                    'Authorization': `Bearer ${localStorage.getItem("token")}`
-                },
-                body: JSON.stringify({
-                    doctorId: returnedId,
-                    date: convertedDate
-                })
-            })
-            const result = await response.json();
-            console.log(result)
-            return result
-        } catch (err) {
-            console.log(err);
-        }
-    };
-
-    const makeBooking = async (event, returnedId) => {
-        const convertedDate = date.format('DD-MM-YYYY')
-        try {
-            const response = await fetch("http://localhost:4001/api/appointment/book-appointment", {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json',
-                    'Accept': 'application/json',
-                },
-                body: JSON.stringify({
-                    doctorId: returnedId,
-                    userId: localStorage.getItem("userId"),
-                    date: convertedDate
-                })
-            })
-            const result = await response.json();
-            console.log(result)
-            return result
-        } catch (err) {
-            console.log(err);
-        }
-    };
 
 
-    //Nav bar layout and icons
     return (
         <div className='main'>
             <div className='d-flex layout'>
@@ -123,6 +74,21 @@ const Layout = () => {
                         <Link to='/'><button onClick={()=>localStorage.removeItem('token')} >logout</button></Link>
                         {/* {menuToBeRendered.map((menu) => {
                             const isActive = location.pathname === menu.path
+                            useEffect(() => {
+                                if(location.pathname === '/'){
+                                    // localStorage.removeItem('token')
+                                    console.log('hello')
+                                }
+                            }, [location.pathname])
+                            
+                            
+                            // const logOut = location.pathname
+                            // if (logOut === false) {
+                            //     console.log("hello")
+                            // }
+                            
+                            
+                            
                             return <div className={`d-flex menu-item ${isActive && 'active-menu-item'}`}>
                                 <i className={menu.icon}></i>
                                 <Link to={menu.path}>{menu.name}</Link>
@@ -146,13 +112,6 @@ const Layout = () => {
                                 <p>{doctor.name}</p>
                                 <p>{doctor.specialization}</p>
                                 <p className="bio">{doctor.bio}</p>
-                                <label for="datepicker">Please select an appointment date:</label>
-                                <div className='datepicker'><DatePicker format="DD-MM-YYYY" onChange={(value) => {setDate(value)}}/></div>
-                                <div className='popout-feature'>
-                                <PopoutApp />
-                                </div>
-                                <button onClick={event => checkAvailability(event, doctor._id)} className="btn btn-primary">Check Appointment</button>
-                                <button onClick={event => makeBooking(event, doctor._id)} className="btn btn-primary">Book Appointment</button>
                             </div>
                             }
                             )} 

@@ -5,6 +5,7 @@ import './bookings.css'
 import { AiOutlineFacebook, AiOutlineInstagram, AiOutlineTwitter } from 'react-icons/ai'
 
 
+//Bookings page with social icons.
 
 const Bookings = () => {
 
@@ -14,12 +15,10 @@ const Bookings = () => {
       <div className='contact'>
         <h1 className='social-heading'>Contact us on socials</h1>
         <div className='socials-mainlayout'>
-          <AiOutlineFacebook className='social-icons' />
-          <AiOutlineInstagram className='social-icons' />
-          <AiOutlineTwitter className='social-icons' />
+          <Socials />
+      
         </div>
-
-      </div>
+        </div>
     </>
   )
 }
