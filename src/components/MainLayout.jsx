@@ -120,7 +120,7 @@ const Layout = () => {
                     <div className="menu">
                     <Link to='/'><button >Home</button></Link>
                     <Link to='/appointments'><button>Appointments</button></Link>
-                        <Link to='/'><button onClick={()=>localStorage.removeItem('token')}>logout</button></Link>
+                        <Link to='/'><button onClick={()=>localStorage.removeItem('token')} >logout</button></Link>
                         {/* {menuToBeRendered.map((menu) => {
                             const isActive = location.pathname === menu.path
                             return <div className={`d-flex menu-item ${isActive && 'active-menu-item'}`}>
