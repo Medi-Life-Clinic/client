@@ -44,7 +44,7 @@ export const Login = () => {
       toast.error("Something went wrong")
     }
   }
-
+//Functionality/styling for the popup error message using Toast
   return (
     <>
       <ToastContainer 

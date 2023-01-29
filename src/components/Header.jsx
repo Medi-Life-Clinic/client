@@ -2,6 +2,7 @@ import React from 'react'
 import {GiHospitalCross} from 'react-icons/gi'
 import './header.css'
 
+//Main header for Login and register page.
 const Header = () => {
   return (
     <>

@@ -3,6 +3,7 @@ import './mainLayout.css'
 import { Link, Navigate, useLocation } from 'react-router-dom'
 import { GiHospitalCross } from 'react-icons/gi'
 import { DatePicker } from "antd";
+import PopoutApp from './popupFeature/PopoutApp';
 
 const Layout = () => {
     const fetchDoctors = async () => {
@@ -114,15 +115,12 @@ const Layout = () => {
                 <div className="sidebar">
                     <div className="sidebar-header">
                         <h1><GiHospitalCross />Medi-Life</h1>
-                    </div>
+                        </div>
                     <div className="menu">
-                        {menuToBeRendered.map((menu) => {
-                            const isActive = location.pathname === menu.path
-                            return <div className={`d-flex menu-item ${isActive && 'active-menu-item'}`}>
-                                <i className={menu.icon}></i>
-                                <Link to={menu.path}>{menu.name}</Link>
-                            </div>
-                        })}
+                    <Link to='/bookings'><button >Doctors</button></Link>
+                    <Link to='/appointments'><button>Appointments</button></Link>
+                        <Link to='/'><button onClick={()=>localStorage.removeItem('token')} >Logout</button></Link>
+                     
                     </div>
                 </div>
 
@@ -142,6 +140,9 @@ const Layout = () => {
                                 <p className="bio">{doctor.bio}</p>
                                 <label for="datepicker">Please select an appointment date:</label>
                                 <div className='datepicker'><DatePicker format="DD-MM-YYYY" onChange={(value) => {setDate(value)}}/></div>
+                                <div className='popout-feature'>
+                                <PopoutApp />
+                                </div>
                                 <button onClick={event => checkAvailability(event, doctor._id)} className="btn btn-primary">Check Appointment</button>
                                 <button onClick={event => makeBooking(event, doctor._id)} className="btn btn-primary">Book Appointment</button>
                             </div>

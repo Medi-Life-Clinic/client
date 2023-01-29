@@ -1,13 +1,15 @@
-import React, { useEffect } from 'react'
+import React from 'react'
 import Layout from '../../components/MainLayout'
+import { Link, useLocation } from 'react-router-dom'
+import { GiHospitalCross } from 'react-icons/gi'
+
 import Socials from '../../components/Socials'
-import './bookings.css'
+import './appointments.css'
 import { AiOutlineFacebook, AiOutlineInstagram, AiOutlineTwitter } from 'react-icons/ai'
 
+//Appointments page with social icons.
 
-//Bookings page with social icons.
-
-const Bookings = () => {
+const Appointments = () => {
 
   return (
     <>
@@ -16,11 +18,10 @@ const Bookings = () => {
         <h1 className='social-heading'>Contact us on socials</h1>
         <div className='socials-mainlayout'>
           <Socials />
-      
         </div>
-        </div>
+      </div>
     </>
   )
 }
 
-export default Bookings
+export default Appointments
