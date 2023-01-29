@@ -117,16 +117,10 @@ const Layout = () => {
                         <h1><GiHospitalCross />Medi-Life</h1>
                         </div>
                     <div className="menu">
-                    <Link to='/'><button >Home</button></Link>
+                    <Link to='/bookings'><button >Doctors</button></Link>
                     <Link to='/appointments'><button>Appointments</button></Link>
-                        <Link to='/'><button onClick={()=>localStorage.removeItem('token')} >logout</button></Link>
-                        {/* {menuToBeRendered.map((menu) => {
-                            const isActive = location.pathname === menu.path
-                            return <div className={`d-flex menu-item ${isActive && 'active-menu-item'}`}>
-                                <i className={menu.icon}></i>
-                                <Link to={menu.path}>{menu.name}</Link>
-                            </div>
-                        })} */}
+                        <Link to='/'><button onClick={()=>localStorage.removeItem('token')} >Logout</button></Link>
+                     
                     </div>
                 </div>
 

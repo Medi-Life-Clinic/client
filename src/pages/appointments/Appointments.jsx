@@ -11,18 +11,17 @@ import { AiOutlineFacebook, AiOutlineInstagram, AiOutlineTwitter } from 'react-i
 
 const Appointments = () => {
 
-    return (
-      <>
-        <Layout />
-        <div className='contact'>
-          <h1 className='social-heading'>Contact us on socials</h1>
-          <div className='socials-mainlayout'>
+  return (
+    <>
+      <Layout />
+      <div className='contact'>
+        <h1 className='social-heading'>Contact us on socials</h1>
+        <div className='socials-mainlayout'>
           <Socials />
-          </div>
-  
         </div>
-      </>
-    )
-  }
-  
-  export default Appointments
+      </div>
+    </>
+  )
+}
+
+export default Appointments
