@@ -5,7 +5,7 @@ import { GiHospitalCross } from 'react-icons/gi'
 
 import Socials from '../../components/Socials'
 import './appointments.css'
-import { AiOutlineFacebook, AiOutlineInstagram, AiOutlineTwitter } from 'react-icons/ai'
+
 
 //Appointments page with social icons.
 //Inherits Page layout from MainLayout.jsx
@@ -14,15 +14,9 @@ const Appointments = () => {
   return (
     <>
     <Layout>
-      <div className="box">hello</div>
+      
+      <Socials />
     </Layout>
-      {/* <Layout/>
-      <div className='contact'>
-        <h1 className='social-heading'>Contact us on socials</h1>
-        <div className='socials-mainlayout'>
-          <Socials />
-        </div>
-      </div> */}
     </>
   )
 }
