@@ -1,7 +1,29 @@
 /* .doctors {
     display: none;
 } */
-
+.appointments {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    border-radius: 5px;
+    box-shadow: 0 0 5px #74cac0;
+    border: 5px;
+    
+}
+.appointment {
+    background-color: #74cac0;
+    color: black;
+    margin: 3%;
+    border-radius: 5px;
+    box-shadow: 0 0 5px gray;
+    border: 5px;
+    font-size: 13px;
+    padding: 16px;
+    width: 30%;
+}
+.body {
+    height: 83.5vh;
+}
 socials-box {
     font-size: 3rem;
     background-color: #0a4b59;
