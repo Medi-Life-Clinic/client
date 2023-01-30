@@ -8,3 +8,19 @@ a :hover{
     color:#000;
     color: #2c6f66
     }
+
+.socials-box {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    margin-bottom: 20px;
+}
+
+.socials-heading{
+    margin-top: 7%;
+    color: white;
+    display: flex;
+    justify-content: center;
+}
+
+
