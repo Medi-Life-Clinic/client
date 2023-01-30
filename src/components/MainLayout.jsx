@@ -123,19 +123,19 @@ const Layout = () => {
                     <div className="menu">
                     <Link to='/bookings'>
                             <button style={{background: "transparent", border: "none"}}>
-                            <FaHouseUser />
+                            <FaHouseUser class="m-2"/> 
                             Doctors
                             </button>
                     </Link>
                     <Link to='/appointments'>
                             <button style={{background: "transparent", border: "none"}}>
-                            <BsCalendarDate />
+                            <BsCalendarDate class="m-2"/>
                             Appointments
                             </button>
                     </Link>
                     <Link to='/'>
                             <button style={{background: "transparent", border: "none"}} onClick={()=>localStorage.removeItem('token')}>
-                             <MdLogout />
+                             <MdLogout class="m-2"/>
                              Logout
                             </button>
                     </Link>
