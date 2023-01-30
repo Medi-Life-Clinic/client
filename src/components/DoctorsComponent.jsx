@@ -1,9 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import { ToastContainer, toast } from 'react-toastify'
 import { DatePicker, TimePicker } from "antd";
-import Socials from '../components/Socials'
 import dayjs from 'dayjs';
-
 
 const Doctors = () => {
     const fetchDoctors = async () => {
@@ -24,7 +22,6 @@ const Doctors = () => {
     const [date, setDate] = useState();
     const [time, setTime] = useState();
     const format = 'HH:mm'; // time picker format
-
 
     useEffect(() => {
         fetchDoctors().then(result => {
@@ -47,12 +44,13 @@ const Doctors = () => {
                 headers: {
                     'Content-Type': 'application/json',
                     'Accept': 'application/json',
-                    'Authorization': `Bearer ${localStorage.getItem("token")}`
+                    'Authorization': "Bearer " + localStorage.getItem("token"),
                 },
                 body: JSON.stringify({
                     doctorId: returnedId,
                     date: convertedDate,
-                    time: convertedTime
+                    time : convertedTime,
+
                 })
             })
             const result = await response.json();
@@ -67,32 +65,33 @@ const Doctors = () => {
     };
 
     const makeBooking = async (event, returnedId) => {
+
         const convertedDate = date.format('DD-MM-YYYY')
         const convertedTime = time.format('HH:mm')
+        const doctor = doctors.find(doctor => doctor._id === returnedId)
+
         try {
             const response = await fetch("https://medi-life-clinic.herokuapp.com/api/appointment/book-appointment", {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
                     'Accept': 'application/json',
+                    'Authorization': "Bearer " + localStorage.getItem("token"),
                 },
                 body: JSON.stringify({
                     doctorId: returnedId,
                     userId: localStorage.getItem("userId"),
                     date: convertedDate,
-                    time: convertedTime
-                    // doctorInfo: doctor,
-                    // userInfo: user
+                    time : convertedTime,
+                    doctorInfo: doctor,
                 })
             })
             const result = await response.json();
             toast.success(result.message)
-            console.log(convertedTime)
         } catch (err) {
             toast.error('Something went wrong');
         }
     };
-
 
     return (
         <div className='content'>
@@ -138,6 +137,28 @@ const Doctors = () => {
                 />
             </div>
         </div>
+
+
+// ADAM TEST COMBINED DATE AND TIME PICKER CODE NEEDS IMPORT {space} from antd
+
+/*
+
+
+    // date picker test
+    // const onChange = (value, dateString) => {
+    //     console.log('Formatted Selected Time: ', dateString);
+    //     const dateSplit = dateString.split(" ")[0]
+    //     const timeSplit = dateString.split(" ")[1]
+    //     return setDate(dateSplit), setTime(timeSplit)
+    //   };
+    //   const onOk = (dateString) => {
+    //     console.log('onOk: ', dateString);
+    //   };
+
+        <Space direction="vertical" size={12}>
+          <DatePicker showTime onChange={onChange} minuteStep={60} format="DD-MM-YYYY HH:mm" disabledHours={() => [0, 1, 2, 3, 4, 5, 6,7,8, 17, 18, 19, 20, 21, 22, 23, 24]} />
+        </Space> 
+*/
 
     )
 }
