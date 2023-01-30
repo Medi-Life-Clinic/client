@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react'
 
 const AppointmentsComponent = () => {
+    document.title = 'Medi-Life | Appointments'
 
     const getAppointments = async () => {
         try {

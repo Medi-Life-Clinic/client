@@ -4,6 +4,8 @@ import { DatePicker, TimePicker } from "antd";
 import dayjs from 'dayjs';
 
 const Doctors = () => {
+    document.title = 'Medi-Life | Bookings'
+
     const fetchDoctors = async () => {
         try {
             const response = await fetch("http://localhost:4001/api/doctor/get-all", {

@@ -6,6 +6,7 @@ import 'react-toastify/dist/ReactToastify.css'
 
 
 export const Login = () => {
+  document.title = 'Medi-Life | Login'
   // this is used to navigate to the bookings page
   const navigate = useNavigate()
 
