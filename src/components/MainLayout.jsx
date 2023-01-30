@@ -2,6 +2,9 @@ import React, { useEffect, useState } from 'react'
 import './mainLayout.css'
 import { Link, Navigate, useLocation } from 'react-router-dom'
 import { GiHospitalCross } from 'react-icons/gi'
+import { FaHouseUser } from 'react-icons/fa'
+import { BsCalendarDate } from 'react-icons/bs'
+import { MdLogout } from 'react-icons/md'
 import { DatePicker } from "antd";
 import { ToastContainer, toast } from 'react-toastify'
 import { Toast } from 'bootstrap';
@@ -145,6 +148,7 @@ const Layout = () => {
     const userName = localStorage.getItem("user")
     
 
+    //NAV BAR LINKS
     return (
         <div className='main'>
             <div className='d-flex layout'>
@@ -154,16 +158,36 @@ const Layout = () => {
                         <h4 className="user-name">{userName}</h4>
                     </div>
                     <div className="menu">
-                        <Link to='/bookings'><button >Doctors</button></Link>
-                        <Link to='/appointments'><button>Appointments</button></Link>
-                        <Link to='/'><button onClick={() => localStorage.removeItem('token')} >Logout</button></Link>
+                    <Link to='/bookings' className={location.pathname === '/bookings' ? 'active' : ''}>
+                            <button style={{background: "transparent", border: "none"}} class="p-0">
+                            <FaHouseUser className="m-2 nav-icon" size='20'/> 
+                            Doctors
+                            </button>
+                    </Link>
+                    <Link to='/appointments' className={location.pathname === '/appointments' ? 'active' : ''}>
+                            <button style={{background: "transparent", border: "none"}}  class="p-0">
+                            <BsCalendarDate className="m-2 nav-icon" size='20'/>
+                            Appointments
+                            </button>
+                    </Link>
+                    <Link to='/'>
+                            <button className="nav-btn"style={{background: "transparent", border: "none"}} onClick={()=>localStorage.removeItem('token')} class="p-0">
+                             <MdLogout className="m-2" size = '25' />
+                             Logout
+                            </button>
+                    </Link>
+
+        
+                     
 
                     </div>
                 </div>
 
                 <div className='content'>
                     <div className="layout-header">
-                        <h1>Meet our doctors</h1>
+                    <h1>
+            {location.pathname === '/appointments' ? 'Your Appointments' : 'Meet our doctors'}
+          </h1>
                     </div>
                     <div className="body">
                         <section className='doctors'>

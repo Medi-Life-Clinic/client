@@ -177,6 +177,36 @@
     text-align: center;
 }
 
+.datepicker {
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+}
+
+/* Sets the styling of current location buttons */
+.active {
+    background-color: #0A4B59;
+   
+
+}
+
+
+.nav-icon {
+    display: "flex";
+    align-items: "center";
+     justify-content: "center";
+      font-size: "px"  
+}
+
+
+.sidebar a{
+    margin-left: -40px;
+
+}
+
 /* ======== MEDIA QUERIES (MEDIUM DEVICES) ======== */
 @media screen and (max-width: 1024px) {}
 
@@ -194,6 +224,8 @@
         flex: 100%;
         padding-left: 2.2rem;
     }
+
+
 
     .layout {
         display: flex;
@@ -230,3 +262,4 @@
         margin-bottom: 3rem;
     }
 }
+

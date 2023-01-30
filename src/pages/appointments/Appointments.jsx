@@ -8,12 +8,12 @@ import './appointments.css'
 import { AiOutlineFacebook, AiOutlineInstagram, AiOutlineTwitter } from 'react-icons/ai'
 
 //Appointments page with social icons.
+//Inherits Page layout from MainLayout.jsx
 
 const Appointments = () => {
-
   return (
     <>
-      <Layout />
+      <Layout /> 
       <div className='contact'>
         <h1 className='social-heading'>Contact us on socials</h1>
         <div className='socials-mainlayout'>

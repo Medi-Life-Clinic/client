@@ -48,7 +48,7 @@ export const Login = () => {
 //Functionality/styling for the popup error message using Toast
   return (
     <>
-      <ToastContainer 
+      <ToastContainer  //This package creates a notifications for the user. 
       position="bottom-center"
       autoClose={5000}
       hideProgressBar={false}
@@ -73,7 +73,7 @@ export const Login = () => {
             </label>
             <input value={password} onChange={(e) => setPassword(e.target.value)} className='mb-4' type="password" name="password" placeholder='Password' />
             <input className='mb-3 login-button' type="submit" value="LOGIN" />
-            <Link to='/register' className='anchor'>Haven't registered? Click Here</Link>
+            <Link to='/register' className='anchor'>Haven't registered? Click Here</Link> 
           </form>
         </div>
       </div>
