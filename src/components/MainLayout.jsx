@@ -6,7 +6,9 @@ import { FaHouseUser } from 'react-icons/fa'
 import { BsCalendarDate } from 'react-icons/bs'
 import { MdLogout } from 'react-icons/md'
 import { DatePicker } from "antd";
-import PopoutApp from './popupFeature/PopoutApp';
+import { ToastContainer, toast } from 'react-toastify'
+import { Toast } from 'bootstrap';
+
 
 const Layout = () => {
     const fetchDoctors = async () => {
@@ -35,7 +37,7 @@ const Layout = () => {
             setDoctors(doctors)
         })
     }, [])
-    
+
     const location = useLocation()
     const userMenu = [
         {
@@ -55,17 +57,17 @@ const Layout = () => {
             icon: 'ri-logout-circle-line'
         }
     ]
-    
+
 
 
 
     const menuToBeRendered = userMenu
-    
+
     // Adam testing booking backend
 
     const checkAvailability = async (event, returnedId) => {
 
-    const convertedDate = date.format('DD-MM-YYYY')
+        const convertedDate = date.format('DD-MM-YYYY')
 
         try {
             const response = await fetch("http://localhost:4001/api/appointment/check-availability", {
@@ -81,10 +83,13 @@ const Layout = () => {
                 })
             })
             const result = await response.json();
-            console.log(result)
-            return result
+            if (result.success) {
+                makeBooking(event, returnedId)
+            } else {
+                toast.error(result.message)
+            }
         } catch (err) {
-            console.log(err);
+            toast.error('Something went wrong');
         }
     };
 
@@ -100,17 +105,48 @@ const Layout = () => {
                 body: JSON.stringify({
                     doctorId: returnedId,
                     userId: localStorage.getItem("userId"),
-                    date: convertedDate
+                    date: convertedDate,
+                    time: "10:00"
+                    // doctorInfo: doctor,
+                    // userInfo: user
                 })
             })
             const result = await response.json();
-            console.log(result)
-            return result
+            toast.success(result.message)
         } catch (err) {
-            console.log(err);
+            toast.error('Something went wrong');
         }
     };
 
+    // const makeBooking = async (event, returnedId) => {
+    //     const convertedDate = date.format('DD-MM-YYYY')
+    //     try {
+    //         const response = await fetch("http://localhost:4001/api/appointment/book-appointment", {
+    //             method: 'POST',
+    //             headers: {
+    //                 'Content-Type': 'application/json',
+    //                 'Accept': 'application/json',
+    //             },
+    //             body: JSON.stringify({
+    //                 doctorId: returnedId,
+    //                 userId: localStorage.getItem("userId"),
+    //                 date: convertedDate
+    //             })
+    //         })
+    //         const result = await response.json();
+    //         // console.log(result)
+    //         toast.success(result.message)
+    //         return result
+    //     } catch (err) {
+    //         console.log(err);
+    //     }
+    // };
+
+
+    // Save the username from local storage to the variable userName
+    // displays username in the h4 tag below.
+    const userName = localStorage.getItem("user")
+    
 
     //NAV BAR LINKS
     return (
@@ -119,7 +155,8 @@ const Layout = () => {
                 <div className="sidebar">
                     <div className="sidebar-header">
                         <h1><GiHospitalCross />Medi-Life</h1>
-                        </div>
+                        <h4 className="user-name">{userName}</h4>
+                    </div>
                     <div className="menu">
                     <Link to='/bookings' className={location.pathname === '/bookings' ? 'active' : ''}>
                             <button style={{background: "transparent", border: "none"}} class="p-0">
@@ -142,6 +179,7 @@ const Layout = () => {
 
         
                      
+
                     </div>
                 </div>
 
@@ -155,24 +193,36 @@ const Layout = () => {
                         <section className='doctors'>
                             {doctors.map((doctor) => {
                                 return <div className='box'>
-                                <div className='imgBx'>
-                                
-                                    <img className="doctor-image" src={doctor.image}></img>
+                                    <div className='imgBx'>
+                                        <img className="doctor-image" src={doctor.image}></img>
+                                    </div>
+                                    <p>{doctor.name}</p>
+                                    <p>{doctor.specialization}</p>
+                                    <p className="bio">{doctor.bio}</p>
+
+                                    <container className='booking-container'>
+                                        
+                                        <label>Please select an appointment date:</label>
+                                        <DatePicker className='date-picker' format="DD-MM-YYYY" onChange={(value) => { setDate(value) }} />
+                                        <button onClick={event => checkAvailability(event, doctor._id)} className="booking-button">Book Appointment</button>
+                                        {/* <button onClick={event => makeBooking(event, doctor._id)} className="booking-button">Book Appointment</button> */}
+                                    </container>
                                 </div>
-                                <p>{doctor.name}</p>
-                                <p>{doctor.specialization}</p>
-                                <p className="bio">{doctor.bio}</p>
-                                <label for="datepicker">Please select an appointment date:</label>
-                                <div className='datepicker'><DatePicker format="DD-MM-YYYY" onChange={(value) => {setDate(value)}}/></div>
-                                <div className='popout-feature'>
-                                <PopoutApp />
-                                </div>
-                                <button onClick={event => checkAvailability(event, doctor._id)} className="btn btn-primary">Check Appointment</button>
-                                <button onClick={event => makeBooking(event, doctor._id)} className="btn btn-primary">Book Appointment</button>
-                            </div>
                             }
-                            )} 
+                            )}
                         </section>
+                        <ToastContainer
+                                            position="bottom-center"
+                                            autoClose={3000}
+                                            hideProgressBar={true}
+                                            newestOnTop={true}
+                                            closeOnClick
+                                            rtl={false}
+                                            // pauseOnFocusLoss
+                                            draggable
+                                            pauseOnHover
+                                            theme="dark"
+                                        />
                     </div>
                 </div>
             </div>
@@ -185,4 +235,4 @@ export default Layout
 
 
 // logout arrow functions
-{/* <button onClick={logout => localStorage.removeItem('token') } className="btn btn-primary">Logout</button> */}
+{/* <button onClick={logout => localStorage.removeItem('token') } className="btn btn-primary">Logout</button> */ }
