@@ -147,13 +147,14 @@ const Layout = () => {
 
                 <div className='content'>
                     <div className="layout-header">
-                        <h1>Meet our doctors</h1>
+                       <h1>Meet our doctors</h1>
                     </div>
                     <div className="body">
                         <section className='doctors'>
                             {doctors.map((doctor) => {
                                 return <div className='box'>
                                 <div className='imgBx'>
+                                
                                     <img className="doctor-image" src={doctor.image}></img>
                                 </div>
                                 <p>{doctor.name}</p>

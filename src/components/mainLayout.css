@@ -145,6 +145,8 @@
 /* Sets the styling of current location buttons */
 .active {
     background-color: #0A4B59;
+   
+
 }
 
 
@@ -152,12 +154,13 @@
     display: "flex";
     align-items: "center";
      justify-content: "center";
-      font-size: "px";
+      font-size: "px"  
 }
 
 
 .sidebar a{
-    margin-left: -30px;
+    margin-left: -40px;
+
 }
 
 /* ======== MEDIA QUERIES (MEDIUM DEVICES) ======== */
