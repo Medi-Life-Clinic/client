@@ -35,6 +35,7 @@ export const Login = () => {
       if (result.success) {
       localStorage.setItem('token', result.token)
       localStorage.setItem('userId', result.userId)
+      localStorage.setItem('user', result.user)
       navigate('/bookings')
     } else {
       toast.error(result.message)
