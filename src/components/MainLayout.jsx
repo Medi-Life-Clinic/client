@@ -3,7 +3,9 @@ import './mainLayout.css'
 import { Link, Navigate, useLocation } from 'react-router-dom'
 import { GiHospitalCross } from 'react-icons/gi'
 import { DatePicker } from "antd";
-import PopoutApp from './popupFeature/PopoutApp';
+import { ToastContainer, toast } from 'react-toastify'
+import { Toast } from 'bootstrap';
+
 
 const Layout = () => {
     const fetchDoctors = async () => {
@@ -32,7 +34,7 @@ const Layout = () => {
             setDoctors(doctors)
         })
     }, [])
-    
+
     const location = useLocation()
     const userMenu = [
         {
@@ -52,17 +54,17 @@ const Layout = () => {
             icon: 'ri-logout-circle-line'
         }
     ]
-    
+
 
 
 
     const menuToBeRendered = userMenu
-    
+
     // Adam testing booking backend
 
     const checkAvailability = async (event, returnedId) => {
 
-    const convertedDate = date.format('DD-MM-YYYY')
+        const convertedDate = date.format('DD-MM-YYYY')
 
         try {
             const response = await fetch("http://localhost:4001/api/appointment/check-availability", {
@@ -78,7 +80,8 @@ const Layout = () => {
                 })
             })
             const result = await response.json();
-            console.log(result)
+            // console.log(result)
+            toast.success(result.message)
             return result
         } catch (err) {
             console.log(err);
@@ -101,7 +104,8 @@ const Layout = () => {
                 })
             })
             const result = await response.json();
-            console.log(result)
+            // console.log(result)
+            toast.success(result.message)
             return result
         } catch (err) {
             console.log(err);
@@ -115,12 +119,12 @@ const Layout = () => {
                 <div className="sidebar">
                     <div className="sidebar-header">
                         <h1><GiHospitalCross />Medi-Life</h1>
-                        </div>
+                    </div>
                     <div className="menu">
-                    <Link to='/bookings'><button >Doctors</button></Link>
-                    <Link to='/appointments'><button>Appointments</button></Link>
-                        <Link to='/'><button onClick={()=>localStorage.removeItem('token')} >Logout</button></Link>
-                     
+                        <Link to='/bookings'><button >Doctors</button></Link>
+                        <Link to='/appointments'><button>Appointments</button></Link>
+                        <Link to='/'><button onClick={() => localStorage.removeItem('token')} >Logout</button></Link>
+
                     </div>
                 </div>
 
@@ -132,22 +136,34 @@ const Layout = () => {
                         <section className='doctors'>
                             {doctors.map((doctor) => {
                                 return <div className='box'>
-                                <div className='imgBx'>
-                                    <img className="doctor-image" src={doctor.image}></img>
+                                    <div className='imgBx'>
+                                        <img className="doctor-image" src={doctor.image}></img>
+                                    </div>
+                                    <p>{doctor.name}</p>
+                                    <p>{doctor.specialization}</p>
+                                    <p className="bio">{doctor.bio}</p>
+
+                                    <container className='booking-container'>
+                                        <ToastContainer
+                                            position="bottom-center"
+                                            autoClose={5000}
+                                            hideProgressBar={false}
+                                            newestOnTop={false}
+                                            closeOnClick
+                                            rtl={false}
+                                            pauseOnFocusLoss
+                                            draggable
+                                            pauseOnHover
+                                            theme="dark"
+                                        />
+                                        <label>Please select an appointment date:</label>
+                                        <DatePicker className='date-picker' format="DD-MM-YYYY" onChange={(value) => { setDate(value) }} />
+                                        <button onClick={event => checkAvailability(event, doctor._id)} className="booking-button">Check Appointment</button>
+                                        <button onClick={event => makeBooking(event, doctor._id)} className="booking-button">Book Appointment</button>
+                                    </container>
                                 </div>
-                                <p>{doctor.name}</p>
-                                <p>{doctor.specialization}</p>
-                                <p className="bio">{doctor.bio}</p>
-                                <label for="datepicker">Please select an appointment date:</label>
-                                <div className='datepicker'><DatePicker format="DD-MM-YYYY" onChange={(value) => {setDate(value)}}/></div>
-                                <div className='popout-feature'>
-                                <PopoutApp />
-                                </div>
-                                <button onClick={event => checkAvailability(event, doctor._id)} className="btn btn-primary">Check Appointment</button>
-                                <button onClick={event => makeBooking(event, doctor._id)} className="btn btn-primary">Book Appointment</button>
-                            </div>
                             }
-                            )} 
+                            )}
                         </section>
                     </div>
                 </div>
@@ -161,4 +177,4 @@ export default Layout
 
 
 // logout arrow functions
-{/* <button onClick={logout => localStorage.removeItem('token') } className="btn btn-primary">Logout</button> */}
+{/* <button onClick={logout => localStorage.removeItem('token') } className="btn btn-primary">Logout</button> */ }
