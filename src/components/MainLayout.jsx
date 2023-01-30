@@ -112,6 +112,10 @@ const Layout = () => {
         }
     };
 
+    // Save the username from local storage to the variable userName
+    // displays username in the h4 tag below.
+    const userName = localStorage.getItem("user")
+    
 
     return (
         <div className='main'>
@@ -119,6 +123,7 @@ const Layout = () => {
                 <div className="sidebar">
                     <div className="sidebar-header">
                         <h1><GiHospitalCross />Medi-Life</h1>
+                        <h4 className="user-name">{userName}</h4>
                     </div>
                     <div className="menu">
                         <Link to='/bookings'><button >Doctors</button></Link>
