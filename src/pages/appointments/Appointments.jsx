@@ -5,6 +5,7 @@ import { GiHospitalCross } from 'react-icons/gi'
 
 import Socials from '../../components/Socials'
 import './appointments.css'
+import AppointmentsComponent from '../../components/AppointmentsComponent'
 
 
 //Appointments page with social icons.
@@ -12,12 +13,13 @@ import './appointments.css'
 
 const Appointments = () => {
   return (
-    <>
+    
     <Layout>
       
-      <Socials />
+      <AppointmentsComponent />
+      
     </Layout>
-    </>
+    
   )
 }
 
