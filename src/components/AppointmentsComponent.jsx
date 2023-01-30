@@ -4,7 +4,7 @@ const AppointmentsComponent = () => {
 
     const getAppointments = async () => {
         try {
-            const response = await fetch("http://localhost:4001/api/appointment/get-all-by-user-id", {
+            const response = await fetch("https://medi-life-clinic.herokuapp.com/api/appointment/get-all-by-user-id", {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',

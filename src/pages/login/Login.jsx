@@ -20,7 +20,7 @@ export const Login = () => {
       
     // this is the fetch request to the server
     try {
-      const response = await fetch('http://localhost:4001/api/user/login', {
+      const response = await fetch('https://medi-life-clinic.herokuapp.com/api/user/login', {
         method: 'POST', // http method
         headers: { // headers are used to tell the server what type of data we are sending
           'Content-Type': 'application/json',

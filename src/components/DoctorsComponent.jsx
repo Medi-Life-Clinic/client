@@ -8,7 +8,7 @@ import dayjs from 'dayjs';
 const Doctors = () => {
     const fetchDoctors = async () => {
         try {
-            const response = await fetch("http://localhost:4001/api/doctor/get-all", {
+            const response = await fetch("https://medi-life-clinic.herokuapp.com/api/doctor/get-all", {
                 headers: {
                     Authorization: "Bearer " + localStorage.getItem("token"),
                 },
@@ -42,7 +42,7 @@ const Doctors = () => {
         const convertedTime = time.format('HH:mm')
 
         try {
-            const response = await fetch("http://localhost:4001/api/appointment/check-availability", {
+            const response = await fetch("https://medi-life-clinic.herokuapp.com/api/appointment/check-availability", {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
@@ -70,7 +70,7 @@ const Doctors = () => {
         const convertedDate = date.format('DD-MM-YYYY')
         const convertedTime = time.format('HH:mm')
         try {
-            const response = await fetch("http://localhost:4001/api/appointment/book-appointment", {
+            const response = await fetch("https://medi-life-clinic.herokuapp.com/api/appointment/book-appointment", {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',

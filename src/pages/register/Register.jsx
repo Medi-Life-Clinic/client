@@ -19,7 +19,7 @@ export const Register = (props) => {
     e.preventDefault() // this stops the page from refreshing
     console.log(email) // this is just a test to check that the email is being passed through
 
-    fetch('http://localhost:4001/api/user/register', { // this is the fetch request to the server
+    fetch('https://medi-life-clinic.herokuapp.com/api/user/register', { // this is the fetch request to the server
       method: 'POST', // http method
       headers: { // headers are used to tell the server what type of data we are sending
         'Content-Type': 'application/json',
