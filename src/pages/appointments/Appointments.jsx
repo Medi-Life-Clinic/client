@@ -13,13 +13,16 @@ import { AiOutlineFacebook, AiOutlineInstagram, AiOutlineTwitter } from 'react-i
 const Appointments = () => {
   return (
     <>
-      <Layout /> 
+    <Layout>
+      <div className="box">hello</div>
+    </Layout>
+      {/* <Layout/>
       <div className='contact'>
         <h1 className='social-heading'>Contact us on socials</h1>
         <div className='socials-mainlayout'>
           <Socials />
         </div>
-      </div>
+      </div> */}
     </>
   )
 }
