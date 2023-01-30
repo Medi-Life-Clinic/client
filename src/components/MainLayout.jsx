@@ -80,11 +80,13 @@ const Layout = () => {
                 })
             })
             const result = await response.json();
-            // console.log(result)
-            toast.success(result.message)
-            return result
+            if (result.success) {
+                makeBooking(event, returnedId)
+            } else {
+                toast.error(result.message)
+            }
         } catch (err) {
-            console.log(err);
+            toast.error('Something went wrong');
         }
     };
 
@@ -104,13 +106,36 @@ const Layout = () => {
                 })
             })
             const result = await response.json();
-            // console.log(result)
             toast.success(result.message)
-            return result
         } catch (err) {
-            console.log(err);
+            toast.error('Something went wrong');
         }
     };
+
+    // const makeBooking = async (event, returnedId) => {
+    //     const convertedDate = date.format('DD-MM-YYYY')
+    //     try {
+    //         const response = await fetch("http://localhost:4001/api/appointment/book-appointment", {
+    //             method: 'POST',
+    //             headers: {
+    //                 'Content-Type': 'application/json',
+    //                 'Accept': 'application/json',
+    //             },
+    //             body: JSON.stringify({
+    //                 doctorId: returnedId,
+    //                 userId: localStorage.getItem("userId"),
+    //                 date: convertedDate
+    //             })
+    //         })
+    //         const result = await response.json();
+    //         // console.log(result)
+    //         toast.success(result.message)
+    //         return result
+    //     } catch (err) {
+    //         console.log(err);
+    //     }
+    // };
+
 
     // Save the username from local storage to the variable userName
     // displays username in the h4 tag below.
@@ -149,27 +174,28 @@ const Layout = () => {
                                     <p className="bio">{doctor.bio}</p>
 
                                     <container className='booking-container'>
-                                        <ToastContainer
-                                            position="bottom-center"
-                                            autoClose={5000}
-                                            hideProgressBar={false}
-                                            newestOnTop={false}
-                                            closeOnClick
-                                            rtl={false}
-                                            pauseOnFocusLoss
-                                            draggable
-                                            pauseOnHover
-                                            theme="dark"
-                                        />
+                                        
                                         <label>Please select an appointment date:</label>
                                         <DatePicker className='date-picker' format="DD-MM-YYYY" onChange={(value) => { setDate(value) }} />
-                                        <button onClick={event => checkAvailability(event, doctor._id)} className="booking-button">Check Appointment</button>
-                                        <button onClick={event => makeBooking(event, doctor._id)} className="booking-button">Book Appointment</button>
+                                        <button onClick={event => checkAvailability(event, doctor._id)} className="booking-button">Book Appointment</button>
+                                        {/* <button onClick={event => makeBooking(event, doctor._id)} className="booking-button">Book Appointment</button> */}
                                     </container>
                                 </div>
                             }
                             )}
                         </section>
+                        <ToastContainer
+                                            position="bottom-center"
+                                            autoClose={3000}
+                                            hideProgressBar={true}
+                                            newestOnTop={true}
+                                            closeOnClick
+                                            rtl={false}
+                                            // pauseOnFocusLoss
+                                            draggable
+                                            pauseOnHover
+                                            theme="dark"
+                                        />
                     </div>
                 </div>
             </div>
