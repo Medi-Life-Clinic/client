@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import { ToastContainer, toast } from 'react-toastify'
 import { DatePicker, TimePicker } from "antd";
-import Socials from '../components/Socials'
 import dayjs from 'dayjs';
 
 
@@ -24,7 +23,6 @@ const Doctors = () => {
     const [date, setDate] = useState();
     const [time, setTime] = useState();
     const format = 'HH:mm'; // time picker format
-
 
     useEffect(() => {
         fetchDoctors().then(result => {
@@ -52,7 +50,7 @@ const Doctors = () => {
                 body: JSON.stringify({
                     doctorId: returnedId,
                     date: convertedDate,
-                    time : convertedTime
+                    time : convertedTime,
                 })
             })
             const result = await response.json();
@@ -69,6 +67,8 @@ const Doctors = () => {
     const makeBooking = async (event, returnedId) => {
         const convertedDate = date.format('DD-MM-YYYY')
         const convertedTime = time.format('HH:mm')
+        const doctor = doctors.find(doctor => doctor._id === returnedId)
+
         try {
             const response = await fetch("http://localhost:4001/api/appointment/book-appointment", {
                 method: 'POST',
@@ -80,14 +80,12 @@ const Doctors = () => {
                     doctorId: returnedId,
                     userId: localStorage.getItem("userId"),
                     date: convertedDate,
-                    time: convertedTime
-                    // doctorInfo: doctor,
-                    // userInfo: user
+                    time: convertedTime,
+                    doctorInfo: doctor,
                 })
             })
             const result = await response.json();
             toast.success(result.message)
-            console.log(convertedTime)
         } catch (err) {
             toast.error('Something went wrong');
         }
