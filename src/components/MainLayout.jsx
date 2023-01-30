@@ -147,7 +147,9 @@ const Layout = () => {
 
                 <div className='content'>
                     <div className="layout-header">
-                       <h1>Meet our doctors</h1>
+                    <h1>
+            {location.pathname === '/appointments' ? 'Your Appointments' : 'Meet our doctors'}
+          </h1>
                     </div>
                     <div className="body">
                         <section className='doctors'>
