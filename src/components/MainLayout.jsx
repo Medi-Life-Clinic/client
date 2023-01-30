@@ -2,6 +2,9 @@ import React, { useEffect, useState } from 'react'
 import './mainLayout.css'
 import { Link, Navigate, useLocation } from 'react-router-dom'
 import { GiHospitalCross } from 'react-icons/gi'
+import { FaHouseUser } from 'react-icons/fa'
+import { BsCalendarDate } from 'react-icons/bs'
+import { MdLogout } from 'react-icons/md'
 import { DatePicker } from "antd";
 import PopoutApp from './popupFeature/PopoutApp';
 
@@ -109,6 +112,7 @@ const Layout = () => {
     };
 
 
+    //NAV BAR LINKS
     return (
         <div className='main'>
             <div className='d-flex layout'>
@@ -117,9 +121,26 @@ const Layout = () => {
                         <h1><GiHospitalCross />Medi-Life</h1>
                         </div>
                     <div className="menu">
-                    <Link to='/bookings'><button >Doctors</button></Link>
-                    <Link to='/appointments'><button>Appointments</button></Link>
-                        <Link to='/'><button onClick={()=>localStorage.removeItem('token')} >Logout</button></Link>
+                    <Link to='/bookings'>
+                            <button style={{background: "transparent", border: "none"}}>
+                            <FaHouseUser />
+                            Doctors
+                            </button>
+                    </Link>
+                    <Link to='/appointments'>
+                            <button style={{background: "transparent", border: "none"}}>
+                            <BsCalendarDate />
+                            Appointments
+                            </button>
+                    </Link>
+                    <Link to='/'>
+                            <button style={{background: "transparent", border: "none"}} onClick={()=>localStorage.removeItem('token')}>
+                             <MdLogout />
+                             Logout
+                            </button>
+                    </Link>
+
+        
                      
                     </div>
                 </div>
