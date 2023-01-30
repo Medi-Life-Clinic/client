@@ -121,21 +121,21 @@ const Layout = () => {
                         <h1><GiHospitalCross />Medi-Life</h1>
                         </div>
                     <div className="menu">
-                    <Link to='/bookings'>
-                            <button style={{background: "transparent", border: "none"}}>
-                            <FaHouseUser class="m-2"/> 
+                    <Link to='/bookings' className={location.pathname === '/bookings' ? 'active' : ''}>
+                            <button style={{background: "transparent", border: "none"}} class="p-0">
+                            <FaHouseUser className="m-2 nav-icon" size='20'/> 
                             Doctors
                             </button>
                     </Link>
-                    <Link to='/appointments'>
-                            <button style={{background: "transparent", border: "none"}}>
-                            <BsCalendarDate class="m-2"/>
+                    <Link to='/appointments' className={location.pathname === '/appointments' ? 'active' : ''}>
+                            <button style={{background: "transparent", border: "none"}}  class="p-0">
+                            <BsCalendarDate className="m-2 nav-icon" size='20'/>
                             Appointments
                             </button>
                     </Link>
                     <Link to='/'>
-                            <button style={{background: "transparent", border: "none"}} onClick={()=>localStorage.removeItem('token')}>
-                             <MdLogout class="m-2"/>
+                            <button className="nav-btn"style={{background: "transparent", border: "none"}} onClick={()=>localStorage.removeItem('token')} class="p-0">
+                             <MdLogout className="m-2" size = '25' />
                              Logout
                             </button>
                     </Link>

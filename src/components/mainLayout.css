@@ -193,6 +193,18 @@
 
 }
 
-.nav-btn{
-    
+/* Sets the styling of current location buttons */
+.active {
+    background-color: #0A4B59;
 }
+
+
+.nav-icon {
+    display: "flex";
+    align-items: "center";
+     justify-content: "center";
+      font-size: "px";
+;
+}
+
+
