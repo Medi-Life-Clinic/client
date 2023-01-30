@@ -102,7 +102,10 @@ const Layout = () => {
                 body: JSON.stringify({
                     doctorId: returnedId,
                     userId: localStorage.getItem("userId"),
-                    date: convertedDate
+                    date: convertedDate,
+                    time: "10:00"
+                    // doctorInfo: doctor,
+                    // userInfo: user
                 })
             })
             const result = await response.json();
