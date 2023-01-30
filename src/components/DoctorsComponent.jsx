@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import { ToastContainer, toast } from 'react-toastify'
 import { DatePicker } from "antd";
-
+import Socials from '../components/Socials'
 
 
 const Doctors = () => {
@@ -130,6 +130,7 @@ const Doctors = () => {
         />
     </div>
 </div>
+
   )
 }
 

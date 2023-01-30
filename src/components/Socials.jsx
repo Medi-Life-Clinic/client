@@ -7,6 +7,8 @@ import './socials.css'
 
 const Socials = () => {
   return (
+    <>
+     <h4 className="socials-heading">Contact us on socials</h4>
     <div className='socials-box'>
       <a href="https://facebook.com" className="social-link">
         <AiOutlineFacebook className='social-icons' class="mx-4" />
@@ -18,6 +20,7 @@ const Socials = () => {
         <RxTwitterLogo className='social-icons' class="mx-4" />
       </a>
     </div>
+    </>
   )
 }
 
