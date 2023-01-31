@@ -212,39 +212,45 @@
 
 }
 
+.hamburger {
+    display: none;
+  }
+
+
 /* ======== MEDIA QUERIES (MEDIUM DEVICES) ======== */
 @media screen and (max-width: 1024px) {}
 
 
 /* ======== MEDIA QUERIES (SMALL DEVICES) ======== */
-@media screen and (max-width: 500px) {
-    .sidebar-header {
-        text-align: center;
-    }
-
+@media screen and (max-width: 400px) {
     .main {
         display: flex;
         flex-direction: row;
         flex-wrap: wrap;
         flex: 100%;
         padding-left: 2.2rem;
+        
+        
     }
-
-
 
     .layout {
         display: flex;
         flex-direction: column;
         flex: 100%;
+        
+ 
     }
 
     .body {
         width: 95%;
+     
+        
     }
 
     .box {
         margin-left: 2rem;
-    }
+        
+         }
 
     .doctors::-webkit-scrollbar {
         display: none;
@@ -253,13 +259,42 @@
     .box {
         width: 100%;
         margin-left: 1rem;
+        
+        
     }
 
     .sidebar {
-        min-height: 32%;
-        flex: 95%;
-        width: 95%;
-        margin-bottom: 3rem;
-    }
-}
+      
+        background-color: #74cac0;;
+        display: none;
+        height: 66%;
+        width:100%;
+        position: fixed;
+        top: 0;
+        left: 0;
+        z-index: 1;
+      }
 
+    
+    .menu button{
+        margin-top: 2%;
+    }
+    
+        .hamburger {
+          display: block;
+          background-color: transparent;
+          border: none;
+          margin-right: -70%;
+          margin-top: -15%;
+    
+        }
+      }
+      
+      .sidebar.show {
+        display: block;
+      }
+
+      button.hamburger {
+        font-size: 30px; 
+          z-index: 2;
+      }

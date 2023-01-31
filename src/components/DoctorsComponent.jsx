@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import { ToastContainer, toast } from 'react-toastify'
 import { DatePicker, TimePicker } from "antd";
-import Socials from '../components/Socials'
+import "./doctors.css"
 import dayjs from 'dayjs';
 
 

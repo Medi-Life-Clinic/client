@@ -4,17 +4,27 @@ import { GiHospitalCross } from 'react-icons/gi'
 import { FaHouseUser } from 'react-icons/fa'
 import { BsCalendarDate } from 'react-icons/bs'
 import { MdLogout } from 'react-icons/md'
+import React, { useState } from 'react';
+
 
 
 const Layout = ({ children }) => {
     // Save the username from local storage to the variable userName
     // displays username in the h4 tag below.
     const userName = localStorage.getItem("user")
-    //NAV BAR LINKS
+    const [showNav, setShowNav] = useState(false);
+    //NAV BAR LINKS - HAMBURGER MEU
     return (
         <div className='main'>
             <div className='d-flex layout'>
-                <div className="sidebar">
+            
+            <button
+                    className="hamburger"
+                    onClick={() => setShowNav(!showNav)}>
+                    &#9776; 
+            </button>
+
+                <div className={`sidebar ${showNav ? 'show' : ''}`}>
                     <div className="sidebar-header">
                         <h1><GiHospitalCross />Medi-Life</h1>
                         <h4 className="user-name">{userName}</h4>

@@ -1,0 +1,52 @@
+
+
+  
+  /* ======== MEDIA QUERIES SOCIALS(MEDIUM DEVICES) ======== */
+
+  
+  
+  /* ======== MEDIA QUERIES (SMALL DEVICES) ======== */
+  
+  @media screen and (max-width:400px){
+  
+  
+  .doctor-image{
+      margin-left: 2%;
+      width: 70%;
+  }
+  .content {
+      display:flex;
+      flex-direction: column;
+       align-items:center;                               
+    }
+    
+    .body {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      overflow-y: scroll;
+      margin: 0;
+    }
+    
+    .box {
+     width: 80%;
+     margin-left: 10%
+    
+    }
+  
+    .layout-header {
+      margin-left: -1%;
+  
+    }
+  
+    .main {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+      
+    }
+  
+  }
+   
+  
