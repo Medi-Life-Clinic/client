@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import { ToastContainer, toast } from 'react-toastify'
 
-const AppointmentsComponent = () => {
+export const AppointmentsComponent = () => {
     document.title = 'Medi-Life | Appointments'
 
     const getAppointments = async () => {
@@ -60,13 +60,14 @@ const AppointmentsComponent = () => {
 
     return (
         <>
-            <div className="layout-header">
+            <div className="appointment-heading">
                 <h1>
-                    {location.pathname === '/appointments' ? 'Your Appointments' : 'Meet our doctors'}
+                    {/* {location.pathname === '/appointments' ? 'Your Appointments' : 'Meet our doctors'} */}
+                    Your Appointments
                 </h1>
             </div>
 
-            <section className="appointments">
+            <section className="appointments-section">
                 {appointments.map((appointment) => {
                     return (
                         <div className="appointment">
@@ -74,7 +75,7 @@ const AppointmentsComponent = () => {
                             <p>Specialization: {appointment.doctorInfo.specialization}</p>
                             <p>Date: {appointment.date}</p>
                             <p>Time:{appointment.time}</p>
-                            <button className='booking-button'onClick={event => deleteAppointment(event, appointment)}>Cancel Appointment</button>
+                            <button className='appointment-button' onClick={event => deleteAppointment(event, appointment)}>Cancel Appointment</button>
                         </div>
                     )
                 })}

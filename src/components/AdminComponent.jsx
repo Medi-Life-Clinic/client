@@ -1,17 +1,37 @@
-import React from "react";
+import React, { useEffect, useState } from 'react'
 import "../pages/admin/admin.css";
+// import AppointmentsComponent from "./AppointmentsComponent.jsx";
 
 
 const AdminComponent = () => {
   document.title = "Medi-Life | Admin";
+
+  // const [appointments, setAppointments] = useState([])
+  
+  // useEffect(() => {
+  //   const fetchAppointments = async () => { 
+  //     const appointmentsData = await AppointmentsComponent.getAppointments()
+      
+  //     setAppointments(appointmentsData)
+  //   }
+  //   fetchAppointments()
+  // }, [])
+
   return (
     <>
+      {/* {appointments.map(appointment => (
+        <p key={appointment.id}>{appointment.date}</p>
+      ))}
+      { */}
+      
+      
       <div className="layout-header">
         <h1>{location.pathname === "/admin" ? "Admin" : "Meet our doctors"}</h1>
       </div>
       <container className="admin-container">
         <container className="users">
           <h1>Users</h1>
+          
           <table>
             <tr>
               <th>Username</th>
@@ -50,7 +70,7 @@ const AdminComponent = () => {
             </tr>
           </table>
         </container>
-      </container>
+      </container> 
     </>
   );
 };
