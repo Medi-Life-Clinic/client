@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react'
 import { ToastContainer, toast } from 'react-toastify'
 import { DatePicker, TimePicker } from "antd";
 import "./doctors.css"
+import '../../pages/doctors.css'
 import dayjs from 'dayjs';
 
 
