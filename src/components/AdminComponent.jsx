@@ -1,14 +1,9 @@
 import React from "react";
 import "../pages/admin/admin.css";
-import AppointmentsComponent from "./AppointmentsComponent";
+
 
 const AdminComponent = () => {
   document.title = "Medi-Life | Admin";
-  const appointments = AppointmentsComponent.getAppointment()
-  console.log(appointments)
-
-// const appointments = appointments.AppointmentsComponent.getAppointment()
-console.log(appointments)
   return (
     <>
       <div className="layout-header">
