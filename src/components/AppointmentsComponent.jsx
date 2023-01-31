@@ -16,31 +16,23 @@ const AppointmentsComponent = () => {
                 body: JSON.stringify({
                     userId: localStorage.getItem("userId")
                 })
-
             })
-            // console.log(response)
             const responseData = await response.json()
-            // console.log(responseData)
             return responseData
         } catch (error) {
-
+            toast.error("Error fetching appointments")
         }
     }
+
     const [appointments, setAppointments] = useState([])
 
     useEffect(() => {
         getAppointments().then(result => {
-            const appointments = []
-            result.data.forEach(appointment => {
-                appointments.push(appointment)
-            })
-            setAppointments(appointments)
-            console.log(appointments)
+            setAppointments(result.data)
         })
-    }, [appointments])
-
+    }, [])
+    
     // Cancel appointment
-
     const deleteAppointment = async (event, appointment) => {
         try {
             const response = await fetch("http://localhost:4001/api/appointment/delete-by-id", {
@@ -53,17 +45,18 @@ const AppointmentsComponent = () => {
                 body: JSON.stringify({
                     id: appointment._id
                 })
-
             })
             const responseData = await response.json()
-            toast.success(responseData.message)
-            return responseData
-            
+            if (responseData.success == true) {
+                const updatedAppointments = appointments.filter(appointment => appointment._id !== responseData.data._id)
+                setAppointments(updatedAppointments)
+                toast.success("Appointment cancelled successfully")
+            }
+
         } catch (error) {
-            console.log(error)
+            toast.error('Error cancelling appointment')
         }
     }
-
 
     return (
         <>

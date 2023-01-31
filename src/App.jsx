@@ -4,10 +4,10 @@ import Login from './pages/login/Login.jsx'
 import Register from './pages/register/Register.jsx'
 import Socials from './components/Socials.jsx'
 import Header from './components/Header.jsx'
-import Bookings from './pages/bookings/Bookings.jsx'
 import Appointments from './pages/appointments/Appointments.jsx'
 import ProtectedRoute from './components/ProtectedRoute.jsx'
 import Doctors from './pages/Doctors/Doctors.jsx'
+import Admin from './pages/admin/Admin.jsx'
 
 //Main App function with routes
 
@@ -19,6 +19,7 @@ const App = () => {
       <Route path='/register' element={<><Header /> <Register /> <Socials /></>}/>
       <Route path='/bookings' element={<ProtectedRoute><Doctors /></ProtectedRoute>}/>
       <Route path='/appointments' element={<ProtectedRoute> <Appointments /></ProtectedRoute>}/>
+      <Route path='/admin'  element={<ProtectedRoute> <Admin /></ProtectedRoute>}/>
     </Routes>
   </BrowserRouter>
    )
