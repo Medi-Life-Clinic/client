@@ -1,6 +1,8 @@
 import React, { useEffect, useState } from 'react'
+import { ToastContainer, toast } from 'react-toastify'
 
 const AppointmentsComponent = () => {
+    document.title = 'Medi-Life | Appointments'
 
     const getAppointments = async () => {
         try {
@@ -35,7 +37,33 @@ const AppointmentsComponent = () => {
             setAppointments(appointments)
             console.log(appointments)
         })
-    }, [])
+    }, [appointments])
+
+    // Cancel appointment
+
+    const deleteAppointment = async (event, appointment) => {
+        try {
+            const response = await fetch("http://localhost:4001/api/appointment/delete-by-id", {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                    'Accept': 'application/json',
+                    'Authorization': "Bearer " + localStorage.getItem("token"),
+                },
+                body: JSON.stringify({
+                    id: appointment._id
+                })
+
+            })
+            const responseData = await response.json()
+            toast.success(responseData.message)
+            return responseData
+            
+        } catch (error) {
+            console.log(error)
+        }
+    }
+
 
     return (
         <>
@@ -53,11 +81,24 @@ const AppointmentsComponent = () => {
                             <p>Specialization: {appointment.doctorInfo.specialization}</p>
                             <p>Date: {appointment.date}</p>
                             <p>Time:{appointment.time}</p>
+                            <button className='booking-button'onClick={event => deleteAppointment(event, appointment)}>Cancel Appointment</button>
                         </div>
                     )
                 })}
 
             </section>
+            <ToastContainer
+                    position="bottom-center"
+                    autoClose={3000}
+                    hideProgressBar={true}
+                    newestOnTop={true}
+                    closeOnClick
+                    rtl={false}
+                    // pauseOnFocusLoss
+                    draggable
+                    pauseOnHover
+                    theme="dark"
+                />
         </>
     )
 }

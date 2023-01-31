@@ -4,6 +4,8 @@ import { DatePicker, TimePicker } from "antd";
 import dayjs from 'dayjs';
 
 const Doctors = () => {
+    document.title = 'Medi-Life | Bookings'
+
     const fetchDoctors = async () => {
         try {
             const response = await fetch("https://medi-life-clinic.herokuapp.com/api/doctor/get-all", {
