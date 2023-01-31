@@ -21,13 +21,13 @@ const Layout = ({ children }) => {
                     </div>
                     <div className="menu">
                         <Link to='/bookings' className={location.pathname === '/bookings' ? 'active' : ''}>
-                            <button style={{ background: "transparent", border: "none" }} /*className="p-0"*/>
+                            <button style={{ background: "transparent", border: "none" }} className="p-0">
                                 <FaHouseUser className="m-2 nav-icon" size='20' />
                                 Doctors
                             </button>
                         </Link>
                         <Link to='/appointments' className={location.pathname === '/appointments' ? 'active' : ''}>
-                            <button style={{ background: "transparent", border: "none" }} /*</Link>className="p-0"*/>
+                            <button style={{ background: "transparent", border: "none" }} className="p-0">
                                 <BsCalendarDate className="m-2 nav-icon" size='20' />
                                 Appointments
                             </button>

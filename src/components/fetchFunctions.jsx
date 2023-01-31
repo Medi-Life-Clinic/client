@@ -38,7 +38,6 @@ export const getAllAppointments = async () => {
     }
 };
 
-
 // get all doctors
 export const fetchDoctors = async () => {
     try {

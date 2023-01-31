@@ -12,7 +12,6 @@ export const AppointmentsComponent = () => {
             setAppointments(result.data)
         })
     }, [])
-    const userName = localStorage.getItem("user")
     // Cancel appointment
     const deleteAppointment = async (event, appointment) => {
         try {
@@ -43,7 +42,7 @@ export const AppointmentsComponent = () => {
             <div className="appointment-heading">
                 <h1>
                     {/* {location.pathname === '/appointments' ? 'Your Appointments' : 'Meet our doctors'} */}
-                    {userName}'s Appointments
+                    Your Appointments
                 </h1>
             </div>
 
