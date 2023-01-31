@@ -9,9 +9,9 @@
     box-shadow: 0 0 5px #74cac0;
     border: 5px;
     margin-top: 1rem;
-    overflow: scroll;
+    /* overflow: scroll; */
     height: 112%;
-    overflow-x: hidden;
+    /* overflow-x: hidden; */
     
 }
 .appointment {

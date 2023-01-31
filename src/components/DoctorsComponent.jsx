@@ -2,44 +2,21 @@ import React, { useEffect, useState } from 'react'
 import { ToastContainer, toast } from 'react-toastify'
 import { DatePicker, TimePicker } from "antd";
 import dayjs from 'dayjs';
+import { fetchDoctors } from './fetchFunctions'
 
 const Doctors = () => {
     document.title = 'Medi-Life | Bookings'
-
-    const fetchDoctors = async () => {
-        try {
-            const response = await fetch("http://localhost:4001/api/doctor/get-all", {
-                headers: {
-                    Authorization: "Bearer " + localStorage.getItem("token"),
-                },
-            });
-            const responseData = await response.json();
-            return responseData
-        } catch (err) {
-            console.log(err);
-        }
-    };
 
     const [doctors, setDoctors] = useState([])
     const [date, setDate] = useState();
     const [time, setTime] = useState();
     const format = 'HH:mm'; // time picker format
 
-    useEffect(() => {
-        fetchDoctors().then(result => {
-            const doctors = []
-            result.data.forEach(doctor => {
-                doctors.push(doctor)
-            })
-            setDoctors(doctors)
-        })
-    }, [])
-
     const checkAvailability = async (event, returnedId) => {
 
         const convertedDate = date.format('DD-MM-YYYY')
         const convertedTime = time.format('HH:mm')
-
+    
         try {
             const response = await fetch("http://localhost:4001/api/appointment/check-availability", {
                 method: 'POST',
@@ -52,7 +29,7 @@ const Doctors = () => {
                     doctorId: returnedId,
                     date: convertedDate,
                     time : convertedTime,
-
+    
                 })
             })
             const result = await response.json();
@@ -65,13 +42,13 @@ const Doctors = () => {
             toast.error('Something went wrong');
         }
     };
-
-    const makeBooking = async (event, returnedId) => {
-
+    
+     const makeBooking = async (event, returnedId) => {
+    
         const convertedDate = date.format('DD-MM-YYYY')
         const convertedTime = time.format('HH:mm')
         const doctor = doctors.find(doctor => doctor._id === returnedId)
-
+    
         try {
             const response = await fetch("http://localhost:4001/api/appointment/book-appointment", {
                 method: 'POST',
@@ -94,6 +71,23 @@ const Doctors = () => {
             toast.error('Something went wrong');
         }
     };
+
+    // useEffect(() => {
+    //     fetchDoctors().then(result => {
+    //         const doctors = []
+    //         result.data.forEach(doctor => {
+    //             doctors.push(doctor)
+    //         })
+    //         setDoctors(doctors)
+    //     })
+    // }, [])
+
+    //refactored like glenn's
+    useEffect(() => {
+        fetchDoctors().then(result => {
+            setDoctors(result.data)
+        })
+    }, [])
 
     return (
         <div className='content'>

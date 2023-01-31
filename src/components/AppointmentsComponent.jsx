@@ -1,28 +1,9 @@
 import React, { useEffect, useState } from 'react'
 import { ToastContainer, toast } from 'react-toastify'
+import { getAppointments } from './fetchFunctions'
 
 export const AppointmentsComponent = () => {
     document.title = 'Medi-Life | Appointments'
-
-    const getAppointments = async () => {
-        try {
-            const response = await fetch("http://localhost:4001/api/appointment/get-all-by-user-id", {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json',
-                    'Accept': 'application/json',
-                    Authorization: "Bearer " + localStorage.getItem("token"),
-                },
-                body: JSON.stringify({
-                    userId: localStorage.getItem("userId")
-                })
-            })
-            const responseData = await response.json()
-            return responseData
-        } catch (error) {
-            toast.error("Error fetching appointments")
-        }
-    }
 
     const [appointments, setAppointments] = useState([])
 
@@ -31,7 +12,7 @@ export const AppointmentsComponent = () => {
             setAppointments(result.data)
         })
     }, [])
-    
+    const userName = localStorage.getItem("user")
     // Cancel appointment
     const deleteAppointment = async (event, appointment) => {
         try {
@@ -52,18 +33,17 @@ export const AppointmentsComponent = () => {
                 setAppointments(updatedAppointments)
                 toast.success("Appointment cancelled successfully")
             }
-
+    
         } catch (error) {
             toast.error('Error cancelling appointment')
         }
     }
-
     return (
         <>
             <div className="appointment-heading">
                 <h1>
                     {/* {location.pathname === '/appointments' ? 'Your Appointments' : 'Meet our doctors'} */}
-                    Your Appointments
+                    {userName}'s Appointments
                 </h1>
             </div>
 
