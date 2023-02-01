@@ -1,3 +1,8 @@
+.person-icon {
+    color: white;
+    font-size: 20px;
+    margin-right: 10px;
+}
 
 .nav-btn {
     padding: 0;
@@ -8,10 +13,13 @@
     
 }
 .user-name {
+    
+    display: flex;
+    justify-content: center;
     color: white;
-    margin-top: 10%;
-    margin-left: 5%;
+    margin-top: 1rem;
     font-size: 16px;
+    text-align: center;
 }
 .date-picker {
     margin-bottom: 3%;
