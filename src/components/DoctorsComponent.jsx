@@ -72,17 +72,6 @@ const Doctors = () => {
         }
     };
 
-    // useEffect(() => {
-    //     fetchDoctors().then(result => {
-    //         const doctors = []
-    //         result.data.forEach(doctor => {
-    //             doctors.push(doctor)
-    //         })
-    //         setDoctors(doctors)
-    //     })
-    // }, [])
-
-    //refactored like glenn's
     useEffect(() => {
         fetchDoctors().then(result => {
             setDoctors(result.data)

@@ -31,8 +31,7 @@ export const AppointmentsComponent = () => {
                 const updatedAppointments = appointments.filter(appointment => appointment._id !== responseData.data._id)
                 setAppointments(updatedAppointments)
                 toast.success("Appointment cancelled successfully")
-            }
-    
+            } 
         } catch (error) {
             toast.error('Error cancelling appointment')
         }
