@@ -1,8 +1,8 @@
 import React, { useState } from 'react'
 import { Link, useNavigate } from 'react-router-dom'
-import './login.css'
 import { ToastContainer, toast } from 'react-toastify'
 import 'react-toastify/dist/ReactToastify.css'
+import './login.css'
 
 
 export const Login = () => {
@@ -37,10 +37,16 @@ export const Login = () => {
       localStorage.setItem('token', result.token)
       localStorage.setItem('userId', result.userId)
       localStorage.setItem('user', result.user)
-      navigate('/bookings')
-    } else {
-      toast.error(result.message)
-    }
+      }
+      if (result.isAdmin) {
+        navigate('/admin')
+      } else {
+        navigate('/doctors')
+        
+    } 
+    // else {
+    //   toast.error(result.message)
+    // }
 
     } catch (err) {
       toast.error("Something went wrong")

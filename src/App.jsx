@@ -1,13 +1,15 @@
 import React from 'react'
 import { BrowserRouter, Routes, Route } from 'react-router-dom'
-import Login from './pages/login/Login.jsx'
-import Register from './pages/register/Register.jsx'
-import Socials from './components/Socials.jsx'
+import Login from './components/Login.jsx'
+import Register from './components/Register.jsx'
+import Doctors from './components/DoctorsComponent.jsx'
+import Appointments from './components/AppointmentsComponent.jsx'
+import Admin from './components/AdminComponent.jsx'
 import Header from './components/Header.jsx'
-import Bookings from './pages/bookings/Bookings.jsx'
-import Appointments from './pages/appointments/Appointments.jsx'
-import ProtectedRoute from './components/ProtectedRoute.jsx'
-import Doctors from './pages/Doctors/Doctors.jsx'
+import Socials from './components/Socials.jsx'
+import Layout from './components/MainLayout.jsx'
+import ProtectedRoute from './utils/ProtectedRoute.jsx'
+
 
 //Main App function with routes
 
@@ -17,8 +19,9 @@ const App = () => {
     <Routes>
       <Route path='/' element={<><Header /> <Login /><Socials /> </>}/>
       <Route path='/register' element={<><Header /> <Register /> <Socials /></>}/>
-      <Route path='/bookings' element={<ProtectedRoute><Doctors /></ProtectedRoute>}/>
-      <Route path='/appointments' element={<ProtectedRoute> <Appointments /></ProtectedRoute>}/>
+      <Route path='/doctors' element={<ProtectedRoute><Layout><Doctors /></Layout></ProtectedRoute>}/>
+      <Route path='/appointments' element={<ProtectedRoute> <Layout><Appointments /></Layout></ProtectedRoute>}/>
+      <Route path='/admin'  element={<ProtectedRoute> <Layout><Admin /></Layout></ProtectedRoute>}/>
     </Routes>
   </BrowserRouter>
    )

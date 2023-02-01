@@ -1,46 +1,19 @@
 import React, { useEffect, useState } from 'react'
 import { ToastContainer, toast } from 'react-toastify'
+import { getAppointments } from '../utils/fetchFunctions'
+import  './appointmentsComponent.css' 
 
-const AppointmentsComponent = () => {
+export const AppointmentsComponent = () => {
     document.title = 'Medi-Life | Appointments'
 
-    const getAppointments = async () => {
-        try {
-            const response = await fetch("https://medi-life-clinic.herokuapp.com/api/appointment/get-all-by-user-id", {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json',
-                    'Accept': 'application/json',
-                    Authorization: "Bearer " + localStorage.getItem("token"),
-                },
-                body: JSON.stringify({
-                    userId: localStorage.getItem("userId")
-                })
-
-            })
-            // console.log(response)
-            const responseData = await response.json()
-            // console.log(responseData)
-            return responseData
-        } catch (error) {
-
-        }
-    }
     const [appointments, setAppointments] = useState([])
 
     useEffect(() => {
         getAppointments().then(result => {
-            const appointments = []
-            result.data.forEach(appointment => {
-                appointments.push(appointment)
-            })
-            setAppointments(appointments)
-            console.log(appointments)
+            setAppointments(result.data)
         })
-    }, [appointments])
-
+    }, [])
     // Cancel appointment
-
     const deleteAppointment = async (event, appointment) => {
         try {
             const response = await fetch("http://localhost:4001/api/appointment/delete-by-id", {
@@ -53,27 +26,27 @@ const AppointmentsComponent = () => {
                 body: JSON.stringify({
                     id: appointment._id
                 })
-
             })
             const responseData = await response.json()
-            toast.success(responseData.message)
-            return responseData
-            
+            if (responseData.success == true) {
+                const updatedAppointments = appointments.filter(appointment => appointment._id !== responseData.data._id)
+                setAppointments(updatedAppointments)
+                toast.success("Appointment cancelled successfully")
+            } 
         } catch (error) {
-            console.log(error)
+            toast.error('Error cancelling appointment')
         }
     }
-
-
     return (
         <>
-            <div className="layout-header">
+            <div className="main-heading">
                 <h1>
-                    {location.pathname === '/appointments' ? 'Your Appointments' : 'Meet our doctors'}
+                    {/* {location.pathname === '/appointments' ? 'Your Appointments' : 'Meet our doctors'} */}
+                    Your Appointments
                 </h1>
             </div>
 
-            <section className="appointments">
+            <section className="appointments-section">
                 {appointments.map((appointment) => {
                     return (
                         <div className="appointment">
@@ -81,7 +54,7 @@ const AppointmentsComponent = () => {
                             <p>Specialization: {appointment.doctorInfo.specialization}</p>
                             <p>Date: {appointment.date}</p>
                             <p>Time:{appointment.time}</p>
-                            <button className='booking-button'onClick={event => deleteAppointment(event, appointment)}>Cancel Appointment</button>
+                            <button className='appointment-button' onClick={event => deleteAppointment(event, appointment)}>Cancel Appointment</button>
                         </div>
                     )
                 })}
