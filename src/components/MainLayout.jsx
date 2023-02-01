@@ -31,7 +31,7 @@ const Layout = ({ children }) => {
                     </div>
                     <div className="menu">
                         <Link to='/bookings' className={location.pathname === '/bookings' ? 'active' : ''}>
-                            <button style={{ background: "transparent", border: "none" }} class="p-0">
+                            <button className='menu-button' style={{ background: "transparent", border: "none" }} class="p-0">
                                 <FaHouseUser className="m-2 nav-icon" size='20' />
                                 Doctors
                             </button>

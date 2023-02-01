@@ -96,9 +96,9 @@ const Doctors = () => {
     
   return (
     <div className='content'>
-    <div className="layout-header">
+    <div className="doctor-heading">
         <h1>
-            {location.pathname === '/appointments' ? 'Your Appointments' : 'Meet our doctors'}
+            Doctors
         </h1>
     </div>
     <div className="body">

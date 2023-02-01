@@ -1,57 +1,250 @@
+/* .body {
+  width: 50%;
+} */
+
+.doctor-heading {
+  color: white;
+  font-size: 22px;
+  padding: 1rem 1rem;
+  border-radius: 5px;
+  box-shadow: 0 0 5px #74cac0;
+  border: 5px;
+  width: 100%;
+  margin-bottom: 1rem;
+}
+
+.booking-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  width: 100%;
+  background-color: none;
+  text-align: center;
+  margin-bottom: 3%;
+}
+
+.booking-button {
+  background-color: #0A4B59;
+  color: white;
+  margin: 3%;
+  border-radius: 5px;
+  box-shadow: 0 0 5px gray;
+  border: 5px;
+  font-size: 13px;
+  padding: 16px;
+  width: 39%;
+}
+
+.booking-button:hover {
+  background-color: #136375;
+  box-shadow: 0 0 5px black;
+}
+
+.doctors {
+  width: 100%;
+  height: 95%;
+  display: flex;
+  background-color: #0A4B59;
+  overflow-y: auto;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
+  border-radius: 5px;
+  border-radius: 5px;
+  box-shadow: 0 0 4px #74cac0;
+}
+
+.box {
+  margin-left: 0 !important;
+  background-color: #74cac0;
+  display: flex;
+  flex-direction: column;
+  border-radius: 5px;
+  box-shadow: 0 0 5px gray;
+  margin-top: 1rem;
+  min-width: 400px;
+}
+
+.imgBx {
+  display: flex;
+  justify-content: center;
+  margin: 5%;
+  padding: 0;
+  width: 90%;
+  height: 90%;
+}
+
+.datepicker {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+}
 
 
+.box p {
+  text-align: center;
+}
+
+
+.bio {
+  font-size: 14px;
+  text-align: center;
+  padding-left: 10px;
+  padding: 0px 20px 0px 20px;
+}
+
+.doctor-image {
+  width: 100%;
+  border-radius: 5px;
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 0;
+
+}
+
+.box {
+  width: 25%;
+  margin-left: 10%
+}
+
+.layout-header {
+  margin-left: -1%;
+
+}
+
+.main {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+
+}
+
+
+
+/* ======== MEDIA QUERIES SOCIALS(MEDIUM DEVICES) ======== */
+@media screen and (max-width:1100px) {
+  .box {
+    width: 75%;
+  }
+}
+
+
+/* ======== MEDIA QUERIES (SMALL DEVICES) ======== */
+
+@media screen and (max-width:800px) {
+  .doctor-heading {
+    width: 95%;
+  }
+
+  .button {
+    margin: 0;
+    padding: 0;
+  }
+
+  .main {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    flex: 100%;
+    padding-left: 2.2rem;
+
+
+  }
+
+  .layout {
+    display: flex;
+    flex-direction: column;
+    flex: 100%;
+
+
+  }
+
+  .body {
+    width: 95%;
+
+
+  }
+
+  .box {
+    margin-left: 2rem;
+
+  }
+
+  .doctors::-webkit-scrollbar {
+    display: none;
+  }
+
+  .box {
+    width: 75%;
+    margin-left: 1rem;
+  }
+
+  .sidebar {
+
+    background-color: #74cac0;;
+    display: none;
+    height: 40%;
+    width: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1;
+  }
+
+  .menu {
+    margin: 0;
+  }
+
+  .menu a {
+    margin: 1.5rem;
+  }
+
+  .menu button {
+    margin-top: 2%;
+    margin: 0;
+  }
+
+  .hamburger {
+    display: block;
+    background-color: transparent;
+    border: none;
+    margin-left: 75%;
+    margin-top: 2.5%;
+    
+    z-index: 2;
+    position: absolute;
+    color: white;
+    padding: 0;
+  }
+
+
+  .sidebar.show {
+    display: block;
+
+  }
+
+  button.hamburger {
+    font-size: 30px;
+    z-index: 2;
+  }
+  .body {
+    height: 75vh;
   
-  /* ======== MEDIA QUERIES SOCIALS(MEDIUM DEVICES) ======== */
-
-  
-  
-  /* ======== MEDIA QUERIES (SMALL DEVICES) ======== */
-  
-  @media screen and (max-width:400px){
-    .user-name  {
-      margin-bottom: -30%;
-
-
-    }
   }
   
-  .doctor-image{
-      margin-left: 2%;
-      width: 70%;
-  }
-  .content {
-      display:flex;
-      flex-direction: column;
-       align-items:center;                               
-    }
-    
-    .body {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      overflow-y: scroll;
-      margin: 0;
-    }
-    
-    .box {
-     width: 80%;
-     margin-left: 10%
-    
-    }
-  
-    .layout-header {
-      margin-left: -1%;
-  
-    }
-  
-    .main {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      overflow: hidden;
-      
-    }
-  
-  
-   
-  
+
+}
