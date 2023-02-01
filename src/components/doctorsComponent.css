@@ -173,7 +173,6 @@
   .sidebar {
 
     background-color: #74cac0;
-    ;
     display: none;
     height: 40%;
     width: 100%;
@@ -202,7 +201,6 @@
     border: none;
     margin-left: 75%;
     margin-top: 2.5%;
-
     z-index: 2;
     position: absolute;
     color: white;

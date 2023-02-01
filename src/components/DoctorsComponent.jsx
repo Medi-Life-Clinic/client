@@ -4,7 +4,7 @@ import { DatePicker, TimePicker } from "antd";
 import dayjs from 'dayjs';
 import { fetchDoctors, fetchUsers, authHeaders } from '../utils/fetchFunctions'
 import './doctorsComponent.css'
-import './mainLayout.css'
+import './NavBar.css'
 
 const Doctors = () => {
     document.title = 'Medi-Life | Bookings'

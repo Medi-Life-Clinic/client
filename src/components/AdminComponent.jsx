@@ -102,7 +102,7 @@ const deleteUser = async (event, user) => {
   </div>
 
   <div className='map-container'>
-  <div className='scrollable-container'>
+  {/* <div className='scrollable-container'> */}
 
   <section className="admin-appointments">
   <h2>Appointments</h2>
@@ -169,7 +169,7 @@ const deleteUser = async (event, user) => {
       }
   </section>
 
-  </div>
+  {/* </div> */}
       </div>
 
   <ToastContainer

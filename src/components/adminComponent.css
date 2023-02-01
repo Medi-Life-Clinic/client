@@ -55,10 +55,11 @@
   display: flex;
 }
 
-/* .map-container {
-  max-height: 100vh;
-  overflow-y: scroll;
-} */
+.map-container {
+  height: 94.5vh;
+  overflow-x: hidden;
+  overflow-y: auto;
+}
 
 .scrollable-container {
   /* height: 85vh; */

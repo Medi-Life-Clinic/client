@@ -4,10 +4,10 @@ import { GiHospitalCross } from 'react-icons/gi'
 import { FaHouseUser } from 'react-icons/fa'
 import { BsCalendarDate, BsPerson } from 'react-icons/bs'
 import { MdLogout } from 'react-icons/md'
-import './mainLayout.css'
+import './navBar.css'
 
 
-const Layout = ({ children }) => {
+const NavBar = ({ children }) => {
     // Save the username from local storage to the variable userName
     // displays username in the h4 tag below.
     const userName = localStorage.getItem("user")
@@ -53,7 +53,7 @@ const Layout = ({ children }) => {
     )
 }
 
-export default Layout
+export default NavBar
 
 
 
