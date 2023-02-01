@@ -26,7 +26,7 @@ const AdminComponent = () => {
 // Cancel appointment
 const deleteAppointment = async (event, appointment) => {
   try {
-      const response = await fetch("https://medi-life-clinic.herokuapp.com//api/appointment/delete-by-id", {
+      const response = await fetch("https://medi-life-clinic.herokuapp.com/api/appointment/delete-by-id", {
           method: 'POST',
           headers: authHeaders,
           body: JSON.stringify({
@@ -47,7 +47,7 @@ const deleteAppointment = async (event, appointment) => {
 // delete doctor
 const deleteDoctor = async (event, doctor) => {
   try {
-      const response = await fetch("https://medi-life-clinic.herokuapp.com//api/doctor/delete-by-id", {
+      const response = await fetch("https://medi-life-clinic.herokuapp.com/api/doctor/delete-by-id", {
           method: 'POST',
           headers: authHeaders,
           body: JSON.stringify({
@@ -69,7 +69,7 @@ const deleteDoctor = async (event, doctor) => {
 
 const deleteUser = async (event, user) => {
   try {
-      const response = await fetch("https://medi-life-clinic.herokuapp.com//api/user/delete-by-id", {
+      const response = await fetch("https://medi-life-clinic.herokuapp.com/api/user/delete-by-id", {
           method: 'POST',
           headers: authHeaders,
           body: JSON.stringify({

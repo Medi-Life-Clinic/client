@@ -11,7 +11,7 @@ export const authHeaders = {
 // get apointments by user id
 export const getAppointments = async () => {
     try {
-        const response = await fetch("https://medi-life-clinic.herokuapp.com//api/appointment/get-all-by-user-id", {
+        const response = await fetch("https://medi-life-clinic.herokuapp.com/api/appointment/get-all-by-user-id", {
             method: 'POST',
             headers: authHeaders,
             body: JSON.stringify({
@@ -28,7 +28,7 @@ export const getAppointments = async () => {
 // get all appointments
 export const getAllAppointments = async () => {
     try {
-        const response = await fetch("https://medi-life-clinic.herokuapp.com//api/appointment/get-all", {
+        const response = await fetch("https://medi-life-clinic.herokuapp.com/api/appointment/get-all", {
             headers: authHeaders,
         });
         const responseData = await response.json();
@@ -42,7 +42,7 @@ export const getAllAppointments = async () => {
 // get all doctors
 export const fetchDoctors = async () => {
     try {
-        const response = await fetch("https://medi-life-clinic.herokuapp.com//api/doctor/get-all", {
+        const response = await fetch("https://medi-life-clinic.herokuapp.com/api/doctor/get-all", {
             headers: authHeaders,
         });
         const responseData = await response.json();
@@ -56,7 +56,7 @@ export const fetchDoctors = async () => {
 // get all users
 export const fetchUsers = async () => {
     try {
-        const response = await fetch("https://medi-life-clinic.herokuapp.com//api/user/get-all", {
+        const response = await fetch("https://medi-life-clinic.herokuapp.com/api/user/get-all", {
             headers: authHeaders,
         });
         const responseData = await response.json();

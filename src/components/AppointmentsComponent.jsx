@@ -16,7 +16,7 @@ export const AppointmentsComponent = () => {
     // Cancel appointment
     const deleteAppointment = async (event, appointment) => {
         try {
-            const response = await fetch("https://medi-life-clinic.herokuapp.com//api/appointment/delete-by-id", {
+            const response = await fetch("https://medi-life-clinic.herokuapp.com/api/appointment/delete-by-id", {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
