@@ -84,6 +84,8 @@
 
 .sidebar-header h1 {
     padding-left: 0.7rem;
+    font-size: 33px;
+    text-align: center;
 }
 
 .layout-header {
