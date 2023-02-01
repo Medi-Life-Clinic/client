@@ -8,7 +8,12 @@
   /* ======== MEDIA QUERIES (SMALL DEVICES) ======== */
   
   @media screen and (max-width:400px){
-  
+    .user-name  {
+      margin-bottom: -30%;
+
+
+    }
+  }
   
   .doctor-image{
       margin-left: 2%;
@@ -47,6 +52,6 @@
       
     }
   
-  }
+  
    
   

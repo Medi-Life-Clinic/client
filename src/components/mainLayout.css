@@ -267,7 +267,7 @@
       
         background-color: #74cac0;;
         display: none;
-        height: 66%;
+        height: 55%;
         width:100%;
         position: fixed;
         top: 0;
@@ -292,6 +292,7 @@
       
       .sidebar.show {
         display: block;
+        
       }
 
       button.hamburger {
