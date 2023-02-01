@@ -38,7 +38,7 @@ export const AppointmentsComponent = () => {
     }
     return (
         <>
-            <div className="appointment-heading">
+            <div className="main-heading">
                 <h1>
                     {/* {location.pathname === '/appointments' ? 'Your Appointments' : 'Meet our doctors'} */}
                     Your Appointments

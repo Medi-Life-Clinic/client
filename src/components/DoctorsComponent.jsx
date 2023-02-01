@@ -77,12 +77,12 @@ const Doctors = () => {
     }, [])
 
     return (
-        <div className='content'>
-            <div className="doctor-heading">
-                <h4>
+        <>
+            <div className="main-heading">
+                <h1>
                     {/* {location.pathname === '/appointments' ? 'Your Appointments' : 'Meet our doctors'} */}
                     Meet our doctors
-                </h4>
+                </h1>
             </div>
             <div className="body">
                 <section className='doctors'>
@@ -120,7 +120,7 @@ const Doctors = () => {
                     theme="dark"
                 />
             </div>
-        </div>
+            </>
 
 
 // ADAM TEST COMBINED DATE AND TIME PICKER CODE NEEDS IMPORT {space} from antd

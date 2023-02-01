@@ -96,7 +96,7 @@ const deleteUser = async (event, user) => {
   return (
 <>
 <Layout >
-<div className="admin-heading">
+<div className="main-heading">
     <h1>
         {/* {location.pathname === '/appointments' ? 'Your Appointments' : 'Meet our doctors'} */}
         Admin Portal
@@ -192,59 +192,3 @@ const deleteUser = async (event, user) => {
 };
 
 export default AdminComponent;
-
-
-
-
-// template 
-
-      // /* <container className="admin-container">
-      //   <container className="users">
-      //     <h1>Users</h1>
-      //     <table>
-      //       <thead>
-      //       <tr>
-      //         <th>Username</th>
-      //         <th>Email</th>
-      //         <th>Delete</th>
-      //       </tr>
-      //       </thead>
-      //       <tbody>
-      //       <tr>
-      //         <td>Adam T</td>
-      //         <td>adam.tunchay@me.com</td>
-      //         <td>
-      //           <input type="checkbox"></input>
-      //         </td>
-      //       </tr>
-      //       </tbody>
-      //     </table>
-      //   </container>
-      //   <container className="doctors">
-      //     <h1>Doctors</h1>
-      //     <table>
-      //     <thead>
-      //       <tr>
-      //         <th>Username</th>
-      //         <th>Email</th>
-      //         <th>Delete</th>
-      //       </tr>
-      //       </thead>
-      //     </table>
-      //   </container>
-      //   <container className="appointments">
-      //     <h1>Appointments</h1>
-      //     <table>
-      //       <thead>
-      //       <tr>
-      //         <th>Appointment Id</th>
-      //         <th>Doctor</th>
-      //         <th>User</th>
-      //         <th>DoctorInfo</th>
-      //         <th>Date</th>
-      //         <th>Time</th>
-      //       </tr>
-      //       </thead>
-      //     </table>
-      //   </container>
-      // </container> 

@@ -49,16 +49,6 @@
      box-shadow: none;
  }
 
- .appointment-heading h1 {
-    color: white;
-    font-size: 22px;
-    padding: 2rem;
-    border-radius: 5px;
-    box-shadow: 0 0 5px #74cac0;
-    border: 5px;
-    
-}
-
 .sidebar {
     height: 94.5vh;
 }
@@ -77,7 +67,3 @@
             font-size: 20px;
         }
     }     
- 
-
-
-
