@@ -61,6 +61,8 @@ const deleteAppointment = async (event, appointment) => {
     </h1>
 </div>
 
+<div className='map-container'>
+  
 <section className="admin-appointments">
 <h2>Appointments</h2>
     {appointments.map((appointment) => {
@@ -122,10 +124,10 @@ const deleteAppointment = async (event, appointment) => {
                 
             </div>
         )
-    })
+      })
     }
-
 </section>
+    </div>
 
 <ToastContainer
         position="bottom-center"

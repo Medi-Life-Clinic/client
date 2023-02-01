@@ -2,11 +2,12 @@ import React, { useEffect, useState } from 'react'
 import { ToastContainer, toast } from 'react-toastify'
 import { DatePicker, TimePicker } from "antd";
 import dayjs from 'dayjs';
-import { fetchDoctors } from './fetchFunctions'
+import { fetchDoctors, fetchUsers, authHeaders } from './fetchFunctions'
 
 const Doctors = () => {
     document.title = 'Medi-Life | Bookings'
 
+    const [users, setUsers] = useState([])
     const [doctors, setDoctors] = useState([])
     const [date, setDate] = useState();
     const [time, setTime] = useState();
@@ -20,11 +21,7 @@ const Doctors = () => {
         try {
             const response = await fetch("http://localhost:4001/api/appointment/check-availability", {
                 method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json',
-                    'Accept': 'application/json',
-                    'Authorization': "Bearer " + localStorage.getItem("token"),
-                },
+                headers: authHeaders,
                 body: JSON.stringify({
                     doctorId: returnedId,
                     date: convertedDate,
@@ -48,18 +45,16 @@ const Doctors = () => {
         const convertedDate = date.format('DD-MM-YYYY')
         const convertedTime = time.format('HH:mm')
         const doctor = doctors.find(doctor => doctor._id === returnedId)
+        const userInfo = users.find(user => user._id === localStorage.getItem("userId"))
     
         try {
             const response = await fetch("http://localhost:4001/api/appointment/book-appointment", {
                 method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json',
-                    'Accept': 'application/json',
-                    'Authorization': "Bearer " + localStorage.getItem("token"),
-                },
+                headers: authHeaders,
                 body: JSON.stringify({
                     doctorId: returnedId,
                     userId: localStorage.getItem("userId"),
+                    userInfo: userInfo,
                     date: convertedDate,
                     time : convertedTime,
                     doctorInfo: doctor,
@@ -75,6 +70,9 @@ const Doctors = () => {
     useEffect(() => {
         fetchDoctors().then(result => {
             setDoctors(result.data)
+        })
+        fetchUsers().then(result => {
+            setUsers(result.data)
         })
     }, [])
 
