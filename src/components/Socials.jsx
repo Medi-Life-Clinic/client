@@ -11,13 +11,13 @@ const Socials = () => {
      <h4 className="socials-heading">Contact us on socials</h4>
     <div className='socials-box'>
       <a href="https://facebook.com" className="social-link">
-        <AiOutlineFacebook className='social-icons' class="mx-4" />
+        <AiOutlineFacebook className='social-icons mx-4'  />
       </a>
       <a href="https://instagram.com" className="social-link">
-        <AiOutlineInstagram className="social-icons" class="mx-4" />
+        <AiOutlineInstagram className="social-icons mx-4" />
       </a>
       <a href="https://twitter.com" className="social-link">
-        <RxTwitterLogo className='social-icons' class="mx-4" />
+        <RxTwitterLogo className="social-icons mx-4" />
       </a>
     </div>
     </>

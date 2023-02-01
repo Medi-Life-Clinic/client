@@ -1,0 +1,90 @@
+.container {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  border-radius: 5px;
+  box-shadow: 0 0 5px #74cac0;
+  border: 5px;
+  margin-top: 1rem;
+  height: 112%;
+}
+
+.admin-heading h1 {
+  color: white;
+  font-size: 22px;
+  padding: 2rem 1rem;
+  border-radius: 5px;
+  box-shadow: 0 0 5px #74cac0;
+  border: 5px;
+}
+
+.admin-appointments {
+  display: flex;
+  flex-direction: column;
+  border-radius: 5px;
+  box-shadow: 0 0 5px #74cac0;
+  border: 5px;
+  /* margin: 1%; */
+  padding: 0rem 1rem;
+  margin-top: 1rem;
+}
+
+.admin-appointments h2 {
+  color: white;
+  font-size: 22px;
+  margin-top: 1rem;
+}
+
+.single-appointment {
+  background-color: #74cac0;
+  color: black;
+  margin: 0.5rem 0rem;
+  border-radius: 5px;
+  box-shadow: 0 0 5px gray;
+  border: 5px;
+  font-size: 13px;
+  justify-content: space-between;
+  display: flex;
+  /* flex-direction: column; */
+  align-items: center;
+  padding: 0.5rem 0rem;
+  width: 100%;
+  text-align: left;
+}
+
+.single-appointment p {
+  margin: 10px;
+  justify-content: left;
+  width: 100%;
+}
+
+.admin-appointment-button {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-end;
+  justify-content: flex-end;
+  background-color: #0a4b59;
+  color: white;
+  flex-direction: column;
+  border-radius: 5px;
+  box-shadow: 0 0 5px grey;
+  border: 5px;
+  font-size: 100%;
+  margin-right: 1rem;
+}
+
+.button-section {
+  display: flex;
+}
+
+.map-container {
+  height: 85vh;
+    overflow: auto;
+  
+}
+
+.scrollable-container {
+  height: 85vh;
+  /* overflow: auto; */
+  /* overflow: hidden; */
+}

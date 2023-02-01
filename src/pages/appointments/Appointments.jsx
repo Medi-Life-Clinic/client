@@ -3,6 +3,7 @@ import Layout from '../../components/MainLayout'
 import { Link, useLocation } from 'react-router-dom'
 import { GiHospitalCross } from 'react-icons/gi'
 import './appointments.css'
+import AppointmentsComponent from '../../components/AppointmentsComponent'
 
 
 //Appointments page with social icons.
@@ -10,11 +11,14 @@ import './appointments.css'
 
 const Appointments = () => {
   return (
-    <>
+    
     <Layout>
       
+      <AppointmentsComponent />
+      
+
     </Layout>
-    </>
+    
   )
 }
 

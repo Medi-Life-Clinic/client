@@ -4,7 +4,7 @@ import './register.css'
 
 
 export const Register = (props) => {
-
+  document.title = 'Medi-Life | Register'
 
   // this is used to navigate to the bookings page
   const navigate = useNavigate()

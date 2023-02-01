@@ -7,6 +7,8 @@ import Header from './components/Header.jsx'
 import Appointments from './pages/appointments/Appointments.jsx'
 import ProtectedRoute from './components/ProtectedRoute.jsx'
 import Doctors from './pages/Doctors/Doctors.jsx'
+import AdminComponent from './components/AdminComponent.jsx'
+
 
 //Main App function with routes
 
@@ -18,6 +20,7 @@ const App = () => {
       <Route path='/register' element={<><Header /> <Register /> <Socials /></>}/>
       <Route path='/bookings' element={<ProtectedRoute><Doctors /></ProtectedRoute>}/>
       <Route path='/appointments' element={<ProtectedRoute> <Appointments /></ProtectedRoute>}/>
+      <Route path='/admin'  element={<ProtectedRoute> <AdminComponent /></ProtectedRoute>}/>
     </Routes>
   </BrowserRouter>
    )
