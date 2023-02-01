@@ -68,11 +68,27 @@ const deleteDoctor = async (event, doctor) => {
   }
 }
 
-
-
-
-
-
+const deleteUser = async (event, user) => {
+  try {
+      const response = await fetch("http://localhost:4001/api/user/delete-by-id", {
+          method: 'POST',
+          headers: authHeaders,
+          body: JSON.stringify({
+              id: user._id
+          })
+      })
+      const responseData = await response.json()
+      console.log(responseData)
+      if (responseData.success == true) {
+          const updatedUsers = users.filter(user => user._id !== responseData.data._id)
+          setUsers(updatedUsers)
+          toast.success("User Deleted Successfully")
+      } 
+  } catch (error) {
+      toast.error('Error Deleting User')
+      console.log(error)
+  }
+}
   console.log(appointments)
   console.log(doctors)
   console.log(users)
@@ -146,7 +162,7 @@ const deleteDoctor = async (event, doctor) => {
                 <p></p>
                 <p></p>
                 <section className='button-section'>
-                  <button className='admin-appointment-button' onClick={event => deleteAppointment(event, appointment)}>Delete User</button>
+                  <button className='admin-appointment-button' onClick={event => deleteUser(event, user)}>Delete User</button>
                 </section>
                 
             </div>
