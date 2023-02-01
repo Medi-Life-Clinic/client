@@ -1,4 +1,4 @@
-.doctor-heading  {
+.doctor-heading {
   color: white;
   font-size: 11px !important;
   padding: 2rem;
@@ -137,7 +137,7 @@
 /* ======== MEDIA QUERIES (SMALL DEVICES) ======== */
 
 @media screen and (max-width:800px) {
- .doctors-layout  .doctor-heading {
+  .doctors-layout .doctor-heading {
     width: 95%;
   }
 
@@ -152,7 +152,6 @@
     flex-wrap: wrap;
     flex: 100%;
     padding-left: 2.2rem;
-
 
   }
 
@@ -171,7 +170,7 @@
   }
 
   .doctors-layout .box {
-    margin-left: 2rem;
+    margin-left: 2rem !important;
 
   }
 
@@ -184,9 +183,10 @@
     margin-left: 1rem;
   }
 
- .sidebar {
+  .sidebar {
 
-    background-color: #74cac0;;
+    background-color: #74cac0;
+    ;
     display: none;
     height: 40%;
     width: 100%;
@@ -204,7 +204,7 @@
     margin: 1.5rem;
   }
 
-.menu button {
+  .menu button {
     margin-top: 2%;
     margin: 0;
   }
@@ -215,7 +215,7 @@
     border: none;
     margin-left: 75%;
     margin-top: 2.5%;
-    
+
     z-index: 2;
     position: absolute;
     color: white;
@@ -232,10 +232,10 @@
     font-size: 30px;
     z-index: 2;
   }
+
   .doctors-layout .body {
     height: 75vh;
-  
+
   }
-  
 
 }
