@@ -37,10 +37,16 @@ export const Login = () => {
       localStorage.setItem('token', result.token)
       localStorage.setItem('userId', result.userId)
       localStorage.setItem('user', result.user)
-      navigate('/bookings')
-    } else {
-      toast.error(result.message)
-    }
+      }
+      if (result.isAdmin) {
+        navigate('/admin')
+      } else {
+        navigate('/bookings')
+        
+    } 
+    // else {
+    //   toast.error(result.message)
+    // }
 
     } catch (err) {
       toast.error("Something went wrong")

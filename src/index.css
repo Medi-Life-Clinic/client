@@ -1,14 +1,17 @@
-@import url('https://fonts.googleapis.com/css2?family=Crimson+Text:wght@400;700&family=MuseoModerno:ital@1&display=swap');
+
+
 
 
 /* Common styling */
 
 
-
+/* body {
+  font-family: 'Crimson Text', serif;
+} */
 /* General Styling*/
 
 :root {
-  font-family: 'Noto Sans', sans-serif;
+  font-family: ;
   font-size: 16px;
   line-height: 24px;
   font-weight: 400;
@@ -24,3 +27,12 @@
   -webkit-text-size-adjust: 100%;
 }
 
+.main-heading {
+  color: white;
+  font-size: 50px !important;
+  padding: 2rem;
+  border-radius: 5px;
+  box-shadow: 0 0 5px #74cac0;
+  border: 5px;
+  margin-bottom: 1rem;
+}

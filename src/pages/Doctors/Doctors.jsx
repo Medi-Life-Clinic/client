@@ -2,13 +2,15 @@ import React from 'react'
 import Layout from '../../components/MainLayout'
 import DoctorsComponent from '../../components/DoctorsComponent'
 import '../../components/mainLayout.css'
-import Socials from '../../components/Socials.jsx'
+import "./doctors.css"
 
 const Doctors = () => {
   return (
+    
     <Layout>
+      <div className="doctors-layout">
         <DoctorsComponent />
-        <Socials />
+      </div>
     </Layout>
   )
 }
