@@ -1,4 +1,6 @@
-
+.nav-btn {
+    padding: 0;
+}
 .socials {
     display: flex;
     flex-direction: column;

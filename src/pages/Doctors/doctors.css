@@ -1,12 +1,12 @@
-.doctors-layout .doctor-heading {
+.doctor-heading  {
   color: white;
-  font-size: 22px;
-  padding: 1rem 1rem;
+  font-size: 11px !important;
+  padding: 2rem;
   border-radius: 5px;
   box-shadow: 0 0 5px #74cac0;
   border: 5px;
-  width: 100%;
   margin-bottom: 1rem;
+  width: 100%;
 }
 
 .doctors-layout .booking-container {

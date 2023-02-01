@@ -78,10 +78,11 @@ const Doctors = () => {
 
     return (
         <div className='content'>
-            <div className="layout-header">
-                <h1>
-                    {location.pathname === '/appointments' ? 'Your Appointments' : 'Meet our doctors'}
-                </h1>
+            <div className="doctor-heading">
+                <h4>
+                    {/* {location.pathname === '/appointments' ? 'Your Appointments' : 'Meet our doctors'} */}
+                    Meet our doctors
+                </h4>
             </div>
             <div className="body">
                 <section className='doctors'>
