@@ -2,7 +2,9 @@ import React, { useEffect, useState } from 'react'
 import { ToastContainer, toast } from 'react-toastify'
 import { DatePicker, TimePicker } from "antd";
 import dayjs from 'dayjs';
-import { fetchDoctors, fetchUsers, authHeaders } from './fetchFunctions'
+import { fetchDoctors, fetchUsers, authHeaders } from '../utils/fetchFunctions'
+import './doctorsComponent.css'
+import './mainLayout.css'
 
 const Doctors = () => {
     document.title = 'Medi-Life | Bookings'
@@ -26,7 +28,6 @@ const Doctors = () => {
                     doctorId: returnedId,
                     date: convertedDate,
                     time : convertedTime,
-    
                 })
             })
             const result = await response.json();
@@ -78,49 +79,51 @@ const Doctors = () => {
 
     return (
         <>
-            <div className="main-heading">
-                <h1>
-                    {/* {location.pathname === '/appointments' ? 'Your Appointments' : 'Meet our doctors'} */}
-                    Meet our doctors
-                </h1>
-            </div>
-            <div className="body">
-                <section className='doctors'>
-                    {doctors.map((doctor) => {
-                        return <div className='box'>
-                            <div className='imgBx'>
-                                <img className="doctor-image" src={doctor.image}></img>
+            <div className="doctors-layout">
+                <div className="main-heading">
+                    <h1>
+                        {/* {location.pathname === '/appointments' ? 'Your Appointments' : 'Meet our doctors'} */}
+                        Meet our Doctors
+                    </h1>
+                </div>
+                <div className="body">
+                    <section className='doctors'>
+                        {doctors.map((doctor) => {
+                            return <div className='box'>
+                                <div className='imgBx'>
+                                    <img className="doctor-image" src={doctor.image}></img>
+                                </div>
+                                <p>{doctor.name}</p>
+                                <p>{doctor.specialization}</p>
+                                <p className="bio">{doctor.bio}</p>
+
+                                <section className='booking-container'>
+
+                                    <label>Please select an appointment date and time:</label>
+                                    <DatePicker className='date-picker' format="DD-MM-YYYY" onChange={(value) => { setDate(value) }} />
+                                    <TimePicker defaultValue={dayjs('09:00', format)} minuteStep={60} disabledHours={() => [0, 1, 2, 3, 4, 5, 6, 7, 8, 17, 18, 19, 20, 21, 22, 23, 24]} format={format} onChange={(value) => { setTime(value) }} />
+                                    <button onClick={event => checkAvailability(event, doctor._id)} className="booking-button">Book Appointment</button>
+                                    {/* <button onClick={event => makeBooking(event, doctor._id)} className="booking-button">Book Appointment</button> */}
+                                </section>
                             </div>
-                            <p>{doctor.name}</p>
-                            <p>{doctor.specialization}</p>
-                            <p className="bio">{doctor.bio}</p>
-
-                            <section className='booking-container'>
-
-                                <label>Please select an appointment date and time:</label>
-                                <DatePicker className='date-picker' format="DD-MM-YYYY" onChange={(value) => { setDate(value) }} />
-                                <TimePicker defaultValue={dayjs('09:00', format)} minuteStep={60} disabledHours={() => [0, 1, 2, 3, 4, 5, 6, 7, 8, 17, 18, 19, 20, 21, 22, 23, 24]} format={format} onChange={(value) => { setTime(value) }} />
-                                <button onClick={event => checkAvailability(event, doctor._id)} className="booking-button">Book Appointment</button>
-                                {/* <button onClick={event => makeBooking(event, doctor._id)} className="booking-button">Book Appointment</button> */}
-                            </section>
-                        </div>
-                    }
-                    )}
-                </section>
-                <ToastContainer
-                    position="bottom-center"
-                    autoClose={3000}
-                    hideProgressBar={true}
-                    newestOnTop={true}
-                    closeOnClick
-                    rtl={false}
-                    // pauseOnFocusLoss
-                    draggable
-                    pauseOnHover
-                    theme="dark"
-                />
+                        }
+                        )}
+                    </section>
+                    <ToastContainer
+                        position="bottom-center"
+                        autoClose={3000}
+                        hideProgressBar={true}
+                        newestOnTop={true}
+                        closeOnClick
+                        rtl={false}
+                        // pauseOnFocusLoss
+                        draggable
+                        pauseOnHover
+                        theme="dark"
+                    />
+                </div>
             </div>
-            </>
+        </>
 
 
 // ADAM TEST COMBINED DATE AND TIME PICKER CODE NEEDS IMPORT {space} from antd

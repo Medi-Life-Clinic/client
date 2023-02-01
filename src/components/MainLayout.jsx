@@ -1,11 +1,10 @@
-import './mainLayout.css'
+import React, { useState } from 'react';
 import { Link } from 'react-router-dom'
 import { GiHospitalCross } from 'react-icons/gi'
 import { FaHouseUser } from 'react-icons/fa'
 import { BsCalendarDate, BsPerson } from 'react-icons/bs'
 import { MdLogout } from 'react-icons/md'
-import React, { useState } from 'react';
-import {GoPerson} from 'react-icons/go'
+import './mainLayout.css'
 
 
 const Layout = ({ children }) => {
@@ -28,7 +27,7 @@ const Layout = ({ children }) => {
                         <h4 className="user-name"><BsPerson className='person-icon'/>{userName}</h4>
                     </div>
                     <div className="menu">
-                        <Link to='/bookings' className={location.pathname === '/bookings' ? 'active' : ''}>
+                        <Link to='/doctors' className={location.pathname === '/doctors' ? 'active' : ''}>
                             <button style={{ background: "transparent", border: "none" }} className="p-0">
                                 <FaHouseUser className="m-2 nav-icon" size='20' />
                                 Doctors

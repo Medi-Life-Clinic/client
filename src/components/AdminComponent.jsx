@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import { ToastContainer, toast } from 'react-toastify'
-import { getAllAppointments, fetchDoctors, fetchUsers, authHeaders } from './fetchFunctions'
-import Layout from './MainLayout';
+import { getAllAppointments, fetchDoctors, fetchUsers, authHeaders } from '../utils/fetchFunctions'
 import './adminComponent.css'
 
 
@@ -95,98 +94,96 @@ const deleteUser = async (event, user) => {
 
   return (
 <>
-<Layout >
-<div className="main-heading">
-    <h1>
-        {/* {location.pathname === '/appointments' ? 'Your Appointments' : 'Meet our doctors'} */}
-        Admin Portal
-    </h1>
-</div>
+  <div className="main-heading">
+      <h1>
+          {/* {location.pathname === '/appointments' ? 'Your Appointments' : 'Meet our doctors'} */}
+          Admin Portal
+      </h1>
+  </div>
 
-<div className='map-container'>
-<div className='scrollable-container'>
+  <div className='map-container'>
+  <div className='scrollable-container'>
 
-<section className="admin-appointments">
-<h2>Appointments</h2>
-    {appointments.map((appointment) => {
-        return (
-            // <h1>Appointments</h1>
-            <div className="single-appointment">
-              <p>Patient: {appointment.userInfo.name}</p>
-              <p>Doctor: {appointment.doctorInfo.name}</p>
-              <p>Specialization: {appointment.doctorInfo.specialization}</p>
-              <p>Date: {appointment.date}</p>
-              <p>Time: {appointment.time}</p>
-                <section className='button-section'>
-                  <button className='admin-appointment-button' onClick={event => deleteAppointment(event, appointment)}>Cancel Appointment</button>
-                </section>
-                
-            </div>
-        )
-    })
-    }
-
-</section>
-
-<section className="admin-appointments">
-<h2>Doctors</h2>
-    {doctors.map((doctor) => {
-        return (
-            // <h1>Appointments</h1>
-            <div className="single-appointment">
-                <p>Name: {doctor.name}</p>
-                <p>Specialization: {doctor.specialization}</p>
-                <p></p>
-                <p></p>
-                <p></p>
-                <section className='button-section'>
-                  <button className='admin-appointment-button' onClick={event => deleteDoctor(event, doctor)}>Delete Doctor</button>
-                </section>
-                
-            </div>
-        )
-    })
-    }
-
-</section>
-
-<section className="admin-appointments">
-<h2>Users</h2>
-    {users.map((user) => {
-        return (
-            // <h1>Appointments</h1>
-            <div className="single-appointment">
-                <p>Name: {user.name}</p>
-                <p>Email: {user.email}</p>
-                <p></p>
-                <p></p>
-                <p></p>
-                <section className='button-section'>
-                  <button className='admin-appointment-button' onClick={event => deleteUser(event, user)}>Delete User</button>
-                </section>
-                
-            </div>
-        )
+  <section className="admin-appointments">
+  <h2>Appointments</h2>
+      {appointments.map((appointment) => {
+          return (
+              // <h1>Appointments</h1>
+              <div className="single-appointment">
+                <p>Patient: {appointment.userInfo.name}</p>
+                <p>Doctor: {appointment.doctorInfo.name}</p>
+                <p>Specialization: {appointment.doctorInfo.specialization}</p>
+                <p>Date: {appointment.date}</p>
+                <p>Time: {appointment.time}</p>
+                  <section className='button-section'>
+                    <button className='admin-appointment-button' onClick={event => deleteAppointment(event, appointment)}>Cancel Appointment</button>
+                  </section>
+                  
+              </div>
+          )
       })
-    }
-</section>
+      }
 
-</div>
-    </div>
+  </section>
 
-<ToastContainer
-        position="bottom-center"
-        autoClose={3000}
-        hideProgressBar={true}
-        newestOnTop={true}
-        closeOnClick
-        rtl={false}
-        // pauseOnFocusLoss
-        draggable
-        pauseOnHover
-        theme="dark"
-    />
-        </Layout>
+  <section className="admin-appointments">
+  <h2>Doctors</h2>
+      {doctors.map((doctor) => {
+          return (
+              // <h1>Appointments</h1>
+              <div className="single-appointment">
+                  <p>Name: {doctor.name}</p>
+                  <p>Specialization: {doctor.specialization}</p>
+                  <p></p>
+                  <p></p>
+                  <p></p>
+                  <section className='button-section'>
+                    <button className='admin-appointment-button' onClick={event => deleteDoctor(event, doctor)}>Delete Doctor</button>
+                  </section>
+                  
+              </div>
+          )
+      })
+      }
+
+  </section>
+
+  <section className="admin-appointments">
+  <h2>Users</h2>
+      {users.map((user) => {
+          return (
+              // <h1>Appointments</h1>
+              <div className="single-appointment">
+                  <p>Name: {user.name}</p>
+                  <p>Email: {user.email}</p>
+                  <p></p>
+                  <p></p>
+                  <p></p>
+                  <section className='button-section'>
+                    <button className='admin-appointment-button' onClick={event => deleteUser(event, user)}>Delete User</button>
+                  </section>
+                  
+              </div>
+          )
+        })
+      }
+  </section>
+
+  </div>
+      </div>
+
+  <ToastContainer
+          position="bottom-center"
+          autoClose={3000}
+          hideProgressBar={true}
+          newestOnTop={true}
+          closeOnClick
+          rtl={false}
+          // pauseOnFocusLoss
+          draggable
+          pauseOnHover
+          theme="dark"
+      />
 </>
   );
 };

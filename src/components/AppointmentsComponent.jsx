@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import { ToastContainer, toast } from 'react-toastify'
-import { getAppointments } from './fetchFunctions'
+import { getAppointments } from '../utils/fetchFunctions'
+import  './appointmentsComponent.css' 
 
 export const AppointmentsComponent = () => {
     document.title = 'Medi-Life | Appointments'

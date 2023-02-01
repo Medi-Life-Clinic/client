@@ -1,8 +1,8 @@
 import React, { useState } from 'react'
 import { Link, useNavigate } from 'react-router-dom'
-import './login.css'
 import { ToastContainer, toast } from 'react-toastify'
 import 'react-toastify/dist/ReactToastify.css'
+import './login.css'
 
 
 export const Login = () => {
@@ -41,7 +41,7 @@ export const Login = () => {
       if (result.isAdmin) {
         navigate('/admin')
       } else {
-        navigate('/bookings')
+        navigate('/doctors')
         
     } 
     // else {

@@ -1,33 +1,31 @@
 .header {
-    background-color: #0A4B59;
-    font-size: 4rem;
-    color: #9DD9C8;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-basis: 1;
-    padding-top: 2%;
-    padding-right: 2%;
-    width: 100%;
+  background-color: #0a4b59;
+  font-size: 4rem;
+  color: #9dd9c8;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-basis: 1;
+  padding-top: 2%;
+  padding-right: 2%;
+  width: 100%;
 }
 
-
 .header h1 {
-   
-    padding-left: 1rem;
+  padding-left: 1rem;
 }
 
 .header p {
-    font-size: 20px;
+  font-size: 20px;
 }
 
 @media screen and (max-width: 600px) {
-    .header{
-        margin-left: 3%;
-    }
-    .header p{
-        margin-top: 2%;
-        font-size: 21.5%;
-        font-weight: bold;
-    }
+  .header {
+    margin-left: 3%;
+  }
+  .header p {
+    margin-top: 2%;
+    font-size: 21.5%;
+    font-weight: bold;
+  }
 }
