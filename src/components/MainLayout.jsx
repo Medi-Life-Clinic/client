@@ -2,9 +2,10 @@ import './mainLayout.css'
 import { Link } from 'react-router-dom'
 import { GiHospitalCross } from 'react-icons/gi'
 import { FaHouseUser } from 'react-icons/fa'
-import { BsCalendarDate } from 'react-icons/bs'
+import { BsCalendarDate, BsPerson } from 'react-icons/bs'
 import { MdLogout } from 'react-icons/md'
 import React, { useState } from 'react';
+import {GoPerson} from 'react-icons/go'
 
 
 const Layout = ({ children }) => {
@@ -24,7 +25,7 @@ const Layout = ({ children }) => {
                 <div className={`sidebar ${showNav ? 'show' : ''}`}>
                     <div className="sidebar-header">
                         <h1><GiHospitalCross />Medi-Life</h1>
-                        <h4 className="user-name">{userName}</h4>
+                        <h4 className="user-name"><BsPerson className='person-icon'/>{userName}</h4>
                     </div>
                     <div className="menu">
                         <Link to='/bookings' className={location.pathname === '/bookings' ? 'active' : ''}>
