@@ -4,7 +4,6 @@ import { DatePicker, TimePicker } from "antd";
 import dayjs from 'dayjs';
 import { fetchDoctors, fetchUsers, authHeaders } from '../utils/fetchFunctions'
 import './doctorsComponent.css'
-import './NavBar.css'
 
 const Doctors = () => {
     document.title = 'Medi-Life | Bookings'
@@ -83,7 +82,7 @@ const Doctors = () => {
                 <div className="main-heading">
                     <h1>
                         {/* {location.pathname === '/appointments' ? 'Your Appointments' : 'Meet our doctors'} */}
-                        Meet our Doctors
+                        Meet Our Doctors
                     </h1>
                 </div>
                 <div className="body">

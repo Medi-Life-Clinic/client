@@ -15,7 +15,7 @@ const NavBar = ({ children }) => {
     //NAV BAR LINKS
     return (
         <div className='main'>
-            <div className='d-flex layout'>
+            <div className='page-layout'>
             <button
                     className="hamburger"
                     onClick={() => setShowNav(!showNav)}>
@@ -29,18 +29,18 @@ const NavBar = ({ children }) => {
                     <div className="menu">
                         <Link to='/doctors' className={location.pathname === '/doctors' ? 'active' : ''}>
                             <button style={{ background: "transparent", border: "none" }} className="p-0">
-                                <FaHouseUser className="m-2 nav-icon" size='20' />
+                                <FaHouseUser className="m-2" size='20' />
                                 Doctors
                             </button>
                         </Link>
                         <Link to='/appointments' className={location.pathname === '/appointments' ? 'active' : ''}>
                             <button style={{ background: "transparent", border: "none" }} className="p-0">
-                                <BsCalendarDate className="m-2 nav-icon" size='20' />
+                                <BsCalendarDate className="m-2" size='20' />
                                 Appointments
                             </button>
                         </Link>
                         <Link to='/'>
-                            <button className="nav-btn" style={{ background: "transparent", border: "none" }} onClick={() => localStorage.removeItem('token')} /*className="p-0"*/ >
+                            <button className="p-0" style={{ background: "transparent", border: "none" }} onClick={() => localStorage.removeItem('token')}>
                                 <MdLogout className="m-2" size='25' />
                                 Logout
                             </button>
