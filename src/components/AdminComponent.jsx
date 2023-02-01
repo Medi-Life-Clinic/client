@@ -48,8 +48,6 @@ const deleteAppointment = async (event, appointment) => {
   console.log(appointments)
   console.log(doctors)
   console.log(users)
-  
-  
 
   return (
 <>
@@ -62,18 +60,19 @@ const deleteAppointment = async (event, appointment) => {
 </div>
 
 <div className='map-container'>
-  
+<div className='scrollable-container'>
+
 <section className="admin-appointments">
 <h2>Appointments</h2>
     {appointments.map((appointment) => {
         return (
             // <h1>Appointments</h1>
             <div className="single-appointment">
-              <p>User:{appointment.userId}</p>
+              <p>Patient: {appointment.userInfo.name}</p>
               <p>Doctor: {appointment.doctorInfo.name}</p>
               <p>Specialization: {appointment.doctorInfo.specialization}</p>
               <p>Date: {appointment.date}</p>
-              <p>Time:{appointment.time}</p>
+              <p>Time: {appointment.time}</p>
                 <section className='button-section'>
                   <button className='admin-appointment-button' onClick={event => deleteAppointment(event, appointment)}>Cancel Appointment</button>
                 </section>
@@ -91,7 +90,7 @@ const deleteAppointment = async (event, appointment) => {
         return (
             // <h1>Appointments</h1>
             <div className="single-appointment">
-                <p>Name:{doctor.name}</p>
+                <p>Name: {doctor.name}</p>
                 <p>Specialization: {doctor.specialization}</p>
                 <p></p>
                 <p></p>
@@ -113,7 +112,7 @@ const deleteAppointment = async (event, appointment) => {
         return (
             // <h1>Appointments</h1>
             <div className="single-appointment">
-                <p>Name:{user.name}</p>
+                <p>Name: {user.name}</p>
                 <p>Email: {user.email}</p>
                 <p></p>
                 <p></p>
@@ -127,6 +126,8 @@ const deleteAppointment = async (event, appointment) => {
       })
     }
 </section>
+
+</div>
     </div>
 
 <ToastContainer

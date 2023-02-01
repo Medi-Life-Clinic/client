@@ -54,7 +54,7 @@ const Doctors = () => {
                 body: JSON.stringify({
                     doctorId: returnedId,
                     userId: localStorage.getItem("userId"),
-                    userInfo: userInfo,
+                    userInfo: {name:userInfo.name, email: userInfo.email},
                     date: convertedDate,
                     time : convertedTime,
                     doctorInfo: doctor,
