@@ -97,7 +97,6 @@ const Doctors = () => {
                                 <p className="bio">{doctor.bio}</p>
 
                                 <section className='booking-container'>
-
                                     <label>Please select an appointment date and time:</label>
                                     <DatePicker className='date-picker' format="DD-MM-YYYY" onChange={(value) => { setDate(value) }} />
                                     <TimePicker defaultValue={dayjs('09:00', format)} minuteStep={60} disabledHours={() => [0, 1, 2, 3, 4, 5, 6, 7, 8, 17, 18, 19, 20, 21, 22, 23, 24]} format={format} onChange={(value) => { setTime(value) }} />

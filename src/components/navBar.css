@@ -1,7 +1,7 @@
 /* effects entire page  */
 .main {
   padding: 20px;
-  height: 89vh;
+  height: 94vh;
   background-color: #0a4b59;
 }
 
@@ -72,7 +72,6 @@
 .hamburger {
   display: none;
 }
-
 /* ======== MEDIA QUERIES (MEDIUM DEVICES) ======== */
 @media screen and (max-width: 1024px) {
 }
@@ -89,14 +88,30 @@
 
   .page-layout {
     display: flex;
-    /* flex-wrap: wrap; */
     flex-direction: column;
-    /* flex: 100%; */
   }
 
   .sidebar {
     width: 100%;
     height: auto;
+    margin: 0;
+    padding: 0;
+  }
+
+  .sidebar-header {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    justify-content: space-around;
+    align-items: stretch;
+    /* margin-left: 1rem; */
+    /* width: 100%; */
+  }
+  
+  .sidebar-header h1 {
+    font-size: 20px;
+    /* margin-top: 1rem; */
+    padding: 0.5rem;
   }
 
   .menu button {
@@ -106,6 +121,8 @@
 
   .menu {
     margin: 0;
+    padding: 0;
+    display: none;
   }
 
   .menu a {
@@ -116,44 +133,32 @@
   .person-icon {
     color: white;
     font-size: 20px;
-    margin-right: 10px;
   }
 
   .user-name {
     display: flex;
     justify-content: center;
     color: white;
-    margin-top: 1rem;
     font-size: 16px;
     text-align: center;
+    margin-top: 0;
   }
 
 
   /* hamburger menu */
   .hamburger {
-    display: block;
+    display: inline;
     background-color: transparent;
     border: none;
-    margin-right: -70%;
-    margin-top: -15%;
-  }
-  .hamburger {
-    display: block;
-    background-color: transparent;
-    border: none;
-    margin-left: 75%;
-    margin-top: 2.5%;
-    z-index: 2;
-    position: absolute;
-    color: white;
-    padding: 0;
   }
 
   button.hamburger {
-    font-size: 30px;
-    z-index: 2;
+    font-size: 35px;
   }
-  .sidebar.show {
-    display: block;
+  .menu.show {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+
   }
 }

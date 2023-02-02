@@ -12,21 +12,26 @@ const NavBar = ({ children }) => {
     // displays username in the h4 tag below.
     const userName = localStorage.getItem("user")
     const [showNav, setShowNav] = useState(false);
-    //NAV BAR LINKS
+
     return (
         <div className='main'>
             <div className='page-layout'>
-            <button
+                <div className='sidebar'>
+                    <div className="sidebar-header">
+                        
+                        <div className='title-container'>
+                        <h1><GiHospitalCross />  Medi-Life</h1>
+                        <h4 className="user-name"><BsPerson className='person-icon'/>{userName}</h4>
+                        </div>
+
+                        <button
                     className="hamburger"
                     onClick={() => setShowNav(!showNav)}>
                     &#9776; 
             </button>
-                <div className={`sidebar ${showNav ? 'show' : ''}`}>
-                    <div className="sidebar-header">
-                        <h1><GiHospitalCross />Medi-Life</h1>
-                        <h4 className="user-name"><BsPerson className='person-icon'/>{userName}</h4>
                     </div>
-                    <div className="menu">
+
+                    <div className={`menu ${showNav ? 'show' : ''}`}>
                         <Link to='/doctors' className={location.pathname === '/doctors' ? 'active' : ''}>
                             <button style={{ background: "transparent", border: "none" }} className="p-0">
                                 <FaHouseUser className="m-2" size='20' />
