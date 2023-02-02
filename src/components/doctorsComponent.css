@@ -1,3 +1,9 @@
+.doctors-layout {
+    height: 94vh;
+    overflow-y: hidden;
+    padding: 0.5rem;
+    box-sizing: border-box;
+} 
 
 
 .doctors-layout .doctors {

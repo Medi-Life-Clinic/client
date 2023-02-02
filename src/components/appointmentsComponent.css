@@ -6,9 +6,10 @@
     box-shadow: 0 0 5px #74cac0;
     border: 5px;
     margin-top: 1rem;
-    /* overflow: scroll; */
-    height: 112%;
+    overflow: hidden;
+    height: 100%;
     /* overflow-x: hidden; */
+    overflow-y: scroll;
     
 }
 .appointment {
@@ -41,6 +42,14 @@
     padding: 13px;
 }
 
+
+/* THIS HEIGHT MATCHES THE SIDE BAR  */
+.appointments-layout {
+    height: 94vh;
+    overflow-y: hidden;
+    padding: 0.5rem;
+    box-sizing: border-box;
+} 
 
 /* ////////// need this explained to me */
 
