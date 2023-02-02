@@ -1,7 +1,7 @@
 .doctors-layout {
-    height: 94vh;
+    height: 98vh;
     overflow-y: hidden;
-    padding: 0.5rem;
+    padding: 0.2rem;
     box-sizing: border-box;
 } 
 
@@ -9,12 +9,12 @@
 .doctors-layout .doctors {
   display: flex;
   background-color: #0a4b59;
-  overflow-y: scroll;
+  overflow-y: auto;
   justify-content: space-evenly;
   flex-wrap: wrap;
   border-radius: 5px;
   box-shadow: 0 0 5px #74cac0;
-  height: 88vh;
+  height: 86.7vh;
 }
 
 .doctors-layout .box {
@@ -25,9 +25,9 @@
   border-radius: 5px;
   box-shadow: 0 0 5px gray;
   margin: .5rem 0;
-  /* min-width: 400px; */
   width: 24rem;
-  height: 86vh;
+  height: 84vh;
+  
 }
 
 .doctors-layout .box p {
@@ -39,8 +39,6 @@
   justify-content: center;
   margin: 5%;
   padding: 0;
-  /* width: 90%; */
-  /* height: 90%; */
 }
 
 
@@ -99,6 +97,8 @@
   text-align: center;
   padding-left: 10px;
   padding: 0px 20px 0px 20px;
+  margin: 2rem 2rem;
+  
 }
 
 .doctors-layout .doctor-image {
@@ -114,7 +114,6 @@
 .body {
   border-radius: 5px;
   box-shadow: 0 0 4px #74cac0;
-  /* height: auto; */
   width: 100%;
 }
 
@@ -137,8 +136,6 @@
     justify-content: center;
     margin: 5%;
     padding: 0;
-    /* width: 90%; */
-    /* height: 45%; */
   }
  
   .doctors-layout .doctors {

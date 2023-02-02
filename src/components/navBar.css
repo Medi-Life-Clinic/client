@@ -2,7 +2,6 @@
 
 .main {
   padding: 20px;
-  height: 94vh;
   background-color: #0a4b59;
 }
 
@@ -20,7 +19,7 @@
   border-radius: 5px;
   box-shadow: 0 0 2px gray;
   margin-right: 20px;
-  /* height: 94vh; */
+  height: 96vh;
   padding: 10px;
   width: 300px;
 }
