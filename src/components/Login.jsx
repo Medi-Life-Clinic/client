@@ -35,16 +35,17 @@ export const Login = () => {
       });
       const result = await response.json();
       console.log(result);
-      if(result.success === true) {
+      if (result.success === true) {
         localStorage.setItem("token", result.token);
         localStorage.setItem("userId", result.userId);
         localStorage.setItem("user", result.user);
         localStorage.setItem("isAdmin", result.isAdmin);
-        navigate("/doctors");
-        console.log(result);
-      }
-    else {
-        toast.error(result.message);
+        if (result.isAdmin) {
+          navigate("/admin");
+        } else {
+          navigate("/doctors");
+          console.log(result);
+        }
       }
     } catch (err) {
       toast.error("Something went wrong");
