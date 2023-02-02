@@ -108,6 +108,7 @@ const Doctors = () => {
                   <section className="booking-container">
                     <label>Please select an appointment date and time:</label>
                     <DatePicker
+                      placeholder="Select date and time:"
                       format="DD-MM-YYYY HH:mm"
                       onChange={onChange}
                       minuteStep={60}

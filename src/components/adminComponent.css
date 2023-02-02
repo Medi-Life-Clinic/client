@@ -22,17 +22,17 @@
   box-shadow: 0 0 5px gray;
   border: 5px;
   font-size: 13px;
-  justify-content: space-between;
   display: flex;
+  justify-content: space-between;
   align-items: center;
   padding: 0.5rem 0rem;
-  width: 100%;
-  text-align: left;
+  /* width: 100%; */
+  /* text-align: left; */
 }
 
 .single-appointment p {
   margin: 10px;
-  justify-content: left;
+  /* justify-content: left; */
   width: 100%;
 }
 
@@ -53,6 +53,11 @@
   height: 94vh;
   overflow-x: hidden;
   overflow-y: auto;
+}
+
+.update-picker {
+  margin-right: 1rem;
+  /* width: 400px; */
 }
 
 .scrollable-container {
