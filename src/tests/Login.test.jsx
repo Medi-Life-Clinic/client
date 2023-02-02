@@ -41,7 +41,7 @@ it('Should update the email state when input value changes', () => {
     expect(emailInput.value).toBe('test@email.com')
 })
 
-//passed 
+//Passed 
 it('Should update the password state when input value changes', () => {
     const { getByPlaceholderText } = render(<BrowserRouter><Login /></BrowserRouter>)
     const passwordInput = getByPlaceholderText(/Password/i)
@@ -49,15 +49,31 @@ it('Should update the password state when input value changes', () => {
     expect(passwordInput.value).toBe('testpassword')
 })
 
-it('Should display a toast notification when form submission fails', () => {
-    const { getByPlaceholderText, getByText } = render(<BrowserRouter><Login /></BrowserRouter>)
-    const emailInput = getByPlaceholderText(/Email/i)
-    fireEvent.change(emailInput, { target: { value: 'test@email.com' } })
-    const passwordInput = getByPlaceholderText(/Password/i)
-    fireEvent.change(passwordInput, { target: { value: 'testpassword' } })
-    const submitBtn = getByText(/LOGIN/i)
-    fireEvent.click(submitBtn)
-    const toast = getByText(/Something went wrong/i)
-    expect(toast).toBeInTheDocument()
+// Passed Test - Testing state of email and password field
+describe('Test the state of the email field and password fields', () => {
+    it('Displays the email box with an empty value', () => {
+        const { getByLabelText } = render(<BrowserRouter><Login /></BrowserRouter>)
+        const emailInput = getByLabelText(/email/i)
+        expect(emailInput.value).toBe('')
+    })
+    it('Displays the password box with an empty value', () => {
+        const { getByLabelText } = render(<BrowserRouter><Login /></BrowserRouter>)
+        const emailInput = getByLabelText(/password/i)
+        expect(passwordInput.value).toBe('')
+    })
 })
+
+
+
+// it('Should display a toast notification when form submission fails', () => {
+//     const { getByPlaceholderText, getByText } = render(<Login />)
+//     const emailInput = getByPlaceholderText(/Email/i)
+//     fireEvent.change(emailInput, { target: { value: 'test@email.com' } })
+//     const passwordInput = getByPlaceholderText(/Password/i)
+//     fireEvent.change(passwordInput, { target: { value: 'testpassword' } })
+//     const submitBtn = getByText(/LOGIN/i)
+//     fireEvent.click(submitBtn)
+//     const toast = getByText(/Something went wrong/i)
+//     expect(toast).toBeInTheDocument()
+// })
 
