@@ -39,7 +39,7 @@ export const Login = () => {
         localStorage.setItem("token", result.token);
         localStorage.setItem("userId", result.userId);
         localStorage.setItem("user", result.user);
-        localStorage.setItem("role", result.isAdmin);
+        localStorage.setItem("isAdmin", result.isAdmin);
         navigate("/doctors");
         console.log(result);
       }
