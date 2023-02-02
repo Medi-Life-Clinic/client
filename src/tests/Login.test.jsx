@@ -20,3 +20,9 @@ describe('Login component', () => {
         expect(getByPlaceholderText(/Email/i)).toBeInTheDocument()
     })
 })
+
+it('Should render password input', () => {
+    const{ getByPlaceholderText } = render(<BrowserRouter><Login /></BrowserRouter>)
+    expect(getByPlaceholderText(/Password/i)).toBeInTheDocument()
+})
+
