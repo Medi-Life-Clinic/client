@@ -8,7 +8,7 @@
   flex-wrap: wrap;
   border-radius: 5px;
   box-shadow: 0 0 5px #74cac0;
-  height: 94vh;
+  height: 88vh;
 }
 
 .doctors-layout .box {
@@ -18,9 +18,10 @@
   flex-direction: column;
   border-radius: 5px;
   box-shadow: 0 0 5px gray;
-  margin: 1rem 0;
+  margin: .5rem 0;
   min-width: 400px;
   width: 24rem;
+  height: 86vh;
 }
 
 .doctors-layout .box p {
@@ -47,7 +48,7 @@
   background-color: none;
   text-align: center;
   margin-bottom: 3%;
-  margin-top: 12%;
+  
 }
 
 .doctors-layout .booking-button {
@@ -147,9 +148,4 @@
     display: none;
   }
 
-  /* probably should move this to main */
-  .main-heading {
-    margin-top: 1rem;
-    margin: 1rem;
-  }
 }

@@ -2,9 +2,8 @@
 
 .main {
   padding: 20px;
-  /* height: 94vh; */
+  height: 94vh;
   background-color: #0a4b59;
-  
 }
 
 /* flex direction between nav and page specific elements (note - d-flex removed from tag, so this is now in play */
