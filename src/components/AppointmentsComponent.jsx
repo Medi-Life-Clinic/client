@@ -73,7 +73,7 @@ export const AppointmentsComponent = () => {
                     pauseOnHover
                     theme="dark"
                 />
-                </div>
+        </div>
         </>
     )
 }
