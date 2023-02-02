@@ -98,8 +98,8 @@ const Doctors = () => {
 
                                 <section className='booking-container'>
                                     <label>Please select an appointment date and time:</label>
-                                    <DatePicker className='date-picker' format="DD-MM-YYYY" onChange={(value) => { setDate(value) }} />
-                                    <TimePicker defaultValue={dayjs('09:00', format)} minuteStep={60} disabledHours={() => [0, 1, 2, 3, 4, 5, 6, 7, 8, 17, 18, 19, 20, 21, 22, 23, 24]} format={format} onChange={(value) => { setTime(value) }} />
+                                    <DatePicker className='time-date-selector' format="DD-MM-YYYY" onChange={(value) => { setDate(value) }} />
+                                    <TimePicker className="time-date-selector" defaultValue={dayjs('09:00', format)} minuteStep={60} disabledHours={() => [0, 1, 2, 3, 4, 5, 6, 7, 8, 17, 18, 19, 20, 21, 22, 23, 24]} format={format} onChange={(value) => { setTime(value) }} />
                                     <button onClick={event => checkAvailability(event, doctor._id)} className="booking-button">Book Appointment</button>
                                     {/* <button onClick={event => makeBooking(event, doctor._id)} className="booking-button">Book Appointment</button> */}
                                 </section>
