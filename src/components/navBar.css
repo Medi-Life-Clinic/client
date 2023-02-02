@@ -165,7 +165,7 @@
   button.hamburger {
     font-size: 35px;
   }
-  .menu.show {
+  .menu.show .admin-menu.show{
     display: flex;
     flex-direction: column;
     justify-content: space-evenly;
