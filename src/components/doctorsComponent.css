@@ -146,17 +146,19 @@
 
   .booking-container {
     background-color: #74cac0;
+    
   }
 
   .doctors-layout .box {
-    margin-bottom: 2rem;
+    
     width: 90%;
+    margin-bottom: 10rem;
     
   } 
 
    .main-heading h1 {
     width: 90%;
-    margin-left: 7%;
+    margin-left: 5%;
     margin-top: 5%;
     text-align: center;
     
@@ -178,7 +180,7 @@
     background-color: #0a4b59;
     overflow: visible;
     box-shadow: none;
-    width: 90%;
+    width: 86%;
     
     
   }
