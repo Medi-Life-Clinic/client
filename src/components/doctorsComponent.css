@@ -3,7 +3,7 @@
 .doctors-layout .doctors {
   display: flex;
   background-color: #0a4b59;
-  overflow-y: auto;
+  overflow-y: scroll;
   justify-content: space-evenly;
   flex-wrap: wrap;
   border-radius: 5px;
@@ -48,6 +48,7 @@
   background-color: none;
   text-align: center;
   margin-bottom: 3%;
+  background-color: #74cac0;
   
 }
 
@@ -112,40 +113,81 @@
 }
 
 /* ======== MEDIA QUERIES SOCIALS(MEDIUM DEVICES) ======== */
-@media screen and (max-width: 1200px) {
+@media screen and (max-width: 800px) {
+  *::-webkit-scrollbar {
+    display: none;
+  }
   .doctors-layout .box {
-    width: 55%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+  }
+
+  .doctors-layout .imgBx {
+    display: flex;
+    position: relative;
+    justify-content: center;
+    margin: 5%;
+    padding: 0;
+    width: 90%;
+    height: 45%;
+  }
+ 
+  .doctors-layout .doctors {
+    display: flex;
+    background-color: #0a4b59;
+    overflow: visible;
+    box-shadow: none;
+    width: 90%;
+    margin-left: 7%;
+  }
+
+
+  .booking-container {
+    background-color: #74cac0;
+  }
+
+  .doctors-layout .box {
+    margin-bottom: 2rem;
+    width: 90%;
+    
+  } 
+
+   .main-heading h1 {
+    width: 90%;
+    margin-left: 7%;
+    margin-top: 5%;
+    text-align: center;
+    
+  } 
+
+  .sidebar-header {
+    display: flex !important;
+    flex-direction: column !important;
+    background-color:#74cac0;
+    padding-bottom: 2%;
   }
 }
 
 /* ======== MEDIA QUERIES (SMALL DEVICES) ======== */
 
-@media screen and (max-width: 800px) {
-  .doctors-layout .doctor-heading {
-    width: 95%;
+@media screen and (max-width: 460px) {
+  .doctors-layout .doctors {
+ 
+    background-color: #0a4b59;
+    overflow: visible;
+    box-shadow: none;
+    width: 90%;
+    
+    
   }
-
-  .doctors-layout .button {
-    margin: 0;
-    padding: 0;
-  }
-
-
-  .doctors-layout .body {
-    width: auto;
-    height: 75vh;
-    margin: 2rem;
-  }
-
   .doctors-layout .box {
-    /* margin-left: 2rem !important; */
-    width: 75%;
-    /* width: 100%; */
-    /* margin-left: 1rem; */
-  }
-
-  .doctors::-webkit-scrollbar {
-    display: none;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    
+    
   }
 
 }
