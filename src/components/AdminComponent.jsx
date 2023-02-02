@@ -6,6 +6,8 @@ import {
   fetchUsers,
   authHeaders,
 } from "../utils/fetchFunctions";
+import { DatePicker } from "antd";
+import dayjs from "dayjs";
 import "./adminComponent.css";
 
 const AdminComponent = () => {
@@ -14,6 +16,8 @@ const AdminComponent = () => {
   const [appointments, setAppointments] = useState([]);
   const [doctors, setDoctors] = useState([]);
   const [users, setUsers] = useState([]);
+  const [date, setDate] = useState();
+  const [time, setTime] = useState();
 
   useEffect(() => {
     getAllAppointments().then((result) => {
@@ -107,9 +111,72 @@ const AdminComponent = () => {
       console.log(error);
     }
   };
-  console.log(appointments);
-  console.log(doctors);
-  console.log(users);
+
+  const checkAvailability = async (event, appointment) => {
+    try {
+      const response = await fetch(
+        "http://localhost:4001/api/appointment/check-availability",
+        {
+          method: "POST",
+          headers: authHeaders,
+          body: JSON.stringify({
+            doctorId: appointment.doctorId,
+            date: date,
+            time: time,
+          }),
+        }
+      );
+      // console.log(appointment.doctorId);
+      const result = await response.json();
+      console.log(result);
+      // toast.success(result.message);
+      if (result.success) {
+        upDateBooking(appointment);
+        console.log(appointment);
+      } else {
+        toast.error(result.message);
+      }
+    } catch (err) {
+      toast.error("Something went wrong");
+    }
+  };
+
+  // Update Booking
+  const upDateBooking = async (appointment) => {
+    try {
+      const response = await fetch(
+        "http://localhost:4001/api/appointment/update-by-id",
+        {
+          method: "POST",
+          headers: authHeaders,
+          body: JSON.stringify({
+            id: appointment._id,
+            date: date,
+            time: time,
+          }),
+        }
+      );
+      const responseData = await response.json();
+      console.log(responseData);
+      if (responseData.success == true) {
+        const updatedAppointments = appointments.filter(
+          (appointment) => appointment._id !== responseData.data._id
+        );
+        setAppointments(updatedAppointments);
+      toast.success("Booking Updated Successfully");
+      }} catch (error) {
+      toast.error("Error Updating Booking");
+      console.log(error);
+    }
+  };
+
+  // DatePicker
+  const onChange = (value, dateString) => {
+    console.log("Selected Time: ", value);
+    const dateSplit = dateString.split(" ")[0];
+    const timeSplit = dateString.split(" ")[1];
+    return setDate(dateSplit), setTime(timeSplit);
+  };
 
   return (
     <>
@@ -134,6 +201,30 @@ const AdminComponent = () => {
                   <p>Specialization: {appointment.doctorInfo.specialization}</p>
                   <p>Date: {appointment.date}</p>
                   <p>Time: {appointment.time}</p>
+                  {/* THIS HAS TO CHANGE CANNOT NEST DatePicker in <p> tag */}
+                  <p>
+                    <DatePicker
+                      className="update-picker"
+                      placeholder="Update Booking Time"
+                      format="DD-MM-YYYY HH:mm"
+                      onChange={onChange}
+                      minuteStep={60}
+                      disabledHours={() => [
+                        0, 1, 2, 3, 4, 5, 6, 7, 8, 17, 18, 19, 20, 21, 22, 23,
+                        24,
+                      ]}
+                      hideDisabledOptions={true}
+                      showTime={{ defaultValue: dayjs("09:00", "HH:mm") }}
+                    />
+                 </p>
+                  <button
+                    onClick={(event) =>
+                      checkAvailability(event, appointment)
+                    }
+                    className="admin-appointment-button"
+                  >
+                    Update Appointment
+                  </button>
                   <section className="button-section">
                     <button
                       className="admin-appointment-button"
