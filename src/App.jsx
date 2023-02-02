@@ -7,7 +7,7 @@ import Appointments from './components/AppointmentsComponent.jsx'
 import Admin from './components/AdminComponent.jsx'
 import Header from './components/Header.jsx'
 import Socials from './components/Socials.jsx'
-import Layout from './components/MainLayout.jsx'
+import NavBar from './components/NavBar.jsx'
 import ProtectedRoute from './utils/ProtectedRoute.jsx'
 
 
@@ -19,9 +19,9 @@ const App = () => {
     <Routes>
       <Route path='/' element={<><Header /> <Login /><Socials /> </>}/>
       <Route path='/register' element={<><Header /> <Register /> <Socials /></>}/>
-      <Route path='/doctors' element={<ProtectedRoute><Layout><Doctors /></Layout></ProtectedRoute>}/>
-      <Route path='/appointments' element={<ProtectedRoute> <Layout><Appointments /></Layout></ProtectedRoute>}/>
-      <Route path='/admin'  element={<ProtectedRoute> <Layout><Admin /></Layout></ProtectedRoute>}/>
+      <Route path='/doctors' element={<ProtectedRoute><NavBar><Doctors /></NavBar></ProtectedRoute>}/>
+      <Route path='/appointments' element={<ProtectedRoute> <NavBar><Appointments /></NavBar></ProtectedRoute>}/>
+      <Route path='/admin'  element={<ProtectedRoute> <NavBar><Admin /></NavBar></ProtectedRoute>}/>
     </Routes>
   </BrowserRouter>
    )
@@ -29,4 +29,4 @@ const App = () => {
 
 export default App
 
-
+NavBar

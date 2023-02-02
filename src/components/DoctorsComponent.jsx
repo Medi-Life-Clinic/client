@@ -4,7 +4,6 @@ import { DatePicker, TimePicker } from "antd";
 import dayjs from 'dayjs';
 import { fetchDoctors, fetchUsers, authHeaders } from '../utils/fetchFunctions'
 import './doctorsComponent.css'
-import './mainLayout.css'
 
 const Doctors = () => {
     document.title = 'Medi-Life | Bookings'
@@ -83,7 +82,7 @@ const Doctors = () => {
                 <div className="main-heading">
                     <h1>
                         {/* {location.pathname === '/appointments' ? 'Your Appointments' : 'Meet our doctors'} */}
-                        Meet our Doctors
+                        Meet Our Doctors
                     </h1>
                 </div>
                 <div className="body">
@@ -98,7 +97,6 @@ const Doctors = () => {
                                 <p className="bio">{doctor.bio}</p>
 
                                 <section className='booking-container'>
-
                                     <label>Please select an appointment date and time:</label>
                                     <DatePicker className='date-picker' format="DD-MM-YYYY" onChange={(value) => { setDate(value) }} />
                                     <TimePicker defaultValue={dayjs('09:00', format)} minuteStep={60} disabledHours={() => [0, 1, 2, 3, 4, 5, 6, 7, 8, 17, 18, 19, 20, 21, 22, 23, 24]} format={format} onChange={(value) => { setTime(value) }} />

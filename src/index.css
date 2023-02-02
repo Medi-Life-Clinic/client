@@ -1,5 +1,7 @@
-/* Common styling */
+/* Font Import */
+@import url("https://fonts.googleapis.com/css2?family=Jost:ital,wght@0,400;0,700;1,400&display=swap");
 
+/* Common styling */
 
 /* body {
   font-family: 'Crimson Text', serif;
@@ -7,8 +9,7 @@
 /* General Styling*/
 
 :root {
-  font-family: 
-  font-size: 16px;
+  font-size: 18px;
   line-height: 24px;
   font-weight: 400;
 
@@ -25,10 +26,14 @@
 
 .main-heading {
   color: white;
-  font-size: 50px !important;
+  font-size: 50px;
   padding: 2rem;
   border-radius: 5px;
   box-shadow: 0 0 5px #74cac0;
   border: 5px;
   margin-bottom: 1rem;
+}
+
+* {
+  font-family: "Jost", sans-serif;
 }

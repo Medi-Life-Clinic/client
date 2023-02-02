@@ -39,6 +39,7 @@ export const AppointmentsComponent = () => {
     }
     return (
         <>
+        <div className='appointments-layout'>
             <div className="main-heading">
                 <h1>
                     {/* {location.pathname === '/appointments' ? 'Your Appointments' : 'Meet our doctors'} */}
@@ -72,6 +73,7 @@ export const AppointmentsComponent = () => {
                     pauseOnHover
                     theme="dark"
                 />
+                </div>
         </>
     )
 }

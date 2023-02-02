@@ -1,0 +1,164 @@
+/* effects entire page  */
+.main {
+  padding: 20px;
+  height: 94vh;
+  background-color: #0a4b59;
+}
+
+/* flex direction between nav and page specific elements (note - d-flex removed from tag, so this is now in play */
+.page-layout {
+  display: flex;
+  flex-direction: row;
+  flex: 100%;
+}
+
+/* entire side bar properties */
+.sidebar {
+  background-color: #74cac0;
+  border-radius: 5px;
+  box-shadow: 0 0 2px gray;
+  margin-right: 20px;
+  height: 94vh;
+  padding: 10px;
+  width: 300px;
+}
+
+.sidebar-header h1 {
+  font-size: 33px;
+  text-align: center;
+}
+
+.sidebar a {
+  margin-left: -40px;
+}
+
+/* user info and icon styling */
+.person-icon {
+  color: white;
+  font-size: 20px;
+  margin-right: 10px;
+}
+
+.user-name {
+  display: flex;
+  justify-content: center;
+  color: white;
+  margin-top: 1rem;
+  font-size: 16px;
+  text-align: center;
+}
+
+/* menu items */
+.menu {
+  margin-left: 20%;
+  display: flex;
+  flex-direction: column;
+  color: white;
+  margin-top: 50%;
+  flex: 100%;
+  margin-top: 100px;
+}
+
+.menu a {
+  margin-bottom: 20%;
+}
+
+/* Sets the styling of current location buttons */
+.active {
+  background-color: #0a4b59;
+}
+
+/* hamburger icon */
+.hamburger {
+  display: none;
+}
+/* ======== MEDIA QUERIES (MEDIUM DEVICES) ======== */
+@media screen and (max-width: 1024px) {
+}
+
+/* ======== MEDIA QUERIES (SMALL DEVICES) ======== */
+@media screen and (max-width: 800px) {
+  .main {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    flex: 100%;
+    padding: 0;
+  }
+
+  .page-layout {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .sidebar {
+    width: 100%;
+    height: auto;
+    margin: 0;
+    padding: 0;
+  }
+
+  .sidebar-header {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    justify-content: space-around;
+    align-items: stretch;
+    /* margin-left: 1rem; */
+    /* width: 100%; */
+  }
+  
+  .sidebar-header h1 {
+    font-size: 20px;
+    /* margin-top: 1rem; */
+    padding: 0.5rem;
+  }
+
+  .menu button {
+    margin-top: 2%;
+    margin: 0;
+  }
+
+  .menu {
+    margin: 0;
+    padding: 0;
+    display: none;
+  }
+
+  .menu a {
+    margin-left: 1.5rem;
+    margin-bottom: 1rem;
+  }
+
+  .person-icon {
+    color: white;
+    font-size: 20px;
+  }
+
+  .user-name {
+    display: flex;
+    justify-content: center;
+    color: white;
+    font-size: 16px;
+    text-align: center;
+    margin-top: 0;
+  }
+
+
+  /* hamburger menu */
+  .hamburger {
+    display: inline;
+    background-color: transparent;
+    border: none;
+  }
+
+  button.hamburger {
+    font-size: 35px;
+  }
+  .menu.show {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+
+  }
+}
