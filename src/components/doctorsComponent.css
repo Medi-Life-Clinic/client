@@ -118,13 +118,15 @@
     padding: 0;
   }
 
+
   .doctors-layout .body {
-    width: 95%;
-    height: 75vh;
+    width: auto
+    /* height: 75vh; */
+    margin: 2rem;
   }
 
   .doctors-layout .box {
-    margin-left: 2rem !important;
+    /* margin-left: 2rem !important; */
     width: 75%;
     /* width: 100%; */
     /* margin-left: 1rem; */
@@ -134,10 +136,11 @@
     display: none;
   }
   
-   /* probably should move this to main */
+  /* probably should move this to main */
   .main-heading {
   margin-top: 1rem;
     margin: 1rem;
   }
-} 
-
+  } 
+  
+  
