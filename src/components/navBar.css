@@ -102,34 +102,21 @@
 
   .sidebar-header {
     display: flex;
-    flex-direction: row;
     align-items: flex-start;
-    justify-content: space-around;
-    align-items: stretch;
-    /* margin-left: 1rem; */
-    /* width: 100%; */
+    justify-content: space-between;
+    padding: 0.5rem;
   }
   
   .sidebar-header h1 {
     font-size: 20px;
-    /* margin-top: 1rem; */
-    padding: 0.5rem;
+    /* padding: 0.5rem; */
   }
 
-  .menu button {
-    margin-top: 2%;
-    margin: 0;
-  }
 
-  .menu {
-    margin: 0;
-    padding: 0;
-    display: none;
-  }
-
-  .menu a {
-    margin-left: 1.5rem;
-    margin-bottom: 1rem;
+  .title-container {
+    display: flex;
+    flex-direction: column;
+    margin-left: 1rem;
   }
 
   .person-icon {
@@ -147,11 +134,33 @@
   }
 
 
+ /* LIST ITEMS  */
+  .menu button {
+    margin-top: 2%;
+    margin: 0;
+  }
+
+  .menu {
+    margin: 0;
+    padding: 0;
+    display: none;
+  }
+
+  .menu a {
+    margin-left: 1.5rem;
+    margin-bottom: 1rem;
+  }
+
   /* hamburger menu */
   .hamburger {
     display: inline;
     background-color: transparent;
     border: none;
+    /* display: flex; */
+    /* justify-content: flex-end; */
+    align-items: center;
+    margin-right: 1rem;
+    
   }
 
   button.hamburger {
