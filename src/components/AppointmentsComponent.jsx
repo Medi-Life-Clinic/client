@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import { ToastContainer, toast } from 'react-toastify'
-import { getAppointments } from './fetchFunctions'
+import { getAppointments } from '../utils/fetchFunctions'
+import  './appointmentsComponent.css' 
 
 export const AppointmentsComponent = () => {
     document.title = 'Medi-Life | Appointments'
@@ -38,6 +39,7 @@ export const AppointmentsComponent = () => {
     }
     return (
         <>
+        <div className='appointments-layout'>
             <div className="main-heading">
                 <h1>
                     {/* {location.pathname === '/appointments' ? 'Your Appointments' : 'Meet our doctors'} */}
@@ -71,6 +73,7 @@ export const AppointmentsComponent = () => {
                     pauseOnHover
                     theme="dark"
                 />
+                </div>
         </>
     )
 }

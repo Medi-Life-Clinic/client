@@ -1,6 +1,3 @@
-/* .doctors {
-    display: none;
-} */
 .appointments-section {
     display: flex;
     flex-direction: row;
@@ -38,21 +35,19 @@
     color: white;
     margin: 3%;
     border-radius: 5px;
-    box-shadow: 0 0 5px grey;
+    box-shadow: 0 0 5px gray;
     border: 5px;
     font-size: 100%;
     padding: 13px;
 }
 
+
+/* ////////// need this explained to me */
+
  .body {
      background-color: #0a4b59;
      box-shadow: none;
  }
-
-.sidebar {
-    height: 94.5vh;
-}
-
  
  @media screen and (max-width: 1050px) {
         .appointments-section {
