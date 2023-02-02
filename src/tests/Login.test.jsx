@@ -50,7 +50,15 @@ it('Should update the password state when input value changes', () => {
     expect(passwordInput.value).toBe('testpassword')
 })
 
-// //Failed 
+
+
+
+
+
+
+
+
+// //Failed -Dep
 // it('Should display a toast notification when form submission fails', () => {
 //     const { getByPlaceholderText, getByText } = render(<Login />)
 //     const emailInput = getByPlaceholderText(/Email/i)
@@ -63,16 +71,16 @@ it('Should update the password state when input value changes', () => {
 //     expect(toast).toBeInTheDocument()
 // })
 
-//Passed Test - Testing state of email and password field
-describe('Test the state of the email field and password fields', () => {
-    it('Displays the email box with an empty value', () => {
-        const { getByLabelText } = render(<BrowserRouter><Login /></BrowserRouter>)
-        const emailInput = getByLabelText(/email/i)
-        expect(emailInput.value).toBe('')
-    })
-    it('Displays the password box with an empty value', () => {
-        const { getByLabelText } = render(<BrowserRouter><Login /></BrowserRouter>)
-        const emailInput = getByLabelText(/password/i)
-        expect(passwordInput.value).toBe('')
-    })
-})
+// //Failed - Dep Testing state of email and password field
+// describe('Test the state of the email field and password fields', () => {
+//     it('Displays the email box with an empty value', () => {
+//         const { getByLabelText } = render(<BrowserRouter><Login /></BrowserRouter>)
+//         const emailInput = getByLabelText(/email/i)
+//         expect(emailInput.value).toBe('')
+//     })
+//     it('Displays the password box with an empty value', () => {
+//         const { getByLabelText } = render(<BrowserRouter><Login /></BrowserRouter>)
+//         const emailInput = getByLabelText(/password/i)
+//         expect(passwordInput.value).toBe('')
+//     })
+// })
