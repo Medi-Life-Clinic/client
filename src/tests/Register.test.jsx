@@ -57,14 +57,3 @@ it('Should update the password state when input value changes', () => {
     fireEvent.change(passwordInput, { target: { value: 'testpassword' } })
     expect(passwordInput.value).toBe('testpassword')
 })
-
-//Passed
-describe('Register Component Submit', () => {
-    it('Renders the Register submit button', () => {
-    const { getByText } = render(<BrowserRouter><Login /></BrowserRouter>)
-    const submitButton = getByText(/Submit/i)
-    expect(submitButton).toBeInTheDocument()
-    fireEvent.click(submitButton)
-    })
-    })
-

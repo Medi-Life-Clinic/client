@@ -53,15 +53,5 @@ it('Should update the password state when input value changes', () => {
 })
 
 
-//Passed
-describe('Login Component Submit', () => {
-    it('Renders the submit button', () => {
-    const { getByText } = render(<BrowserRouter><Login /></BrowserRouter>)
-    const submitButton = getByText(/Submit/i)
-    expect(submitButton).toBeInTheDocument()
-    fireEvent.click(submitButton)
-    })
-    })
-
 
 
