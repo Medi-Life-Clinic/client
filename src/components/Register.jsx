@@ -41,7 +41,7 @@ export const Register = (props) => {
   return (
     <>
       <div className='register-box'>
-      <h1 className='card-title-register'>Register</h1>
+      <h1 className='card-title-register'  data-testid="H1">Register</h1>
         <div className='register-form card p-4'>
          <form onSubmit={handleSubmit}>
             <label type="text">

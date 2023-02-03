@@ -57,3 +57,16 @@ it('Should update the password state when input value changes', () => {
     fireEvent.change(passwordInput, { target: { value: 'testpassword' } })
     expect(passwordInput.value).toBe('testpassword')
 })
+
+
+//Passed 
+describe("Register render", () => {
+    it("Renders the H1 tag", () => {
+      const { getByTestId } = render((
+        <BrowserRouter>
+          <Register />
+        </BrowserRouter>
+      ))
+      expect(getByTestId("H1")).toBeInTheDocument();
+    })
+  })
