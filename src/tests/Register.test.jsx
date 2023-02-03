@@ -86,6 +86,8 @@ it('Should update name when input value changes', () => {
   })
 })
 
+
+//Passed
 describe("Register Components", () => {
 it('Allows user to submit form', () => {
   const { getByPlaceholderText, getByTestId } = render(<BrowserRouter><Register /></BrowserRouter>)

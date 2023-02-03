@@ -13,3 +13,8 @@ describe("Appointment render", () => {
         render((<BrowserRouter><AppointmentsComponent /></BrowserRouter>))
   })
   })
+
+  it('Sets page title to Medi-Life | Appointments',  () => {
+    render((<BrowserRouter><AppointmentsComponent /></BrowserRouter>));
+    expect(document.title).toBe('Medi-Life | Appointments');
+  });
