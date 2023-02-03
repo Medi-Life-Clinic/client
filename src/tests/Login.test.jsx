@@ -1,5 +1,5 @@
 import React from 'react'
-import { render, fireEvent } from '@testing-library/react'
+import { render, fireEvent, getByTestId } from '@testing-library/react'
 import '@testing-library/jest-dom'
 import Login from '../components/Login'
 import Socials from '../components/Socials'
@@ -63,4 +63,18 @@ describe("Login render", () => {
       ))
       expect(getByTestId("H1")).toBeInTheDocument();
     })
+  })
+
+  
+  describe("Login Handle Submit Component", () => {
+  it('Should call the handleSubmit function on submit', () => {
+    const { getByTestId } = render(<BrowserRouter><Login /></BrowserRouter>)
+    const submitButton = getByTestId("Submit")
+    const handleSubmitMock = jest.fn()
+    jest.spyOn(React, 'useState').mockImplementation(() => [email, setEmail] = useState(''))
+    jest.spyOn(React, 'useState').mockImplementation(() => [password, setPassword] = useState(''))
+    jest.spyOn(Login.prototype, 'handleSubmit').mockImplementation(handleSubmitMock)
+    fireEvent.click(submitButton)
+    expect(handleSubmitMock).toHaveBeenCalled()
+})
   })

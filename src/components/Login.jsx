@@ -70,7 +70,7 @@ export const Login = () => {
       <div className='login-box'>
       <h1 className='card-title-login' data-testid="H1">Login</h1>
         <div className='login-form card p-4'>
-         <form onSubmit={handleSubmit}>
+         <form onSubmit={handleSubmit} data-testid="Submit">
             <label type="text">
               Email:
             </label>
