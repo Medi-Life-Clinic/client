@@ -58,24 +58,47 @@ it('Should update the password state when input value changes', () => {
     expect(passwordInput.value).toBe('testpassword')
 })
 
+//Passed
+it('Should update name when input value changes', () => {
+  const { getByPlaceholderText } = render(<BrowserRouter><Register /></BrowserRouter>)
+  const nameInput = getByPlaceholderText(/Name/i)
 
-//Passed 
-describe("Register render", () => {
-    it("Renders the H1 tag", () => {
-      const { getByTestId } = render((
-        <BrowserRouter>
-          <Register />
-        </BrowserRouter>
-      ))
-      expect(getByTestId("H1")).toBeInTheDocument();
-    })
-  })
+  fireEvent.change(nameInput, { target: { value: 'John Doe' } })
+
+  expect(nameInput.value).toBe('John Doe')
+})
 
 
   //Passed
-  describe("Register Btn Component", () => {
+  describe("Register Components", () => {
     it('Renders register button', () => {
       const { getByTestId } = render(<BrowserRouter><Register /></BrowserRouter>)
       expect(getByTestId("Submitbtn")).toBeInTheDocument()
   })
-    })
+
+  it("Renders the H1 tag", () => {
+    const { getByTestId } = render((
+      <BrowserRouter>
+        <Register />
+      </BrowserRouter>
+    ))
+    expect(getByTestId("H1")).toBeInTheDocument();
+  })
+})
+
+describe("Register Components", () => {
+it('Allows user to submit form', () => {
+  const { getByPlaceholderText, getByTestId } = render(<BrowserRouter><Register /></BrowserRouter>)
+  const nameInput = getByPlaceholderText(/Name/i)
+  const emailInput = getByPlaceholderText(/Email/i)
+  const passwordInput = getByPlaceholderText(/Password/i)
+  const submitBtn = getByTestId('Submitbtn')
+
+  fireEvent.change(nameInput, { target: { value: 'John Doe' } })
+  fireEvent.change(emailInput, { target: { value: 'john.doe@example.com' } })
+  fireEvent.change(passwordInput, { target: { value: 'secret' } })
+  fireEvent.click(submitBtn)
+
+  expect(submitBtn).toBeEnabled()
+})
+})

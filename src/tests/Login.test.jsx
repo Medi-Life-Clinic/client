@@ -21,6 +21,7 @@ describe('Login socials', () => {
         expect(getByText(/Contact us on socials/i)).toBeInTheDocument()
     })
 })
+
 //Passed 
 describe('Login component', () => {
     it('Should render email input', () => {
@@ -52,7 +53,7 @@ it('Should update the password state when input value changes', () => {
     expect(passwordInput.value).toBe('testpassword')
 })
 
-
+//Passed
 it('Succesfully submits the Login form', async () => {
   const { getByPlaceholderText, getByTestId } = render(<BrowserRouter><Login /></BrowserRouter>)
   const emailInput = getByPlaceholderText(/Email/i)
