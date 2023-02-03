@@ -71,9 +71,11 @@ describe("Register render", () => {
     })
   })
 
+
+  //Passed
   describe("Register Btn Component", () => {
     it('Renders register button', () => {
-      const { getByText } = render(<BrowserRouter><Login /></BrowserRouter>)
+      const { getByText } = render(<BrowserRouter><Register /></BrowserRouter>)
       expect(getByText(/Register/i)).toBeInTheDocument()
   })
     })
