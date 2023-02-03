@@ -70,3 +70,10 @@ describe("Register render", () => {
       expect(getByTestId("H1")).toBeInTheDocument();
     })
   })
+
+  describe("Register Btn Component", () => {
+    it('Renders register button', () => {
+      const { getByText } = render(<BrowserRouter><Login /></BrowserRouter>)
+      expect(getByText(/Register/i)).toBeInTheDocument()
+  })
+    })
