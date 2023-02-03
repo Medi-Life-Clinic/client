@@ -18,6 +18,7 @@ const AdminComponent = () => {
   const [users, setUsers] = useState([]);
   const [date, setDate] = useState();
   const [time, setTime] = useState();
+  const localAdmin = localStorage.getItem("isAdmin");
 
   useEffect(() => {
     getAllAppointments().then((result) => {
@@ -41,6 +42,7 @@ const AdminComponent = () => {
           headers: authHeaders,
           body: JSON.stringify({
             id: appointment._id,
+            isAdmin: localAdmin
           }),
         }
       );
@@ -59,6 +61,7 @@ const AdminComponent = () => {
 
   // delete doctor
   const deleteDoctor = async (event, doctor) => {
+
     try {
       const response = await fetch(
         "http://localhost:4001/api/doctor/delete-by-id",
@@ -67,6 +70,8 @@ const AdminComponent = () => {
           headers: authHeaders,
           body: JSON.stringify({
             id: doctor._id,
+            isAdmin: localAdmin
+
           }),
         }
       );
@@ -92,6 +97,7 @@ const AdminComponent = () => {
           headers: authHeaders,
           body: JSON.stringify({
             id: user._id,
+            isAdmin: localAdmin
           }),
         }
       );
@@ -147,6 +153,7 @@ const AdminComponent = () => {
             id: appointment._id,
             date: date,
             time: time,
+            isAdmin: localAdmin
           }),
         }
       );

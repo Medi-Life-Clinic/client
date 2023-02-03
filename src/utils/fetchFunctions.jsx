@@ -1,4 +1,4 @@
-
+import { toast } from 'react-toastify';
 // variable that stores headers for requests
 export const authHeaders = {
     'Content-Type': 'application/json',
@@ -13,7 +13,7 @@ export const getAppointments = async () => {
             method: 'POST',
             headers: authHeaders,
             body: JSON.stringify({
-                userId: localStorage.getItem("userId")
+            userId: localStorage.getItem("userId")
             })
         })
         const responseData = await response.json()
@@ -25,7 +25,7 @@ export const getAppointments = async () => {
 
 // get all appointments
 export const getAllAppointments = async () => {
-    try {
+        try {
         const response = await fetch("http://localhost:4001/api/appointment/get-all", {
             headers: authHeaders,
         });
