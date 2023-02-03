@@ -56,7 +56,7 @@ export const Register = (props) => {
              Password:
             </label>
             <input value={password} onChange={(e) => setPassword(e.target.value)} className='mb-4' type="password" name="password" placeholder='Password' />
-            <input className='mb-3 register-button' type="submit" value="REGISTER" />
+            <input className='mb-3 register-button' type="submit" value="REGISTER" data-testid="submitbtn" />
             <Link to='/' className='anchor'>Already Registered? Click Here</Link>
           </form>
         </div>
