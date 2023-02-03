@@ -88,7 +88,7 @@ const Doctors = () => {
     <>
       <div className="doctors-layout">
         <div className="main-heading">
-          <h1>
+          <h1 data-testid="H1">
             {/* {location.pathname === '/appointments' ? 'Your Appointments' : 'Meet our doctors'} */}
             Meet Our Doctors
           </h1>

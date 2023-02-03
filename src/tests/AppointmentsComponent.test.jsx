@@ -3,6 +3,7 @@ import { render, fireEvent, getByTestId } from '@testing-library/react'
 import '@testing-library/jest-dom'
 import  AppointmentsComponent from '../components/AppointmentsComponent'
 import { BrowserRouter } from 'react-router-dom'
+import NavBar from '../components/NavBar'
 
 
 
@@ -32,7 +33,17 @@ describe("Appointment render", () => {
     })
   })
 
+  
+it("Renders the H1 tag", () => {
+  const { getByTestId } = render((
+    <BrowserRouter>
+      <AppointmentsComponent/>
+    </BrowserRouter>
+  ))
+  expect(getByTestId("H1")).toBeInTheDocument();
+})
 
+  
 //   describe('AppointmentsComponent', () => {
 //   it('Renders ToastContainer',  () => {
 //     const { getByTestId } = render((<BrowserRouter><AppointmentsComponent /></BrowserRouter>));

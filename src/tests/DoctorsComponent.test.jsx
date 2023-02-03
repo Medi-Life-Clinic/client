@@ -33,3 +33,15 @@ describe("Doctors render", () => {
       })
     })
   
+
+      
+  it("Renders the H1 tag", () => {
+    const { getByTestId } = render((
+      <BrowserRouter>
+        <DoctorsComponent />
+      </BrowserRouter>
+      ))
+      expect(getByTestId("H1")).toBeInTheDocument();
+    })
+
+  
