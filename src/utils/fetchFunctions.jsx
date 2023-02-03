@@ -1,5 +1,3 @@
-import React, {useEffect, useState} from "react";
-
 
 // variable that stores headers for requests
 export const authHeaders = {

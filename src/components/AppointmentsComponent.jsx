@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import { ToastContainer, toast } from 'react-toastify'
 import { getAppointments } from '../utils/fetchFunctions'
-import  './appointmentsComponent.css' 
+import './appointmentsComponent.css'
 
 export const AppointmentsComponent = () => {
     document.title = 'Medi-Life | Appointments'
@@ -32,48 +32,46 @@ export const AppointmentsComponent = () => {
                 const updatedAppointments = appointments.filter(appointment => appointment._id !== responseData.data._id)
                 setAppointments(updatedAppointments)
                 toast.success("Appointment cancelled successfully")
-            } 
+            }
         } catch (error) {
             toast.error('Error cancelling appointment')
         }
     }
     return (
         <>
-        <div className='appointments-layout'>
-            <div className="main-heading">
-                <h1>
-                    {/* {location.pathname === '/appointments' ? 'Your Appointments' : 'Meet our doctors'} */}
-                    Your Appointments
-                </h1>
-            </div>
+            <div className='appointments-layout'>
+                <div className="main-heading">
+                    <h1>
+                        Your Appointments
+                    </h1>
+                </div>
 
-            <section className="appointments-section">
-                {appointments.map((appointment) => {
-                    return (
-                        <div className="appointment">
-                            <p>Doctor: {appointment.doctorInfo.name}</p>
-                            <p>Specialization: {appointment.doctorInfo.specialization}</p>
-                            <p>Date: {appointment.date}</p>
-                            <p>Time:{appointment.time}</p>
-                            <button className='appointment-button' onClick={event => deleteAppointment(event, appointment)}>Cancel Appointment</button>
-                        </div>
-                    )
-                })}
+                <section className="appointments-section">
+                    {appointments.map((appointment) => {
+                        return (
+                            <div className="appointment">
+                                <p>Doctor: {appointment.doctorInfo.name}</p>
+                                <p>Specialization: {appointment.doctorInfo.specialization}</p>
+                                <p>Date: {appointment.date}</p>
+                                <p>Time:{appointment.time}</p>
+                                <button className='appointment-button' onClick={event => deleteAppointment(event, appointment)}>Cancel Appointment</button>
+                            </div>
+                        )
+                    })}
 
-            </section>
-            <ToastContainer
+                </section>
+                <ToastContainer
                     position="bottom-center"
                     autoClose={3000}
                     hideProgressBar={true}
                     newestOnTop={true}
                     closeOnClick
                     rtl={false}
-                    // pauseOnFocusLoss
                     draggable
                     pauseOnHover
                     theme="dark"
                 />
-        </div>
+            </div>
         </>
     )
 }

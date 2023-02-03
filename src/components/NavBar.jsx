@@ -12,14 +12,14 @@ const NavBar = ({ children }) => {
     // displays username in the h4 tag below.
     const userName = localStorage.getItem("user")
     const [showNav, setShowNav] = useState(false);
-    
+
 
     const isAdmin = () => {
         const role = localStorage.getItem("isAdmin")
-        
+
         // This if statement is admin if true
         if (role === "true") {
-            
+
             return (
                 <div className='sidebar'>
                     <div className="sidebar-header">
@@ -27,7 +27,7 @@ const NavBar = ({ children }) => {
                         <div className='title-container'>
                             <h1><GiHospitalCross />  Medi-Life </h1>
                             <h4 className="user-name"><BsPerson className='person-icon' />{userName}</h4>
-                            
+
                         </div>
 
                         <button

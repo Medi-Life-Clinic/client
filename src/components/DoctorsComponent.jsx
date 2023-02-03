@@ -78,7 +78,6 @@ const Doctors = () => {
 
   // DatePicker
   const onChange = (value, dateString) => {
-    console.log("Selected Time: ", value);
     const dateSplit = dateString.split(" ")[0];
     const timeSplit = dateString.split(" ")[1];
     return setDate(dateSplit), setTime(timeSplit);

@@ -71,7 +71,6 @@ const AdminComponent = () => {
         }
       );
       const responseData = await response.json();
-      console.log(responseData);
       if (responseData.success == true) {
         const updatedDoctors = doctors.filter(
           (doctor) => doctor._id !== responseData.data._id
@@ -81,7 +80,6 @@ const AdminComponent = () => {
       }
     } catch (error) {
       toast.error("Error Deleting Doctor");
-      console.log(error);
     }
   };
 
@@ -98,7 +96,6 @@ const AdminComponent = () => {
         }
       );
       const responseData = await response.json();
-      console.log(responseData);
       if (responseData.success == true) {
         const updatedUsers = users.filter(
           (user) => user._id !== responseData.data._id
@@ -108,7 +105,6 @@ const AdminComponent = () => {
       }
     } catch (error) {
       toast.error("Error Deleting User");
-      console.log(error);
     }
   };
 
@@ -126,13 +122,11 @@ const AdminComponent = () => {
           }),
         }
       );
-      // console.log(appointment.doctorId);
+
       const result = await response.json();
-      console.log(result);
-      // toast.success(result.message);
+
       if (result.success) {
         upDateBooking(appointment);
-        console.log(appointment);
       } else {
         toast.error(result.message);
       }
@@ -157,22 +151,20 @@ const AdminComponent = () => {
         }
       );
       const responseData = await response.json();
-      console.log(responseData);
       if (responseData.success == true) {
         const updatedAppointments = appointments.filter(
           (appointment) => appointment._id !== responseData.data._id
         );
         setAppointments(updatedAppointments);
-      toast.success("Booking Updated Successfully");
-      }} catch (error) {
+        toast.success("Booking Updated Successfully");
+      }
+    } catch (error) {
       toast.error("Error Updating Booking");
-      console.log(error);
     }
   };
 
   // DatePicker
   const onChange = (value, dateString) => {
-    console.log("Selected Time: ", value);
     const dateSplit = dateString.split(" ")[0];
     const timeSplit = dateString.split(" ")[1];
     return setDate(dateSplit), setTime(timeSplit);
@@ -216,7 +208,7 @@ const AdminComponent = () => {
                       hideDisabledOptions={true}
                       showTime={{ defaultValue: dayjs("09:00", "HH:mm") }}
                     />
-                 </p>
+                  </p>
                   <button
                     onClick={(event) =>
                       checkAvailability(event, appointment)

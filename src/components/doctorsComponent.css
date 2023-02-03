@@ -1,9 +1,9 @@
 .doctors-layout {
-    height: 98vh;
-    overflow-y: hidden;
-    padding: 0.2rem;
-    box-sizing: border-box;
-} 
+  height: 98vh;
+  overflow-y: hidden;
+  padding: 0.2rem;
+  box-sizing: border-box;
+}
 
 
 .doctors-layout .doctors {
@@ -27,7 +27,7 @@
   margin: .5rem 0;
   width: 24rem;
   height: 84vh;
-  
+
 }
 
 .doctors-layout .box p {
@@ -53,7 +53,7 @@
   text-align: center;
   margin-bottom: 3%;
   background-color: #74cac0;
-  
+
 }
 
 .doctors-layout .booking-button {
@@ -98,7 +98,7 @@
   padding-left: 10px;
   padding: 0px 20px 0px 20px;
   margin: 2rem 2rem;
-  
+
 }
 
 .doctors-layout .doctor-image {
@@ -106,10 +106,6 @@
   border-radius: 5px;
   position: relative;
 }
-
-/* .date-picker {
-  margin-bottom: 3%;
-} */
 
 .body {
   border-radius: 5px;
@@ -122,6 +118,7 @@
   *::-webkit-scrollbar {
     display: none;
   }
+
   .doctors-layout .box {
     display: flex;
     flex-direction: column;
@@ -137,7 +134,7 @@
     margin: 5%;
     padding: 0;
   }
- 
+
   .doctors-layout .doctors {
     display: flex;
     background-color: #0a4b59;
@@ -150,27 +147,26 @@
 
   .booking-container {
     background-color: #74cac0;
-    
+
   }
 
-   .main-heading h1 {
+  .main-heading h1 {
     width: 90%;
     margin-left: 5%;
     margin-top: 5%;
     text-align: center;
-    
-  } 
+
+  }
 }
 
 /* ======== MEDIA QUERIES (SMALL DEVICES) ======== */
 
 @media screen and (max-width: 460px) {
   .doctors-layout .doctors {
- 
+
     background-color: #0a4b59;
     overflow: visible;
     box-shadow: none;
-    /* width: 86%; */
   }
 
 }
