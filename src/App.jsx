@@ -64,11 +64,10 @@ const App = () => {
             </AdminRoute>
           }
         />
+        <Route path="*" element={<h4>Page not found!</h4>} />
       </Routes>
     </BrowserRouter>
   );
 };
 
 export default App;
-
-NavBar;
