@@ -54,10 +54,10 @@ it('Should update the password state when input value changes', () => {
 
 
 it('Succesfully submits the Login form', async () => {
-  const { getByPlaceholderText, getByText } = render(<BrowserRouter><Login /></BrowserRouter>)
+  const { getByPlaceholderText, getByTestId } = render(<BrowserRouter><Login /></BrowserRouter>)
   const emailInput = getByPlaceholderText(/Email/i)
   const passwordInput = getByPlaceholderText(/Password/i)
-  const submitBtn = getByText(/Submit/i)
+  const submitBtn = getByTestId("Submitbtn")
 
   fireEvent.change(emailInput, { target: { value: 'test@email.com' } })
   fireEvent.change(passwordInput, { target: { value: 'testpassword' } })
@@ -83,8 +83,8 @@ describe("Login render", () => {
 //Passed
   describe("Submit Btn Component", () => {
   it('Renders submit button', () => {
-    const { getByText } = render(<BrowserRouter><Login /></BrowserRouter>)
-    expect(getByText(/Submit/i)).toBeInTheDocument()
+    const { getByTestId } = render(<BrowserRouter><Login /></BrowserRouter>)
+    expect(getByTestId('Submitbtn')).toBeInTheDocument()
 })
   })
 

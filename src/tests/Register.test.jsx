@@ -76,6 +76,6 @@ describe("Register render", () => {
   describe("Register Btn Component", () => {
     it('Renders register button', () => {
       const { getByTestId } = render(<BrowserRouter><Register /></BrowserRouter>)
-      expect(getByTestId("submitbtn")).toBeInTheDocument()
+      expect(getByTestId("Submitbtn")).toBeInTheDocument()
   })
     })
