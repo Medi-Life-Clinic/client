@@ -67,14 +67,12 @@ describe("Login render", () => {
 
   
   describe("Login Handle Submit Component", () => {
-  it('Should call the handleSubmit function on submit', () => {
-    const { getByTestId } = render(<BrowserRouter><Login /></BrowserRouter>)
-    const submitButton = getByTestId("Submit")
-    const handleSubmitMock = jest.fn()
-    jest.spyOn(React, 'useState').mockImplementation(() => [email, setEmail] = useState(''))
-    jest.spyOn(React, 'useState').mockImplementation(() => [password, setPassword] = useState(''))
-    jest.spyOn(Login.prototype, 'handleSubmit').mockImplementation(handleSubmitMock)
-    fireEvent.click(submitButton)
-    expect(handleSubmitMock).toHaveBeenCalled()
-})
+    it('Should call the handleSubmit function on submit', () => {
+      const { getByTestId } = render(<BrowserRouter><Login /></BrowserRouter>)
+      const submitButton = getByTestId("Submit")
+      const handleSubmitMock = jest.fn()
+      jest.spyOn(Login.prototype, 'handleSubmit').mockImplementation(handleSubmitMock)
+      fireEvent.click(submitButton)
+      expect(handleSubmitMock).toHaveBeenCalled()
+    })
   })
