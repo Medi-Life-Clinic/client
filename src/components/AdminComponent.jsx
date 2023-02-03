@@ -38,7 +38,7 @@ const AdminComponent = () => {
       const response = await fetch(
         "http://localhost:4001/api/appointment/delete-by-id",
         {
-          method: "POST",
+          method: "DELETE",
           headers: authHeaders,
           body: JSON.stringify({
             id: appointment._id,
@@ -69,7 +69,7 @@ const AdminComponent = () => {
           headers: authHeaders,
           body: JSON.stringify({
             id: doctor._id,
-            // isAdmin: localAdmin
+            isAdmin: localAdmin,
           }),
         }
       );
@@ -95,7 +95,7 @@ const AdminComponent = () => {
           headers: authHeaders,
           body: JSON.stringify({
             id: user._id,
-            // isAdmin: localAdmin
+            isAdmin: localAdmin,
           }),
         }
       );
@@ -151,7 +151,7 @@ const AdminComponent = () => {
             id: appointment._id,
             date: date,
             time: time,
-            // isAdmin: localAdmin,
+            isAdmin: localAdmin,
           }),
         }
       );
