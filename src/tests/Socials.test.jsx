@@ -24,6 +24,7 @@ describe("Socials Component", () => {
       expect(twitter).toBeInTheDocument()
     })
 
+    //Passed
     it("Renders links to social media platforms", () => {
       const { getByTestId } = render(<Socials />)
       const facebookLink = getByTestId("facebook-link")
