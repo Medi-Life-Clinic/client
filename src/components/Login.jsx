@@ -46,6 +46,8 @@ export const Login = () => {
           navigate("/doctors");
           console.log(result);
         }
+      } else {
+        toast.error(result.message)
       }
     } catch (err) {
       toast.error("Something went wrong");
