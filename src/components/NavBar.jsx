@@ -11,11 +11,12 @@ const NavBar = ({ children }) => {
     // Save the username from local storage to the variable userName
     // displays username in the h4 tag below.
     const userName = localStorage.getItem("user")
+    const [showNav, setShowNav] = useState(false);
     
 
     const isAdmin = () => {
         const role = localStorage.getItem("isAdmin")
-        const [showNav, setShowNav] = useState(false);
+        
         // This if statement is admin if true
         if (role === "true") {
             
