@@ -55,13 +55,13 @@ export const AppointmentsComponent = () => {
                             <p>Specialization: {appointment.doctorInfo.specialization}</p>
                             <p>Date: {appointment.date}</p>
                             <p>Time:{appointment.time}</p>
-                            <button className='appointment-button' onClick={event => deleteAppointment(event, appointment)}>Cancel Appointment</button>
+                            <button className='appointment-button' onClick={event => deleteAppointment(event, appointment)} >Cancel Appointment</button>
                         </div>
                     )
                 })}
 
-            </section>
-            <ToastContainer
+            </section >
+            <ToastContainer 
                     position="bottom-center"
                     autoClose={3000}
                     hideProgressBar={true}
@@ -72,7 +72,7 @@ export const AppointmentsComponent = () => {
                     draggable
                     pauseOnHover
                     theme="dark"
-                />
+                    />
                 </div>
         </>
     )

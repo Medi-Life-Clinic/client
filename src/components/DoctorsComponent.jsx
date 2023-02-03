@@ -121,7 +121,7 @@ const Doctors = () => {
                     />
                     <button
                       onClick={(event) => checkAvailability(event, doctor._id)}
-                      className="booking-button"
+                      className="booking-button" 
                     >
                       Book Appointment
                     </button>
@@ -130,7 +130,7 @@ const Doctors = () => {
               );
             })}
           </section>
-          <ToastContainer
+          <ToastContainer  data-testid="Toast"
             position="bottom-center"
             autoClose={3000}
             hideProgressBar={true}

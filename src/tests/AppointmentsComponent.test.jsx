@@ -14,7 +14,29 @@ describe("Appointment render", () => {
   })
   })
 
-  it('Sets page title to Medi-Life | Appointments',  () => {
+  //Passed
+  it('Renders the Title Medi-Life | Appointments',  () => {
     render((<BrowserRouter><AppointmentsComponent /></BrowserRouter>));
     expect(document.title).toBe('Medi-Life | Appointments');
   });
+
+  //Passed
+  describe('AppointmentsComponent', () => {
+    it('renders appointments Heading', () => {
+      const { getByText } = render(
+        <BrowserRouter>
+          <AppointmentsComponent />
+        </BrowserRouter>
+      )
+      expect(getByText('Your Appointments')).toBeInTheDocument()
+    })
+  })
+
+
+//   describe('AppointmentsComponent', () => {
+//   it('Renders ToastContainer',  () => {
+//     const { getByTestId } = render((<BrowserRouter><AppointmentsComponent /></BrowserRouter>));
+//     const toastContainer = getByTestId('Toast');
+//     expect(toastContainer).toBeInTheDocument();
+//   })
+// })
