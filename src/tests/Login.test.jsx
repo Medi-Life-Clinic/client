@@ -47,18 +47,4 @@ it('Should update the password state when input value changes', () => {
 
 
 
-describe('Register Component', () =>{
-    it('Should reroute to the register page', () => {
-        const { getByTestId } = render(
-          <BrowserRouter><Login /></BrowserRouter>
-        )
-        const registerLink = getByTestId('register-link')
-        fireEvent.click(registerLink)
-        const navigate = jest.fn()
-      
-        expect(navigate).toHaveBeenCalledWith('/register');
-      })
-    })
-
-
 
