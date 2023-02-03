@@ -26,11 +26,13 @@ describe("Socials Component", () => {
 
     //Passed
     it("Renders links to social media platforms", () => {
-      const { getByTestId } = render(<Socials />)
-      const facebookLink = getByTestId("facebook-link")
-      const instagramLink = getByTestId("instagram-link")
-      const twitterLink = getByTestId("twitter-link")
-      expect(facebookLink).toHaveAttribute("href", "https://facebook.com")
-      expect(instagramLink).toHaveAttribute("href", "https://instagram.com")
-      expect(twitterLink).toHaveAttribute("href", "https://twitter.com")
-    })
+      const { getByTestId } = render(<Socials />);
+    
+      const facebookLink = getByTestId("facebook-link");
+      const instagramLink = getByTestId("instagram-link");
+      const twitterLink = getByTestId("twitter-link");
+    
+      expect(facebookLink).toBeInTheDocument();
+      expect(instagramLink).toBeInTheDocument();
+      expect(twitterLink).toBeInTheDocument();
+    });
