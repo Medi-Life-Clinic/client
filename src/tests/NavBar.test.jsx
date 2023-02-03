@@ -26,3 +26,15 @@ describe("NavBar Component", () => {
     const element = getByText(/testUser/i);
     expect(element).toBeInTheDocument();
   })
+
+  it('Navigates succesfully', () => {
+    const { getByText } = render(
+      <BrowserRouter>
+        <NavBar />
+      </BrowserRouter>
+    );
+    const hamburger = getByText(/\u{9776}/i);
+    fireEvent.click(hamburger);
+    const menu = getByText(/Doctors/i);
+    expect(menu).toBeInTheDocument();
+  });
