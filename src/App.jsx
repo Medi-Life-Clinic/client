@@ -58,12 +58,12 @@ const App = () => {
         <Route
           path="/admin"
           element={
-            <ProtectedRoute>
+            <AdminRoute>
               {" "}
               <NavBar>
-                <Admin />
+                  <Admin />
               </NavBar>
-            </ProtectedRoute>
+            </AdminRoute>
           }
         />
       </Routes>
