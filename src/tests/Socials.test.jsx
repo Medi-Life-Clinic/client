@@ -13,6 +13,7 @@ describe("Socials Component", () => {
       })
     })
 
+    //Passed
    it("It Renders three social icons", () => {
       const { getByTestId } = render(<Socials />)
       const facebook = getByTestId("facebook-icon")
@@ -21,4 +22,14 @@ describe("Socials Component", () => {
       expect(facebook).toBeInTheDocument()
       expect(instagram).toBeInTheDocument()
       expect(twitter).toBeInTheDocument()
+    })
+
+    it("Renders links to social media platforms", () => {
+      const { getByTestId } = render(<Socials />)
+      const facebookLink = getByTestId("facebook-link")
+      const instagramLink = getByTestId("instagram-link")
+      const twitterLink = getByTestId("twitter-link")
+      expect(facebookLink).toHaveAttribute("href", "https://facebook.com")
+      expect(instagramLink).toHaveAttribute("href", "https://instagram.com")
+      expect(twitterLink).toHaveAttribute("href", "https://twitter.com")
     })
