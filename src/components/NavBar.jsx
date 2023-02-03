@@ -24,10 +24,11 @@ const NavBar = ({ children }) => {
                         <h4 className="user-name"><BsPerson className='person-icon'/>{userName}</h4>
                         </div>
 
-                        <button
+                        <button data-testid="Burgbtn"
                     className="hamburger"
-                    onClick={() => setShowNav(!showNav)}>
+                    onClick={() => setShowNav(!showNav) }>
                     &#9776; 
+                  
             </button>
                     </div>
 
