@@ -6,6 +6,8 @@ import { BrowserRouter } from 'react-router-dom'
 import NavBar from '../components/NavBar'
 
 
+
+
 //Passed Test 
 
 describe("Admin render", () => {
@@ -20,31 +22,17 @@ describe("Admin render", () => {
     expect(document.title).toBe('Medi-Life | Admin')
   });
 
-//   //Passed
-//   describe('AdminComponent', () => {
-//     it('renders admin Heading', () => {
-//       const { getByText } = render(
-//         <BrowserRouter>
-//           <AdminComponent />
-//         </BrowserRouter>
-//       )
-//       expect(getByText('Your Appointments')).toBeInTheDocument()
-//     })
-//   })
+  it("populates the appointments state", () => {
+    const { getByTestId } = render((<BrowserRouter><AdminComponent /></BrowserRouter>));
+    const appointmentsData = getByTestId("appointments-data");
+    expect(appointmentsData).toBeDefined();
 
+  })
 
-// //Passed
-// it("Renders the H1 tag", () => {
-//   const { getByTestId } = render((
-//     <BrowserRouter>
-//       <AppointmentsComponent/>
-//     </BrowserRouter>
-//   ))
-//   expect(getByTestId("H1")).toBeInTheDocument()
-// })
-
-// it('Renders ToastContainer',  () => {
-//   const { getByTestId } = render((<BrowserRouter><AppointmentsComponent /></BrowserRouter>));
-//   const toastContainer = getByTestId('toast-container');
-//   expect(toastContainer).toBeInTheDocument();
-// });
+  it("populates the doctors state", () => {
+    const { getByTestId } = render((<BrowserRouter><AdminComponent /></BrowserRouter>));
+    const doctorsData = getByTestId("doctors-data");
+    expect(doctorsData).toBeDefined();
+  });
+  
+    

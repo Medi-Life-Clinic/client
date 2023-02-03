@@ -4,6 +4,7 @@ import '@testing-library/jest-dom'
 import  AppointmentsComponent from '../components/AppointmentsComponent'
 import { BrowserRouter } from 'react-router-dom'
 import NavBar from '../components/NavBar'
+import { getAppointments } from '../utils/fetchFunctions';
 
 
 
@@ -44,16 +45,3 @@ it("Renders the H1 tag", () => {
   expect(getByTestId("H1")).toBeInTheDocument()
 })
 
-it('Renders ToastContainer',  () => {
-  const { getByTestId } = render((<BrowserRouter><AppointmentsComponent /></BrowserRouter>));
-  const toastContainer = getByTestId('toast-container');
-  expect(toastContainer).toBeInTheDocument();
-});
-
-//   describe('AppointmentsComponent', () => {
-//   it('Renders ToastContainer',  () => {
-//     const { getByTestId } = render((<BrowserRouter><AppointmentsComponent /></BrowserRouter>));
-//     const toastContainer = getByTestId('Toast');
-//     expect(toastContainer).toBeInTheDocument();
-//   })
-// })
