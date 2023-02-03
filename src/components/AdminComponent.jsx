@@ -239,7 +239,7 @@ const AdminComponent = () => {
           </section>
 
           <section className="admin-appointments">
-            <h2>Doctors</h2>
+            <h2 data-testid="h2-doctors">Doctors</h2>
             {doctors.map((doctor) => {
               return (
                 <div className="single-appointment">
@@ -262,7 +262,7 @@ const AdminComponent = () => {
           </section>
 
           <section className="admin-appointments">
-            <h2>Users</h2>
+            <h2 data-testid="h2-users">Users</h2>
             {users.map((user) => {
               return (
                 <div className="single-appointment">

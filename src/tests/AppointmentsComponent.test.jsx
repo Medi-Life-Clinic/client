@@ -35,13 +35,14 @@ describe("Appointment render", () => {
   })
 
 
-//Passed
-it("Renders the H1 tag", () => {
-  const { getByTestId } = render((
-    <BrowserRouter>
-      <AppointmentsComponent/>
-    </BrowserRouter>
-  ))
-  expect(getByTestId("H1")).toBeInTheDocument()
-})
+  //Passed
+  it("Renders the H1 tag", () => {
+    const { getByTestId } = render((
+      <BrowserRouter>
+        <AppointmentsComponent />
+      </BrowserRouter>
+      ))
+      expect(getByTestId("H1")).toBeInTheDocument()
+    })
 
+  
