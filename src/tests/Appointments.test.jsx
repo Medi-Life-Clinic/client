@@ -1,6 +1,0 @@
-import React from 'react'
-import { render, fireEvent } from '@testing-library/react'
-import '@testing-library/jest-dom'
-import AppointentsComponent from '../components/Login'
-import Socials from '../components/Socials'
-import { BrowserRouter } from 'react-router-dom'

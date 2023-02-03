@@ -68,7 +68,7 @@ export const Login = () => {
       theme="dark"
       />
       <div className='login-box'>
-      <h1 className='card-title-login'>Login</h1>
+      <h1 className='card-title-login' data-testid="H1">Login</h1>
         <div className='login-form card p-4'>
          <form onSubmit={handleSubmit}>
             <label type="text">
