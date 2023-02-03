@@ -4,6 +4,7 @@ import '@testing-library/jest-dom'
 import NavBar from '../components/NavBar'
 import { BrowserRouter } from 'react-router-dom'
 
+//Passed
 describe("NavBar Component", () => {
     it('Renders the NavBar component ', () => {
         const { getByText } = render(
@@ -16,7 +17,7 @@ describe("NavBar Component", () => {
       })
     })
 
-    it ('Username is displayed in h4 tag', () => {
+  it ('Username is displayed in h4 tag', () => {
         localStorage.setItem('user', 'testUser');
         const { getByText } = render(
           <BrowserRouter>

@@ -17,8 +17,8 @@ describe("Doctors render", () => {
 
   //Passed
   it('Renders the Title Medi-Life | Doctors',  () => {
-    render((<BrowserRouter><DoctorsComponent /></BrowserRouter>));
-    expect(document.title).toBe('Medi-Life | Doctors');
+    render((<BrowserRouter><DoctorsComponent /></BrowserRouter>))
+    expect(document.title).toBe('Medi-Life | Doctors')
   });
 
     //Passed
@@ -34,14 +34,14 @@ describe("Doctors render", () => {
     })
   
 
-      
+  //Passed
   it("Renders the H1 tag", () => {
     const { getByTestId } = render((
       <BrowserRouter>
         <DoctorsComponent />
       </BrowserRouter>
       ))
-      expect(getByTestId("H1")).toBeInTheDocument();
+      expect(getByTestId("H1")).toBeInTheDocument()
     })
 
   

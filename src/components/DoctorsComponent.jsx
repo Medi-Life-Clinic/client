@@ -130,7 +130,7 @@ const Doctors = () => {
               );
             })}
           </section>
-          <ToastContainer  data-testid="Toast"
+          <ToastContainer 
             position="bottom-center"
             autoClose={3000}
             hideProgressBar={true}
@@ -148,4 +148,4 @@ const Doctors = () => {
   );
 };
 
-export default Doctors;
+export default Doctors

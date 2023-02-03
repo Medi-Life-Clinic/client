@@ -1,5 +1,5 @@
 import React from 'react'
-import { render, fireEvent, getByTestId } from '@testing-library/react'
+import { render, fireEvent, getByTestId, getAllByTestId } from '@testing-library/react'
 import '@testing-library/jest-dom'
 import  AppointmentsComponent from '../components/AppointmentsComponent'
 import { BrowserRouter } from 'react-router-dom'
@@ -17,8 +17,8 @@ describe("Appointment render", () => {
 
   //Passed
   it('Renders the Title Medi-Life | Appointments',  () => {
-    render((<BrowserRouter><AppointmentsComponent /></BrowserRouter>));
-    expect(document.title).toBe('Medi-Life | Appointments');
+    render((<BrowserRouter><AppointmentsComponent /></BrowserRouter>))
+    expect(document.title).toBe('Medi-Life | Appointments')
   });
 
   //Passed
@@ -33,17 +33,23 @@ describe("Appointment render", () => {
     })
   })
 
-  
+
+//Passed
 it("Renders the H1 tag", () => {
   const { getByTestId } = render((
     <BrowserRouter>
       <AppointmentsComponent/>
     </BrowserRouter>
   ))
-  expect(getByTestId("H1")).toBeInTheDocument();
+  expect(getByTestId("H1")).toBeInTheDocument()
 })
 
-  
+it('Renders ToastContainer',  () => {
+  const { getByTestId } = render((<BrowserRouter><AppointmentsComponent /></BrowserRouter>));
+  const toastContainer = getByTestId('toast-container');
+  expect(toastContainer).toBeInTheDocument();
+});
+
 //   describe('AppointmentsComponent', () => {
 //   it('Renders ToastContainer',  () => {
 //     const { getByTestId } = render((<BrowserRouter><AppointmentsComponent /></BrowserRouter>));

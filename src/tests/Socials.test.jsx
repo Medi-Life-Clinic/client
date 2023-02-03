@@ -35,4 +35,4 @@ describe("Socials Component", () => {
       expect(facebookLink).toBeInTheDocument();
       expect(instagramLink).toBeInTheDocument();
       expect(twitterLink).toBeInTheDocument();
-    });
+    })
