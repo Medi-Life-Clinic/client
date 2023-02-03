@@ -34,7 +34,6 @@ export const Login = () => {
         }),
       });
       const result = await response.json();
-      console.log(result);
       if (result.success === true) {
         localStorage.setItem("token", result.token);
         localStorage.setItem("userId", result.userId);
@@ -44,7 +43,6 @@ export const Login = () => {
           navigate("/admin");
         } else {
           navigate("/doctors");
-          console.log(result);
         }
       } else {
         toast.error(result.message)
