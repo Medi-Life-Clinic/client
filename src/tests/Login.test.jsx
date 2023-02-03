@@ -1,10 +1,17 @@
-import React from 'react';
-import { render, fireEvent } from '@testing-library/react';
+import React from 'react'
+import { render, fireEvent } from '@testing-library/react'
 import '@testing-library/jest-dom'
-import Login from '../components/Login';
-import Socials from '../components/Socials';
-import { BrowserRouter } from 'react-router-dom';
+import Login from '../components/Login'
+import Socials from '../components/Socials'
+import { BrowserRouter } from 'react-router-dom'
 
+//Passed Test 
+
+describe("Login render", () => {
+    it('Renders the Login Component',  () => {
+        render((<BrowserRouter><Login /></BrowserRouter>))
+  })
+  })
 
 //Passed Test 
 
@@ -45,6 +52,16 @@ it('Should update the password state when input value changes', () => {
     expect(passwordInput.value).toBe('testpassword')
 })
 
+
+//Passed
+describe('Login Component Submit', () => {
+    it('Renders the submit button', () => {
+    const { getByText } = render(<BrowserRouter><Login /></BrowserRouter>)
+    const submitButton = getByText(/Submit/i)
+    expect(submitButton).toBeInTheDocument()
+    fireEvent.click(submitButton)
+    })
+    })
 
 
 
