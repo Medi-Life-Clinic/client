@@ -48,7 +48,6 @@ const App = () => {
           path="/appointments"
           element={
             <ProtectedRoute>
-              {" "}
               <NavBar>
                 <Appointments />
               </NavBar>
@@ -59,9 +58,8 @@ const App = () => {
           path="/admin"
           element={
             <AdminRoute>
-              {" "}
               <NavBar>
-                  <Admin />
+                <Admin />
               </NavBar>
             </AdminRoute>
           }

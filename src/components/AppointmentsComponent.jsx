@@ -13,9 +13,10 @@ export const AppointmentsComponent = () => {
       setAppointments(result.data);
     });
   }, []);
+  
   // Cancel appointment
   const deleteAppointment = async (event, appointment) => {
-    const localAdmin = localStorage.getItem("isAdmin");
+    // const localAdmin = localStorage.getItem("isAdmin");
     try {
       const response = await fetch(
         "http://localhost:4001/api/appointment/delete-by-id",
