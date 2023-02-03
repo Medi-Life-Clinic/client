@@ -65,7 +65,7 @@ const AdminComponent = () => {
       const response = await fetch(
         "http://localhost:4001/api/doctor/delete-by-id",
         {
-          method: "POST",
+          method: "DELETE",
           headers: authHeaders,
           body: JSON.stringify({
             id: doctor._id,
@@ -91,7 +91,7 @@ const AdminComponent = () => {
       const response = await fetch(
         "http://localhost:4001/api/user/delete-by-id",
         {
-          method: "POST",
+          method: "DELETE",
           headers: authHeaders,
           body: JSON.stringify({
             id: user._id,
@@ -145,7 +145,7 @@ const AdminComponent = () => {
       const response = await fetch(
         "http://localhost:4001/api/appointment/update-by-id",
         {
-          method: "POST",
+          method: "PUT",
           headers: authHeaders,
           body: JSON.stringify({
             id: appointment._id,

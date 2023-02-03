@@ -68,7 +68,7 @@ const Doctors = () => {
   };
 
   useEffect(() => {
-    fetchDoctors().then((result) => {
+     fetchDoctors().then((result) => {
       setDoctors(result.data);
     });
     fetchUsers().then((result) => {
