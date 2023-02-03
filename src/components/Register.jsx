@@ -1,9 +1,10 @@
 import React, { useState } from 'react'
 import { Link, useNavigate } from 'react-router-dom'
 import './register.css'
+import { ToastContainer, toast } from "react-toastify";
 
 
-export const Register = (props) => {
+const Register = (props) => {
   document.title = 'Medi-Life | Register'
 
   // this is used to navigate to the bookings page
@@ -33,13 +34,29 @@ export const Register = (props) => {
     })
       .then(res => res.json()) // this converts the response to json
       .then(data => { //
-        console.log(data) // this returns the message from the server
-        navigate('/') // this navigates to the homepage (which is currently login)
+        console.log(data)
+        toast.error(data.errors)
+        if (data.success){
+          navigate('/') // this navigates to the homepage (which is currently login)
+          toast.success("User created successfully")
+        }
       })
   }
 
   return (
     <>
+    <ToastContainer //This package creates a notifications for the user.
+        position="bottom-center"
+        autoClose={5000}
+        hideProgressBar={false}
+        newestOnTop={false}
+        closeOnClick
+        rtl={false}
+        pauseOnFocusLoss
+        draggable
+        pauseOnHover
+        theme="dark"
+      />
       <div className='register-box'>
       <h1 className='card-title-register'>Register</h1>
         <div className='register-form card p-4'>
