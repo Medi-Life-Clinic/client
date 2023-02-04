@@ -1,12 +1,6 @@
 /* Font Import */
 @import url("https://fonts.googleapis.com/css2?family=Jost:ital,wght@0,400;0,700;1,400&display=swap");
 
-/* Common styling */
-
-/* body {
-  font-family: 'Crimson Text', serif;
-} */
-/* General Styling*/
 
 :root {
   font-size: 18px;
@@ -24,10 +18,10 @@
   -webkit-text-size-adjust: 100%;
 }
 
-.main-heading {
+.main-heading h1 {
   color: white;
-  font-size: 50px;
-  padding: 2rem;
+  font-size: 25px;
+  padding: 1rem;
   border-radius: 5px;
   box-shadow: 0 0 5px #74cac0;
   border: 5px;

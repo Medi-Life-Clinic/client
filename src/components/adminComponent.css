@@ -1,11 +1,25 @@
+.global-admin-container {
+  height: 94vh;
+  overflow-y: hidden;
+  padding: 0.3rem;
+  box-sizing: border-box;
+}
+
+.admin-menu {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  margin-top: 5rem;
+}
+
 .admin-appointments {
   display: flex;
   flex-direction: column;
   border-radius: 5px;
   box-shadow: 0 0 5px #74cac0;
   border: 5px;
-  padding: 0rem 1rem;
-  margin-top: 1rem;
+  padding: 1rem 2rem;
+  margin: 1rem .1rem .5rem .1rem;
 }
 
 .admin-appointments h2 {
@@ -22,17 +36,14 @@
   box-shadow: 0 0 5px gray;
   border: 5px;
   font-size: 13px;
-  justify-content: space-between;
   display: flex;
+  justify-content: space-between;
   align-items: center;
   padding: 0.5rem 0rem;
-  width: 100%;
-  text-align: left;
 }
 
 .single-appointment p {
   margin: 10px;
-  justify-content: left;
   width: 100%;
 }
 
@@ -50,13 +61,11 @@
 }
 
 .map-container {
-  height: auto;
+  height: 94vh;
   overflow-x: hidden;
   overflow-y: auto;
 }
 
-.scrollable-container {
-  /* height: 85vh; */
-  /* overflow: auto; */
-  /* overflow: hidden; */
+.update-picker {
+  margin-right: 1rem;
 }

@@ -13,22 +13,55 @@ const NavBar = ({ children }) => {
     const userName = localStorage.getItem("user")
     const [showNav, setShowNav] = useState(false);
 
-    return (
-        <div className='main'>
-            <div className='page-layout'>
+
+    const isAdmin = () => {
+        const role = localStorage.getItem("isAdmin")
+
+        // This if statement is admin if true
+        if (role === "true") {
+
+            return (
                 <div className='sidebar'>
                     <div className="sidebar-header">
-                        
+
                         <div className='title-container'>
-                        <h1><GiHospitalCross />  Medi-Life</h1>
-                        <h4 className="user-name"><BsPerson className='person-icon'/>{userName}</h4>
+                            <h1><GiHospitalCross />  Medi-Life </h1>
+                            <h4 className="user-name"><BsPerson className='person-icon' />{userName}</h4>
+
                         </div>
 
                         <button
-                    className="hamburger"
-                    onClick={() => setShowNav(!showNav)}>
-                    &#9776; 
-            </button>
+                            className="hamburger"
+                            onClick={() => setShowNav(!showNav)}>
+                            &#9776;
+                        </button>
+                    </div>
+
+                    <div className={`menu ${showNav ? 'show' : ''}`}>
+                        <Link to='/'>
+                            <button className="p-0" style={{ background: "transparent", border: "none" }} onClick={() => localStorage.clear()}>
+                                <MdLogout className="m-2" size='25' />
+                                Logout
+                            </button>
+                        </Link>
+                    </div>
+                </div>
+            )
+        } else {
+            return (
+                <div className='sidebar'>
+                    <div className="sidebar-header">
+
+                        <div className='title-container'>
+                            <h1><GiHospitalCross />  Medi-Life </h1>
+                            <h4 className="user-name"><BsPerson className='person-icon' />{userName}</h4>
+                        </div>
+
+                        <button
+                            className="hamburger"
+                            onClick={() => setShowNav(!showNav)}>
+                            &#9776;
+                        </button>
                     </div>
 
                     <div className={`menu ${showNav ? 'show' : ''}`}>
@@ -45,13 +78,21 @@ const NavBar = ({ children }) => {
                             </button>
                         </Link>
                         <Link to='/'>
-                            <button className="p-0" style={{ background: "transparent", border: "none" }} onClick={() => localStorage.removeItem('token')}>
+                            <button className="p-0" style={{ background: "transparent", border: "none" }} onClick={() => localStorage.clear()}>
                                 <MdLogout className="m-2" size='25' />
                                 Logout
                             </button>
                         </Link>
                     </div>
                 </div>
+            )
+        }
+    }
+
+    return (
+        <div className='main'>
+            <div className='page-layout'>
+                {isAdmin()}
                 <div className="body">{children}</div>
             </div>
         </div>

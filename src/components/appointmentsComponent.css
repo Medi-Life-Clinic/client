@@ -6,11 +6,12 @@
     box-shadow: 0 0 5px #74cac0;
     border: 5px;
     margin-top: 1rem;
-    /* overflow: scroll; */
-    height: 112%;
-    /* overflow-x: hidden; */
-    
+    overflow: hidden;
+    height: 86.8vh;
+    overflow-y: scroll;
+
 }
+
 .appointment {
     background-color: #74cac0;
     color: black;
@@ -24,8 +25,9 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    height: 26vh;
+    height: auto;
     min-width: 250px;
+    padding: 1rem;
 }
 
 .appointment-button {
@@ -42,23 +44,30 @@
 }
 
 
-/* ////////// need this explained to me */
+/* THIS HEIGHT MATCHES THE SIDE BAR  */
+.appointments-layout {
+    padding: 0.2rem;
+    box-sizing: border-box;
+}
 
- .body {
-     background-color: #0a4b59;
-     box-shadow: none;
- }
- 
- @media screen and (max-width: 1050px) {
-        .appointments-section {
-            justify-content: center;
-            overflow: auto;
-        }
-        .appointment {
-            width: 85%;
-            overflow: auto;
-        }
-        .appointment-heading h1 {
-            font-size: 20px;
-        }
-    }     
+
+.body {
+    background-color: #0a4b59;
+    box-shadow: none;
+}
+
+@media screen and (max-width: 1050px) {
+    .appointments-section {
+        justify-content: center;
+        overflow: auto;
+    }
+
+    .appointment {
+        width: 85%;
+        overflow: auto;
+    }
+
+    .appointment-heading h1 {
+        font-size: 20px;
+    }
+}
