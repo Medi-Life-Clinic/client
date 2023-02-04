@@ -87,7 +87,7 @@ const Doctors = () => {
     <>
       <div className="doctors-layout">
         <div className="main-heading">
-          <h1>
+          <h1 data-testid="H1">
             {/* {location.pathname === '/appointments' ? 'Your Appointments' : 'Meet our doctors'} */}
             Meet Our Doctors
           </h1>
@@ -120,7 +120,7 @@ const Doctors = () => {
                     />
                     <button
                       onClick={(event) => checkAvailability(event, doctor._id)}
-                      className="booking-button"
+                      className="booking-button" 
                     >
                       Book Appointment
                     </button>
@@ -129,7 +129,7 @@ const Doctors = () => {
               );
             })}
           </section>
-          <ToastContainer
+          <ToastContainer 
             position="bottom-center"
             autoClose={3000}
             hideProgressBar={true}
@@ -147,4 +147,4 @@ const Doctors = () => {
   );
 };
 
-export default Doctors;
+export default Doctors

@@ -30,11 +30,11 @@ const NavBar = ({ children }) => {
 
                         </div>
 
-                        <button
-                            className="hamburger"
-                            onClick={() => setShowNav(!showNav)}>
-                            &#9776;
-                        </button>
+                        <button data-testid="Burgbtn"
+                    className="hamburger"
+                    onClick={() => setShowNav(!showNav)}>
+                    &#9776; 
+            </button>
                     </div>
 
                     <div className={`menu ${showNav ? 'show' : ''}`}>

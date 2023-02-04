@@ -46,57 +46,24 @@ const Register = (props) => {
 
   return (
     <>
-      <ToastContainer //This package creates a notifications for the user.
-        position="bottom-center"
-        autoClose={5000}
-        hideProgressBar={false}
-        newestOnTop={false}
-        closeOnClick
-        rtl={false}
-        pauseOnFocusLoss
-        draggable
-        pauseOnHover
-        theme="dark"
-      />
-      <div className="register-box">
-        <h1 className="card-title-register">Register</h1>
-        <div className="register-form card p-4">
-          <form onSubmit={handleSubmit}>
-            <label type="text">Name:</label>
-            <input
-              value={name}
-              onChange={(e) => setName(e.target.value)}
-              className="mb-4"
-              type="text"
-              name="name"
-              placeholder="Full Name here"
-            />
-            <label type="text">Email:</label>
-            <input
-              value={email}
-              onChange={(e) => setEmail(e.target.value)}
-              className="mb-4"
-              type="text"
-              name="email"
-              placeholder="Email address"
-            />
-            <label type="text">Password:</label>
-            <input
-              value={password}
-              onChange={(e) => setPassword(e.target.value)}
-              className="mb-4"
-              type="password"
-              name="password"
-              placeholder="Password"
-            />
-            <input
-              className="mb-3 register-button"
-              type="submit"
-              value="REGISTER"
-            />
-            <Link to="/" className="anchor">
-              Already Registered? Click Here
-            </Link>
+      <div className='register-box'>
+      <h1 className='card-title-register' data-testid="H1">Register</h1>
+        <div className='register-form card p-4'>
+         <form onSubmit={handleSubmit}>
+            <label type="text">
+             Name:
+            </label>
+            <input value={name} onChange={(e) => setName(e.target.value)} className='mb-4' type="text" name="name" placeholder="Full Name here" />
+            <label type="text">
+             Email:
+            </label>
+            <input value={email} onChange={(e) => setEmail(e.target.value)} className='mb-4' type="text" name="email" placeholder='Email address' />
+            <label type="text">
+             Password:
+            </label>
+            <input value={password} onChange={(e) => setPassword(e.target.value)} className='mb-4' type="password" name="password" placeholder='Password' />
+            <input className='mb-3 register-button' type="submit" value="REGISTER" />
+            <Link to='/' className='anchor'>Already Registered? Click Here</Link>
           </form>
         </div>
       </div>
