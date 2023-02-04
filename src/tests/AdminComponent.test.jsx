@@ -6,8 +6,6 @@ import { BrowserRouter } from 'react-router-dom'
 import NavBar from '../components/NavBar'
 
 
-
-
 //Passed Test 
 
 describe("Admin render", () => {
@@ -22,7 +20,6 @@ describe("Admin render", () => {
     expect(document.title).toBe('Medi-Life | Admin')
   })
 
-
   
 //Passed
 it("Renders the Doctors-H2 tag", () => {
@@ -34,6 +31,7 @@ it("Renders the Doctors-H2 tag", () => {
   expect(getByTestId("h2-doctors")).toBeInTheDocument()
 })
 
+//Passed 
 it("Renders the Users-H2 tag", () => {
   const { getByTestId } = render((
     <BrowserRouter>

@@ -30,6 +30,7 @@ describe('Register component', () => {
     })
 })
 
+//Passed
     it('Should render name input', () => {
         const { getByPlaceholderText } = render(<BrowserRouter><Register /></BrowserRouter>)
         expect(getByPlaceholderText(/Name/i)).toBeInTheDocument()

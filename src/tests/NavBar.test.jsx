@@ -17,6 +17,7 @@ describe("NavBar Component", () => {
       })
     })
 
+    //Passed
   it ('Username is displayed in h4 tag', () => {
         localStorage.setItem('user', 'testUser');
         const { getByText } = render(
@@ -28,6 +29,8 @@ describe("NavBar Component", () => {
     expect(element).toBeInTheDocument();
   })
   
+  //Passed 
+
   it("Navigates succesfully", () => {
     const { getByTestId, getByText } = render(
       <BrowserRouter><NavBar /></BrowserRouter>

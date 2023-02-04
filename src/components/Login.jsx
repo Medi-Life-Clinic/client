@@ -74,13 +74,13 @@ export const Login = () => {
             <label type="text">
               Email:
             </label>
-            <input value={email} onChange={(e) => setEmail(e.target.value)} className='mb-4' type="text" name="email" placeholder="Email" />
+            <input value={email} onChange={(e) => setEmail(e.target.value)} className='mb-4' type="text" name="email" placeholder="Email" data-testid="email-input" />
             <label type="text">
               Password:
             </label>
             <input value={password} onChange={(e) => setPassword(e.target.value)} className='mb-4' type="password" name="password" placeholder='Password' data-testid="Submitbtn" />
             <input className='mb-3 login-button' type="submit" value="LOGIN" />
-            <Link to='/register' className='anchor'>Haven't registered? Click Here</Link> 
+            <Link to='/register' className='anchor' data-testid="Register-button"Register-button>Haven't registered? Click Here</Link> 
           </form>
         </div>
       </div>
