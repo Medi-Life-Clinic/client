@@ -169,13 +169,20 @@ Project-Management – Trello, Discord
 <br></br>
 
 
-- As you can see in these screenshot’s we added additional information within the cards as to avoid cluttering the board, on these checklist’s we went through and ticked off any task’s that were completed.
+- Here you can see our progress throughout week two, we were meeting our sprints and development was for the most part succesful.
 
-
-<img align="center" width="100%" src="docs/Week two errors.png">
-
-<h2>Week Three Screenshots</h2>
-<img align="center" width="100%" src="docs/Final Board.png">
 <br></br>
+<img align="center" width="100%" src="docs/Week two errors.png">
+<br></br>
+- Here you can see the Error Log we were working through, each erorr to clear was assigned to certain team members.
+<br></br>
+<h2>Week Three Screenshots</h2>
+<img align="center" width="100%" src="docs/Final.png"> 
+<br></br>
+
+- Here you can see our final Trello Board. All assigned tasks completed. We met all our Sprints except our testing Sprint by one day. We were still very happy with that outcome. 
+
 <img align="center" width="100%" src="docs/Final Week errors.png">
 <br></br>
+
+ -  As you can see here all our errors were cleared by the assigned team members. 
