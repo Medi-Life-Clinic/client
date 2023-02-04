@@ -62,11 +62,22 @@ const Register = (props) => {
              Password:
             </label>
             <input value={password} onChange={(e) => setPassword(e.target.value)} className='mb-4' type="password" name="password" placeholder='Password' />
-            <input className='mb-3 register-button' type="submit" value="REGISTER" />
+            <input className='mb-3 register-button' type="submit" value="REGISTER" data-testid="Submitbtn"/>
             <Link to='/' className='anchor'>Already Registered? Click Here</Link>
           </form>
         </div>
       </div>
+      <ToastContainer
+          position="bottom-center"
+          autoClose={3000}
+          hideProgressBar={true}
+          newestOnTop={true}
+          closeOnClick
+          rtl={false}
+          draggable
+          pauseOnHover
+          theme="dark"
+        />
     </>
   );
 };

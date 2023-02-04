@@ -78,7 +78,7 @@ export const Login = () => {
             </label>
             <input value={password} onChange={(e) => setPassword(e.target.value)} className='mb-4' type="password" name="password" placeholder='Password' data-testid="Submitbtn" />
             <input className='mb-3 login-button' type="submit" value="LOGIN" />
-            <Link to='/register' className='anchor'>Haven't registered? Click Here</Link> 
+            <Link to='/register' className='anchor' data-testid="Register-button">Haven't registered? Click Here</Link> 
           </form>
         </div>
       </div>

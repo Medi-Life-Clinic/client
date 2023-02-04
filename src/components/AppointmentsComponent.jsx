@@ -48,7 +48,7 @@ export const AppointmentsComponent = () => {
     <>
       <div className="appointments-layout">
         <div className="main-heading">
-          <h1>Your Appointments</h1>
+          <h1 data-testid="H1">Your Appointments</h1>
         </div>
 
         <section className="appointments-section">
