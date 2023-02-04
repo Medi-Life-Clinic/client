@@ -3,6 +3,7 @@
 .main {
   padding: 20px;
   background-color: #0a4b59;
+  height: 100vh;
 }
 
 /* flex direction between nav and page specific elements (note - d-flex removed from tag, so this is now in play */
@@ -150,26 +151,6 @@
     margin-bottom: 1rem;
   }
 
-  /* hamburger menu */
-  /* .hamburger {
-    display: inline;
-    background-color: transparent;
-    border: none;
-    align-items: center;
-    margin-right: 1rem;
-
-  }
-
-  button.hamburger {
-    font-size: 35px;
-  }
-
-  .menu.show .admin-menu.show {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-evenly;
-
-  } */
   .hamburger {
     display: inline-block;
     background-color: transparent;

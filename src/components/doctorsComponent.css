@@ -9,12 +9,16 @@
 .doctors-layout .doctors {
   display: flex;
   background-color: #0a4b59;
-  overflow-y: auto;
+  /* overflow-y: hidden; */
   justify-content: space-evenly;
   flex-wrap: wrap;
   border-radius: 5px;
   box-shadow: 0 0 5px #74cac0;
   height: 86.7vh;
+  /* padding: 1rem; */
+  /* overflow-y: scroll; */
+  padding: 1rem;
+  /* overflow-y: scroll; */
 }
 
 .doctors-layout .box {
@@ -24,11 +28,9 @@
   flex-direction: column;
   border-radius: 5px;
   box-shadow: 0 0 5px gray;
-  margin: .5rem 0;
+  /* margin: 1rem 0; */
   width: 24rem;
-  height: 84vh;
-
-}
+  height: auto;}
 
 .doctors-layout .box p {
   text-align: center;
@@ -109,6 +111,19 @@
   /* border-radius: 5px;
   box-shadow: 0 0 5px #74cac0; */
   width: 100%;
+  height: 100%;
+}
+
+
+@media screen and (max-width:1651px) {
+.box {
+  margin: 1rem 0;
+}
+
+
+.doctors-layout .doctors {
+  overflow-y: scroll;
+}
 }
 
 /* ======== MEDIA QUERIES SOCIALS(MEDIUM DEVICES) ======== */
@@ -145,12 +160,6 @@
     box-shadow: none;
     /* width: 90%; */
     /* margin-left: 7%; */
-  }
-
-
-  .booking-container {
-    background-color: #74cac0;
-
   }
 
 

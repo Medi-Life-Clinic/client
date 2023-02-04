@@ -177,7 +177,7 @@ const AdminComponent = () => {
 
   return (
     <>
-      <div className="global-admin-container">
+      <div className="admin-layout">
         <div className="main-heading">
           <h1>
             {/* {location.pathname === '/appointments' ? 'Your Appointments' : 'Meet our doctors'} */}
@@ -185,9 +185,8 @@ const AdminComponent = () => {
           </h1>
         </div>
 
-        <div className="map-container">
+        <div className="admin-section">
           {/* <div className='scrollable-container'> */}
-
           <section className="admin-appointments">
             <h2>Appointments</h2>
             {appointments.map((appointment) => {
