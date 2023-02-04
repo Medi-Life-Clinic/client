@@ -16,7 +16,7 @@ const Doctors = () => {
   const checkAvailability = async (event, returnedId) => {
     try {
       const response = await fetch(
-        "http://localhost:4001/api/appointment/check-availability",
+        "https://medi-life-clinic.herokuapp.com/api/appointment/check-availability",
         {
           method: "POST",
           headers: authHeaders,
@@ -46,7 +46,7 @@ const Doctors = () => {
 
     try {
       const response = await fetch(
-        "http://localhost:4001/api/appointment/book-appointment",
+        "https://medi-life-clinic.herokuapp.com/api/appointment/book-appointment",
         {
           method: "POST",
           headers: authHeaders,
@@ -68,7 +68,7 @@ const Doctors = () => {
   };
 
   useEffect(() => {
-     fetchDoctors().then((result) => {
+    fetchDoctors().then((result) => {
       setDoctors(result.data);
     });
     fetchUsers().then((result) => {
@@ -120,7 +120,7 @@ const Doctors = () => {
                     />
                     <button
                       onClick={(event) => checkAvailability(event, doctor._id)}
-                      className="booking-button" 
+                      className="booking-button"
                     >
                       Book Appointment
                     </button>
@@ -129,7 +129,7 @@ const Doctors = () => {
               );
             })}
           </section>
-          <ToastContainer 
+          <ToastContainer
             position="bottom-center"
             autoClose={3000}
             hideProgressBar={true}
@@ -147,4 +147,4 @@ const Doctors = () => {
   );
 };
 
-export default Doctors
+export default Doctors;

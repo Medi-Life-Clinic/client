@@ -10,7 +10,7 @@ export const authHeaders = {
 export const getAppointments = async () => {
   try {
     const response = await fetch(
-      "http://localhost:4001/api/appointment/get-all-by-user-id",
+      "https://medi-life-clinic.herokuapp.com/api/appointment/get-all-by-user-id",
       {
         method: "POST",
         headers: authHeaders,
@@ -30,7 +30,7 @@ export const getAppointments = async () => {
 export const getAllAppointments = async () => {
   try {
     const response = await fetch(
-      "http://localhost:4001/api/appointment/get-all",
+      "https://medi-life-clinic.herokuapp.com/api/appointment/get-all",
       {
         headers: authHeaders,
       }
@@ -45,9 +45,12 @@ export const getAllAppointments = async () => {
 // get all doctors
 export const fetchDoctors = async () => {
   try {
-    const response = await fetch("http://localhost:4001/api/doctor/get-all", {
-      headers: authHeaders,
-    });
+    const response = await fetch(
+      "https://medi-life-clinic.herokuapp.com/api/doctor/get-all",
+      {
+        headers: authHeaders,
+      }
+    );
     const responseData = await response.json();
     return responseData;
   } catch (err) {
@@ -58,9 +61,12 @@ export const fetchDoctors = async () => {
 // get all users
 export const fetchUsers = async () => {
   try {
-    const response = await fetch("http://localhost:4001/api/user/get-all", {
-      headers: authHeaders,
-    });
+    const response = await fetch(
+      "https://medi-life-clinic.herokuapp.com/api/user/get-all",
+      {
+        headers: authHeaders,
+      }
+    );
     const responseData = await response.json();
     return responseData;
   } catch (err) {

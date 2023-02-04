@@ -36,7 +36,7 @@ const AdminComponent = () => {
   const deleteAppointment = async (event, appointment) => {
     try {
       const response = await fetch(
-        "http://localhost:4001/api/appointment/delete-by-id",
+        "https://medi-life-clinic.herokuapp.com/api/appointment/delete-by-id",
         {
           method: "DELETE",
           headers: authHeaders,
@@ -63,7 +63,7 @@ const AdminComponent = () => {
   const deleteDoctor = async (event, doctor) => {
     try {
       const response = await fetch(
-        "http://localhost:4001/api/doctor/delete-by-id",
+        "https://medi-life-clinic.herokuapp.com/api/doctor/delete-by-id",
         {
           method: "DELETE",
           headers: authHeaders,
@@ -89,7 +89,7 @@ const AdminComponent = () => {
   const deleteUser = async (event, user) => {
     try {
       const response = await fetch(
-        "http://localhost:4001/api/user/delete-by-id",
+        "https://medi-life-clinic.herokuapp.com/api/user/delete-by-id",
         {
           method: "DELETE",
           headers: authHeaders,
@@ -115,7 +115,7 @@ const AdminComponent = () => {
   const checkAvailability = async (event, appointment) => {
     try {
       const response = await fetch(
-        "http://localhost:4001/api/appointment/check-availability",
+        "https://medi-life-clinic.herokuapp.com/api/appointment/check-availability",
         {
           method: "POST",
           headers: authHeaders,
@@ -143,7 +143,7 @@ const AdminComponent = () => {
   const upDateBooking = async (appointment) => {
     try {
       const response = await fetch(
-        "http://localhost:4001/api/appointment/update-by-id",
+        "https://medi-life-clinic.herokuapp.com/api/appointment/update-by-id",
         {
           method: "PUT",
           headers: authHeaders,

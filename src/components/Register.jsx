@@ -18,7 +18,7 @@ const Register = (props) => {
   const handleSubmit = (e) => {
     e.preventDefault(); // this stops the page from refreshing
 
-    fetch("http://localhost:4001/api/user/register", {
+    fetch("https://medi-life-clinic.herokuapp.com/api/user/register", {
       // this is the fetch request to the server
       method: "POST", // http method
       headers: {
@@ -46,38 +46,62 @@ const Register = (props) => {
 
   return (
     <>
-      <div className='register-box'>
-      <h1 className='card-title-register' data-testid="H1">Register</h1>
-        <div className='register-form card p-4'>
-         <form onSubmit={handleSubmit}>
-            <label type="text">
-             Name:
-            </label>
-            <input value={name} onChange={(e) => setName(e.target.value)} className='mb-4' type="text" name="name" placeholder="Full Name here" />
-            <label type="text">
-             Email:
-            </label>
-            <input value={email} onChange={(e) => setEmail(e.target.value)} className='mb-4' type="text" name="email" placeholder='Email address' />
-            <label type="text">
-             Password:
-            </label>
-            <input value={password} onChange={(e) => setPassword(e.target.value)} className='mb-4' type="password" name="password" placeholder='Password' />
-            <input className='mb-3 register-button' type="submit" value="REGISTER" data-testid="Submitbtn"/>
-            <Link to='/' className='anchor'>Already Registered? Click Here</Link>
+      <div className="register-box">
+        <h1 className="card-title-register" data-testid="H1">
+          Register
+        </h1>
+        <div className="register-form card p-4">
+          <form onSubmit={handleSubmit}>
+            <label type="text">Name:</label>
+            <input
+              value={name}
+              onChange={(e) => setName(e.target.value)}
+              className="mb-4"
+              type="text"
+              name="name"
+              placeholder="Full Name here"
+            />
+            <label type="text">Email:</label>
+            <input
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}
+              className="mb-4"
+              type="text"
+              name="email"
+              placeholder="Email address"
+            />
+            <label type="text">Password:</label>
+            <input
+              value={password}
+              onChange={(e) => setPassword(e.target.value)}
+              className="mb-4"
+              type="password"
+              name="password"
+              placeholder="Password"
+            />
+            <input
+              className="mb-3 register-button"
+              type="submit"
+              value="REGISTER"
+              data-testid="Submitbtn"
+            />
+            <Link to="/" className="anchor">
+              Already Registered? Click Here
+            </Link>
           </form>
         </div>
       </div>
       <ToastContainer
-          position="bottom-center"
-          autoClose={3000}
-          hideProgressBar={true}
-          newestOnTop={true}
-          closeOnClick
-          rtl={false}
-          draggable
-          pauseOnHover
-          theme="dark"
-        />
+        position="bottom-center"
+        autoClose={3000}
+        hideProgressBar={true}
+        newestOnTop={true}
+        closeOnClick
+        rtl={false}
+        draggable
+        pauseOnHover
+        theme="dark"
+      />
     </>
   );
 };
