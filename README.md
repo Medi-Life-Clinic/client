@@ -16,7 +16,7 @@
 
 
 ---
-### [Deployed Application](https://adam-deploy-test--silver-lebkuchen-3068d2.netlify.app/) ##
+### [Deployed Application](https://silver-lebkuchen-3068d2.netlify.app/) ##
 
 
 ### [Github Repository - Client](https://github.com/Medi-Life-Clinic/client.git) ##
@@ -262,8 +262,10 @@ Project-Management – Trello, Discord
 
 
 <br></br> 
-<h3>Tests</h3>
+
+## Testing Evidence
 <img align="center" width="100%" src="docs/Test-evidence-1.png">
+<img align="center" width="100%" src="docs/erkan-testing.png">
 <br></br>
 
 
