@@ -1,13 +1,13 @@
-.social-link{
-    color:  #74CAC0;
+.social-link {
+    color: #74CAC0;
     text-decoration: none;
-   
+
 }
 
-a :hover{
-    color:#000;
+a :hover {
+    color: #000;
     color: #2c6f66
-    }
+}
 
 .socials-box {
     display: flex;
@@ -16,11 +16,9 @@ a :hover{
     margin-bottom: 20px;
 }
 
-.socials-heading{
+.socials-heading {
     margin-top: 7%;
     color: white;
     display: flex;
     justify-content: center;
 }
-
-

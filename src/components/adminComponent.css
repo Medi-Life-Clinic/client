@@ -1,11 +1,25 @@
-.admin-appointments {
-  display: flex;
-  flex-direction: column;
+.admin-layout {
+  height: 98vh;
+  padding: 0.2rem;
+  box-sizing: border-box;
+}
+
+.admin-section {
+  flex-wrap: wrap;
   border-radius: 5px;
   box-shadow: 0 0 5px #74cac0;
   border: 5px;
-  padding: 0rem 1rem;
   margin-top: 1rem;
+  overflow-y: scroll;
+  height: 86.7vh;
+}
+
+.admin-appointments {
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0 0 5px #74cac0;
+  border: 5px;
+  padding: 1rem;
 }
 
 .admin-appointments h2 {
@@ -22,17 +36,15 @@
   box-shadow: 0 0 5px gray;
   border: 5px;
   font-size: 13px;
-  justify-content: space-between;
   display: flex;
+  justify-content: space-between;
   align-items: center;
   padding: 0.5rem 0rem;
-  width: 100%;
-  text-align: left;
+  height: 100%;
 }
 
 .single-appointment p {
   margin: 10px;
-  justify-content: left;
   width: 100%;
 }
 
@@ -49,14 +61,29 @@
   display: flex;
 }
 
-.map-container {
-  height: auto;
-  overflow-x: hidden;
-  overflow-y: auto;
+
+
+.update-picker {
+  margin-right: 1rem;
 }
 
-.scrollable-container {
-  /* height: 85vh; */
-  /* overflow: auto; */
-  /* overflow: hidden; */
+
+@media screen and (max-width: 800px) {
+  .admin-section {
+    justify-content: center;
+    height: 100%;
+    /* margin: 5%; */
+    box-shadow: none;
+    /* overflow: auto; */
+  }
+
+  .admin-appointment {
+    width: 90%;
+    overflow: auto;
+    /* margin; */
+  }
+
+  .admin-heading h1 {
+    font-size: 20px;
+  }
 }
