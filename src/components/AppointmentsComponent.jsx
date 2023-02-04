@@ -19,7 +19,7 @@ export const AppointmentsComponent = () => {
     // const localAdmin = localStorage.getItem("isAdmin");
     try {
       const response = await fetch(
-        "http://localhost:4001/api/appointment/delete-by-id",
+        "https://medi-life-clinic.herokuapp.com/api/appointment/delete-by-id",
         {
           method: "DELETE",
           headers: {
@@ -48,7 +48,7 @@ export const AppointmentsComponent = () => {
     <>
       <div className="appointments-layout">
         <div className="main-heading">
-          <h1>Your Appointments</h1>
+          <h1 data-testid="H1">Your Appointments</h1>
         </div>
 
         <section className="appointments-section">

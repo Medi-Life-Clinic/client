@@ -120,12 +120,14 @@ input:focus {
 
   .login-form {
     width: 300px;
-    margin-left: 1.8rem;
+    /* margin-left: 1.8rem; */
   }
 
   .card-title-login {
     font-size: 1.2rem;
     width: 100%;
+    position: absolute;
+    margin-right: 50%;
   }
 
 

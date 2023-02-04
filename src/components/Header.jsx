@@ -6,12 +6,14 @@ import './header.css'
 const Header = () => {
   return (
     <>
+    <div className='headerContainer'>
       <div className='header'>
         <GiHospitalCross className='' />
         <h1>Medi-Life</h1>
       </div>
       <div className='header'>
         <p>Your Gateway to Healthcare </p>
+      </div>
       </div>
     </>
   )

@@ -18,7 +18,7 @@ const Register = (props) => {
   const handleSubmit = (e) => {
     e.preventDefault(); // this stops the page from refreshing
 
-    fetch("http://localhost:4001/api/user/register", {
+    fetch("https://medi-life-clinic.herokuapp.com/api/user/register", {
       // this is the fetch request to the server
       method: "POST", // http method
       headers: {
@@ -29,7 +29,7 @@ const Register = (props) => {
       body: JSON.stringify({
         // this is the data we are sending to the server
         name: name,
-        email: email,
+        email: email.toLowerCase(),
         password: password,
       }),
     })
@@ -46,20 +46,10 @@ const Register = (props) => {
 
   return (
     <>
-      <ToastContainer //This package creates a notifications for the user.
-        position="bottom-center"
-        autoClose={5000}
-        hideProgressBar={false}
-        newestOnTop={false}
-        closeOnClick
-        rtl={false}
-        pauseOnFocusLoss
-        draggable
-        pauseOnHover
-        theme="dark"
-      />
       <div className="register-box">
-        <h1 className="card-title-register">Register</h1>
+        <h1 className="card-title-register" data-testid="H1">
+          Register
+        </h1>
         <div className="register-form card p-4">
           <form onSubmit={handleSubmit}>
             <label type="text">Name:</label>
@@ -93,6 +83,7 @@ const Register = (props) => {
               className="mb-3 register-button"
               type="submit"
               value="REGISTER"
+              data-testid="Submitbtn"
             />
             <Link to="/" className="anchor">
               Already Registered? Click Here
@@ -100,6 +91,17 @@ const Register = (props) => {
           </form>
         </div>
       </div>
+      <ToastContainer
+        position="bottom-center"
+        autoClose={3000}
+        hideProgressBar={true}
+        newestOnTop={true}
+        closeOnClick
+        rtl={false}
+        draggable
+        pauseOnHover
+        theme="dark"
+      />
     </>
   );
 };

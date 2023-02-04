@@ -36,7 +36,7 @@ const AdminComponent = () => {
   const deleteAppointment = async (event, appointment) => {
     try {
       const response = await fetch(
-        "http://localhost:4001/api/appointment/delete-by-id",
+        "https://medi-life-clinic.herokuapp.com/api/appointment/delete-by-id",
         {
           method: "DELETE",
           headers: authHeaders,
@@ -63,7 +63,7 @@ const AdminComponent = () => {
   const deleteDoctor = async (event, doctor) => {
     try {
       const response = await fetch(
-        "http://localhost:4001/api/doctor/delete-by-id",
+        "https://medi-life-clinic.herokuapp.com/api/doctor/delete-by-id",
         {
           method: "DELETE",
           headers: authHeaders,
@@ -89,7 +89,7 @@ const AdminComponent = () => {
   const deleteUser = async (event, user) => {
     try {
       const response = await fetch(
-        "http://localhost:4001/api/user/delete-by-id",
+        "https://medi-life-clinic.herokuapp.com/api/user/delete-by-id",
         {
           method: "DELETE",
           headers: authHeaders,
@@ -115,7 +115,7 @@ const AdminComponent = () => {
   const checkAvailability = async (event, appointment) => {
     try {
       const response = await fetch(
-        "http://localhost:4001/api/appointment/check-availability",
+        "https://medi-life-clinic.herokuapp.com/api/appointment/check-availability",
         {
           method: "POST",
           headers: authHeaders,
@@ -143,7 +143,7 @@ const AdminComponent = () => {
   const upDateBooking = async (appointment) => {
     try {
       const response = await fetch(
-        "http://localhost:4001/api/appointment/update-by-id",
+        "https://medi-life-clinic.herokuapp.com/api/appointment/update-by-id",
         {
           method: "PUT",
           headers: authHeaders,
@@ -177,7 +177,7 @@ const AdminComponent = () => {
 
   return (
     <>
-      <div className="global-admin-container">
+      <div className="admin-layout">
         <div className="main-heading">
           <h1>
             {/* {location.pathname === '/appointments' ? 'Your Appointments' : 'Meet our doctors'} */}
@@ -185,9 +185,8 @@ const AdminComponent = () => {
           </h1>
         </div>
 
-        <div className="map-container">
+        <div className="admin-section">
           {/* <div className='scrollable-container'> */}
-
           <section className="admin-appointments">
             <h2>Appointments</h2>
             {appointments.map((appointment) => {
@@ -234,7 +233,7 @@ const AdminComponent = () => {
           </section>
 
           <section className="admin-appointments">
-            <h2>Doctors</h2>
+            <h2 data-testid="h2-doctors">Doctors</h2>
             {doctors.map((doctor) => {
               return (
                 <div className="single-appointment">
@@ -257,7 +256,7 @@ const AdminComponent = () => {
           </section>
 
           <section className="admin-appointments">
-            <h2>Users</h2>
+            <h2 data-testid="h2-users">Users</h2>
             {users.map((user) => {
               return (
                 <div className="single-appointment">
