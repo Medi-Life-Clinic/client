@@ -151,7 +151,7 @@
   }
 
   /* hamburger menu */
-  .hamburger {
+  /* .hamburger {
     display: inline;
     background-color: transparent;
     border: none;
@@ -169,5 +169,23 @@
     flex-direction: column;
     justify-content: space-evenly;
 
+  } */
+  .hamburger {
+    display: inline-block;
+    background-color: transparent;
+    border: none;
+    align-items: center;
+    margin-right: 1rem;
+    font-size: 35px;
+  }
+  
+  .menu {
+    display: none;
+    flex-direction: column;
+    justify-content: space-evenly;
+  }
+  
+  .menu.show {
+    display: flex;
   }
 }
