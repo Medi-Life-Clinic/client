@@ -75,9 +75,6 @@
   display: none;
 }
 
-/* ======== MEDIA QUERIES (MEDIUM DEVICES) ======== */
-@media screen and (max-width: 1024px) {}
-
 /* ======== MEDIA QUERIES (SMALL DEVICES) ======== */
 @media screen and (max-width: 800px) {
   .main {
@@ -91,6 +88,7 @@
   .page-layout {
     display: flex;
     flex-direction: column;
+    width: 100%;
   }
 
   .sidebar {
@@ -158,6 +156,7 @@
     align-items: center;
     margin-right: 1rem;
     font-size: 35px;
+    color: white;
   }
   
   .menu {

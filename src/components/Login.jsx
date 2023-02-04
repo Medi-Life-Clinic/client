@@ -30,7 +30,7 @@ export const Login = () => {
           },
           body: JSON.stringify({
             // this is the data we are sending to the server
-            email: email,
+            email: email.toLowerCase(),
             password: password,
           }),
         }

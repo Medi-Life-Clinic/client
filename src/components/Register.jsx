@@ -29,7 +29,7 @@ const Register = (props) => {
       body: JSON.stringify({
         // this is the data we are sending to the server
         name: name,
-        email: email,
+        email: email.toLowerCase(),
         password: password,
       }),
     })

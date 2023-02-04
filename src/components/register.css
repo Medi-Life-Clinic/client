@@ -114,7 +114,6 @@ input:focus {
 /* --MEDIA QUERIES (SMALL DEVICES)-- */
 @media screen and (max-width: 600px) {
   .card-title {
-    /*TO DO > Center the box without losing the welcome*/
     margin-left: 1%;
 
   }
@@ -122,11 +121,17 @@ input:focus {
 
   .register-form {
     width: 300px;
-    margin-left: 1.8rem;
+
+  }
+
+  .register-form-card {
+    margin-bottom: 2rem;
   }
 
   .card-title-register {
     font-size: 1.2rem;
+    position: absolute;
+    margin-right: 50%;
   }
 
   .social-icons,

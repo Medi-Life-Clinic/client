@@ -58,11 +58,11 @@
     justify-content: center;
     height: 100%;
     box-shadow: none;
+    overflow: auto;
   }
 
   .appointment {
     width: 90%;
-    overflow: auto;
     /* margin; */
   }
 
