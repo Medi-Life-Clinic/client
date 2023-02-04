@@ -57,9 +57,7 @@
   .appointments-section {
     justify-content: center;
     height: 100%;
-    /* margin: 5%; */
     box-shadow: none;
-    /* overflow: auto; */
   }
 
   .appointment {
