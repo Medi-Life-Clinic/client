@@ -1,7 +1,6 @@
 /* Font Import */
 @import url("https://fonts.googleapis.com/css2?family=Jost:ital,wght@0,400;0,700;1,400&display=swap");
 
-
 :root {
   font-size: 18px;
   line-height: 24px;
@@ -30,4 +29,13 @@
 
 * {
   font-family: "Jost", sans-serif;
+}
+
+/* ======== MEDIA QUERIES SOCIALS(MEDIUM DEVICES) ======== */
+@media screen and (max-width: 800px) {
+  .main-heading h1 {
+    width: 90%;
+    margin: 5%;
+    text-align: center;
+  }
 }

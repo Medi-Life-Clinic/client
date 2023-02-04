@@ -51,8 +51,6 @@
   width: 100%;
   background-color: none;
   text-align: center;
-  margin-bottom: 3%;
-  background-color: #74cac0;
 
 }
 
@@ -108,8 +106,8 @@
 }
 
 .body {
-  border-radius: 5px;
-  box-shadow: 0 0 4px #74cac0;
+  /* border-radius: 5px;
+  box-shadow: 0 0 5px #74cac0; */
   width: 100%;
 }
 
@@ -119,12 +117,17 @@
     display: none;
   }
 
+
+  /* width adjust */
   .doctors-layout .box {
     display: flex;
     flex-direction: column;
     align-items: center;
     width: 90%;
-    margin-bottom: 4rem;
+    /* margin-bottom: 1rem; */
+    height: auto
+    /* margin-left: 5%; */
+    /* margin-right: 5%; */
   }
 
   .doctors-layout .imgBx {
@@ -140,8 +143,8 @@
     background-color: #0a4b59;
     overflow: visible;
     box-shadow: none;
-    width: 90%;
-    margin-left: 7%;
+    /* width: 90%; */
+    /* margin-left: 7%; */
   }
 
 
@@ -150,23 +153,9 @@
 
   }
 
-  .main-heading h1 {
-    width: 90%;
-    margin-left: 5%;
-    margin-top: 5%;
-    text-align: center;
 
+  .doctors-layout {
+    overflow-y: auto;
+    margin-bottom: 1rem;
   }
-}
-
-/* ======== MEDIA QUERIES (SMALL DEVICES) ======== */
-
-@media screen and (max-width: 460px) {
-  .doctors-layout .doctors {
-
-    background-color: #0a4b59;
-    overflow: visible;
-    box-shadow: none;
-  }
-
 }

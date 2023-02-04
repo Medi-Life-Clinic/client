@@ -56,15 +56,19 @@
     box-shadow: none;
 }
 
-@media screen and (max-width: 1050px) {
+@media screen and (max-width: 800px) {
     .appointments-section {
         justify-content: center;
-        overflow: auto;
+        height: 100%;
+        /* margin: 5%; */
+        box-shadow: none;
+        /* overflow: auto; */
     }
 
     .appointment {
-        width: 85%;
+        width: 90%;
         overflow: auto;
+        /* margin; */
     }
 
     .appointment-heading h1 {
