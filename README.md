@@ -1,4 +1,4 @@
-# T3A2-A - Full Stack App 
+# T3A2-B - Full Stack App - Client
 
 
 <img align="right" width="100" height="100" src="./docs/calogo.png">
