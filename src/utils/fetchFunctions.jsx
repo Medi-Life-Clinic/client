@@ -2,18 +2,18 @@ import React, {useEffect, useState} from "react";
 
 
 // variable that stores headers for requests
-export const authHeaders = {
+export const authHeaders = () => ({
     'Content-Type': 'application/json',
     'Accept': 'application/json',
     'Authorization': "Bearer " + localStorage.getItem("token"),
-}
+})
 
 // get apointments by user id
 export const getAppointments = async () => {
     try {
         const response = await fetch("http://localhost:4001/api/appointment/get-all-by-user-id", {
             method: 'POST',
-            headers: authHeaders,
+            headers: authHeaders(),
             body: JSON.stringify({
                 userId: localStorage.getItem("userId")
             })
@@ -29,7 +29,7 @@ export const getAppointments = async () => {
 export const getAllAppointments = async () => {
     try {
         const response = await fetch("http://localhost:4001/api/appointment/get-all", {
-            headers: authHeaders,
+            headers: authHeaders(),
         });
         const responseData = await response.json();
         return responseData
@@ -43,7 +43,7 @@ export const getAllAppointments = async () => {
 export const fetchDoctors = async () => {
     try {
         const response = await fetch("http://localhost:4001/api/doctor/get-all", {
-            headers: authHeaders,
+            headers: authHeaders(),
         });
         const responseData = await response.json();
         return responseData
@@ -57,7 +57,7 @@ export const fetchDoctors = async () => {
 export const fetchUsers = async () => {
     try {
         const response = await fetch("http://localhost:4001/api/user/get-all", {
-            headers: authHeaders,
+            headers: authHeaders(),
         });
         const responseData = await response.json();
         return responseData
