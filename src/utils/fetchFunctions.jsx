@@ -1,7 +1,6 @@
-import React, {useEffect, useState} from "react";
-
-
+import { toast } from "react-toastify";
 // variable that stores headers for requests
+
 export const authHeaders = () => ({
     'Content-Type': 'application/json',
     'Accept': 'application/json',
@@ -38,7 +37,6 @@ export const getAllAppointments = async () => {
     }
 };
 
-
 // get all doctors
 export const fetchDoctors = async () => {
     try {
@@ -52,7 +50,6 @@ export const fetchDoctors = async () => {
     }
 };
 
-
 // get all users
 export const fetchUsers = async () => {
     try {
@@ -65,3 +62,4 @@ export const fetchUsers = async () => {
         console.log(err);
     }
 }
+

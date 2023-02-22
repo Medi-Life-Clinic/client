@@ -1,64 +1,72 @@
-.appointments-section {
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    border-radius: 5px;
-    box-shadow: 0 0 5px #74cac0;
-    border: 5px;
-    margin-top: 1rem;
-    /* overflow: scroll; */
-    height: 112%;
-    /* overflow-x: hidden; */
-    
+/* THIS HEIGHT MATCHES THE SIDE BAR  */
+.appointments-layout {
+  padding: 0.2rem;
+  box-sizing: border-box;
+  height: 98vh;
 }
+
+.appointments-section {
+  display: flex;
+  flex-wrap: wrap;
+  border-radius: 5px;
+  box-shadow: 0 0 5px #74cac0;
+  border: 5px;
+  margin-top: 1rem;
+  overflow-y: scroll;
+  height: 86.7vh;
+}
+
 .appointment {
-    background-color: #74cac0;
-    color: black;
-    margin: 3%;
-    border-radius: 5px;
-    box-shadow: 0 0 5px gray;
-    border: 5px;
-    font-size: 13px;
-    justify-content: center;
-    width: 27%;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    height: 26vh;
-    min-width: 250px;
+  background-color: #74cac0;
+  color: black;
+  margin: 3%;
+  border-radius: 5px;
+  box-shadow: 0 0 5px gray;
+  border: 5px;
+  font-size: 13px;
+  justify-content: center;
+  width: 27%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 100%;
+  min-width: 250px;
+  padding: 1rem;
+  max-height: 40%;
 }
 
 .appointment-button {
-    display: flex;
-    justify-content: center;
-    background-color: #0A4B59;
-    color: white;
-    margin: 3%;
-    border-radius: 5px;
-    box-shadow: 0 0 5px gray;
-    border: 5px;
-    font-size: 100%;
-    padding: 13px;
+  display: flex;
+  justify-content: center;
+  background-color: #0a4b59;
+  color: white;
+  margin: 3%;
+  border-radius: 5px;
+  box-shadow: 0 0 5px gray;
+  border: 5px;
+  font-size: 100%;
+  padding: 13px;
 }
 
+.body {
+  background-color: #0a4b59;
+  box-shadow: none;
+}
 
-/* ////////// need this explained to me */
+@media screen and (max-width: 800px) {
+  .appointments-section {
+    justify-content: center;
+    height: 100%;
+    box-shadow: none;
+    overflow: auto;
+  }
 
- .body {
-     background-color: #0a4b59;
-     box-shadow: none;
- }
- 
- @media screen and (max-width: 1050px) {
-        .appointments-section {
-            justify-content: center;
-            overflow: auto;
-        }
-        .appointment {
-            width: 85%;
-            overflow: auto;
-        }
-        .appointment-heading h1 {
-            font-size: 20px;
-        }
-    }     
+  .appointment {
+    width: 90%;
+    /* margin; */
+  }
+
+  .appointment-heading h1 {
+    font-size: 20px;
+  }
+}

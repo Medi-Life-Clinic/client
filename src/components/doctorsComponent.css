@@ -1,16 +1,20 @@
 .doctors-layout {
-  /* height: 94vh; */
+  height: 98vh;
+  overflow-y: hidden;
+  padding: 0.2rem;
+  box-sizing: border-box;
 }
 
+
 .doctors-layout .doctors {
-  height: 100%;
   display: flex;
   background-color: #0a4b59;
-  overflow-y: auto;
   justify-content: space-evenly;
   flex-wrap: wrap;
   border-radius: 5px;
   box-shadow: 0 0 5px #74cac0;
+  height: 86.7vh;
+  padding: 1rem;
 }
 
 .doctors-layout .box {
@@ -20,10 +24,9 @@
   flex-direction: column;
   border-radius: 5px;
   box-shadow: 0 0 5px gray;
-  margin: 1rem 0;
-  min-width: 400px;
+  /* margin: 1rem 0; */
   width: 24rem;
-}
+  height: auto;}
 
 .doctors-layout .box p {
   text-align: center;
@@ -34,8 +37,6 @@
   justify-content: center;
   margin: 5%;
   padding: 0;
-  width: 90%;
-  height: 90%;
 }
 
 
@@ -48,13 +49,25 @@
   width: 100%;
   background-color: none;
   text-align: center;
-  margin-bottom: 3%;
+
 }
 
 .doctors-layout .booking-button {
   background-color: #0a4b59;
   color: white;
   margin: 3%;
+  border-radius: 5px;
+  box-shadow: 0 0 5px gray;
+  border: 5px;
+  font-size: 13px;
+  padding: 16px;
+  width: 39%;
+}
+
+.time-date-selector {
+  background-color: white;
+  color: white;
+  margin: 2%;
   border-radius: 5px;
   box-shadow: 0 0 5px gray;
   border: 5px;
@@ -80,6 +93,8 @@
   text-align: center;
   padding-left: 10px;
   padding: 0px 20px 0px 20px;
+  margin: 2rem 2rem;
+
 }
 
 .doctors-layout .doctor-image {
@@ -88,59 +103,58 @@
   position: relative;
 }
 
-.date-picker {
-  margin-bottom: 3%;
+.body {
+  width: 100%;
+  height: 100%;
 }
 
-.body {
-  border-radius: 5px;
-  box-shadow: 0 0 4px #74cac0;
-  height: auto;
-  width: 100%;
+
+@media screen and (max-width:1651px) {
+.box {
+  margin: 1rem 0;
+}
+
+
+.doctors-layout .doctors {
+  overflow-y: scroll;
+}
 }
 
 /* ======== MEDIA QUERIES SOCIALS(MEDIUM DEVICES) ======== */
-@media screen and (max-width: 1180px) {
-  .doctors-layout .box {
-    width: 75%;
-  }
-}
-
-/* ======== MEDIA QUERIES (SMALL DEVICES) ======== */
-
 @media screen and (max-width: 800px) {
-  .doctors-layout .doctor-heading {
-    width: 95%;
+  *::-webkit-scrollbar {
+    display: none;
   }
 
-  .doctors-layout .button {
-    margin: 0;
+
+  /* width adjust */
+  .doctors-layout .box {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 90%;
+    height: auto
+  }
+
+  .doctors-layout .imgBx {
+    display: flex;
+    position: relative;
+    justify-content: center;
+    margin: 5%;
+    padding: 0;
+  }
+
+  .doctors-layout .doctors {
+    display: flex;
+    background-color: #0a4b59;
+    overflow: auto;
+    box-shadow: none;
     padding: 0;
   }
 
 
-  .doctors-layout .body {
-    width: auto
-    /* height: 75vh; */
-    margin: 2rem;
+  .doctors-layout {
+    overflow-y: auto;
+    margin-bottom: 1rem;
   }
-
-  .doctors-layout .box {
-    /* margin-left: 2rem !important; */
-    width: 75%;
-    /* width: 100%; */
-    /* margin-left: 1rem; */
-  }
-
-  .doctors::-webkit-scrollbar {
-    display: none;
-  }
-  
-  /* probably should move this to main */
-  .main-heading {
-  margin-top: 1rem;
-    margin: 1rem;
-  }
-  } 
-  
-  
+}

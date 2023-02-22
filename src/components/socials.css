@@ -1,26 +1,29 @@
-.social-link{
-    color:  #74CAC0;
-    text-decoration: none;
-   
+.social-link {
+  color: #74cac0;
+  text-decoration: none;
 }
 
-a :hover{
-    color:#000;
-    color: #2c6f66
-    }
+a :hover {
+  color: #000;
+  color: #2c6f66;
+}
 
 .socials-box {
-    display: flex;
-    flex-direction: row;
-    width: 100%;
-    margin-bottom: 20px;
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  margin-bottom: 20px;
 }
 
-.socials-heading{
-    margin-top: 7%;
-    color: white;
-    display: flex;
-    justify-content: center;
+.socials-heading {
+  margin-top: 7%;
+  color: white;
+  display: flex;
+  justify-content: center;
 }
 
-
+@media screen and (max-width: 600px) {
+  .socials-container {
+    margin-top: 15%;
+  }
+}

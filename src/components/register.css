@@ -1,10 +1,9 @@
-
 .register-button {
-    width: 100%;
-    background-color: #0A4B59;
-    color: rgb(245, 244, 244);
-    border-color: #0A4B59;
-    font-size: 16px;
+  width: 100%;
+  background-color: #0A4B59;
+  color: rgb(245, 244, 244);
+  border-color: #0A4B59;
+  font-size: 16px;
 }
 
 .register-button:hover {
@@ -12,122 +11,129 @@
 }
 
 .register-form {
-    width: 400px;
-   
-  }
-  
- .anchor {
-    color: black;
-    text-decoration: underline;
-    font-size: 16px;
- }
-  .card-title-register {
-    font-size: 1.5rem;
-    font-weight: bold;
-    background-color: rgb(182, 9, 9);
-    color: rgb(255, 255, 255) !important;
-    max-width: max-content;
-    padding: 6px 15px;
-    border-bottom-left-radius: 10px;
-    margin-block-start: -470px;
-    margin-inline: -70px;
-    z-index: 10;
-  }
-  
-  label {
-    width: 100%;
-    font-size: 16px;
-    color: black;
-    margin-bottom: 10px;
-  
-  }
+  width: 400px;
 
-  input {
-    width: 100%;
-    border-radius: 0;
-    border: 1px solid rgba(128, 128, 128, 0.438);
-    height: 40px;
-    text-indent: 10px;
-    border-radius: 5px;
-    
-  }
+}
 
-  input:focus {
-    outline: none;
-    box-shadow: none;
-    border: 1px solid gray;
-  }
-  .standard-text {
-    font-size: 1rem;
-  }
-  
-  .card {
-    box-shadow: 0 0 10px gray;
-    border: .8rem solid !important;
-    border-color: #74CAC0 !important;
-  
-  }
-  
-  .register-box {
-    height: 100vh;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin-bottom: -26vh;
-    margin-top: -20vh;
-  
-  }
-  
- 
+.anchor {
+  color: black;
+  text-decoration: underline;
+  font-size: 16px;
+}
 
-  .register-box {
-    background-color: #0A4B59;
-    
-  }
+.card-title-register {
+  font-size: 1.5rem;
+  font-weight: bold;
+  background-color: rgb(182, 9, 9);
+  color: rgb(255, 255, 255) !important;
+  max-width: max-content;
+  padding: 6px 15px;
+  border-bottom-left-radius: 10px;
+  margin-block-start: -470px;
+  margin-inline: -70px;
+  z-index: 10;
+}
 
-  .socials-box {
-    color: #9DD9C8;
-    font-size: 40px;
-    background-color: #0A4B59;
-    justify-content: center;
-    align-items: center;
-    display: flex;
-  }
- 
-  .social-icons {
-    margin-right: 7%;
-    margin-top: 6%;
-    margin-left: 7%;
-  }
+label {
+  width: 100%;
+  font-size: 16px;
+  color: black;
+  margin-bottom: 10px;
+
+}
+
+input {
+  width: 100%;
+  border-radius: 0;
+  border: 1px solid rgba(128, 128, 128, 0.438);
+  height: 40px;
+  text-indent: 10px;
+  border-radius: 5px;
+
+}
+
+input:focus {
+  outline: none;
+  box-shadow: none;
+  border: 1px solid gray;
+}
+
+.standard-text {
+  font-size: 1rem;
+}
+
+.card {
+  box-shadow: 0 0 10px gray;
+  border: .8rem solid !important;
+  border-color: #74CAC0 !important;
+
+}
+
+.register-box {
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: -26vh;
+  margin-top: -20vh;
+
+}
 
 
 
-  /* --MEDIA QUERIES (MEDIUM DEVICES)-- */
+.register-box {
+  background-color: #0A4B59;
+
+}
+
+.socials-box {
+  color: #9DD9C8;
+  font-size: 40px;
+  background-color: #0A4B59;
+  justify-content: center;
+  align-items: center;
+  display: flex;
+}
+
+.social-icons {
+  margin-right: 7%;
+  margin-top: 6%;
+  margin-left: 7%;
+}
+
+
+
+/* --MEDIA QUERIES (MEDIUM DEVICES)-- */
 @media screen and (max-width: 1024px) {
   header {
-      height: 68vh;
+    height: 68vh;
   }
-  }
-  
+}
+
 
 /* --MEDIA QUERIES (SMALL DEVICES)-- */
 @media screen and (max-width: 600px) {
-  .card-title { 
-    /*TO DO > Center the box without losing the welcome*/
-   margin-left: 1%;
+  .card-title {
+    margin-left: 1%;
 
   }
 
 
   .register-form {
     width: 300px;
-    margin-left: 1.8rem;
+
+  }
+
+  .register-form-card {
+    margin-bottom: 2rem;
   }
 
   .card-title-register {
     font-size: 1.2rem;
+    position: absolute;
+    margin-right: 50%;
   }
-  
+
   .social-icons,
   .socials-box {
     margin-left: auto;

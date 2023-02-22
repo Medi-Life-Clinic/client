@@ -6,6 +6,8 @@ import {
   fetchUsers,
   authHeaders,
 } from "../utils/fetchFunctions";
+import { DatePicker } from "antd";
+import dayjs from "dayjs";
 import "./adminComponent.css";
 
 const AdminComponent = () => {
@@ -14,6 +16,9 @@ const AdminComponent = () => {
   const [appointments, setAppointments] = useState([]);
   const [doctors, setDoctors] = useState([]);
   const [users, setUsers] = useState([]);
+  const [date, setDate] = useState();
+  const [time, setTime] = useState();
+  const localAdmin = localStorage.getItem("isAdmin");
 
   useEffect(() => {
     getAllAppointments().then((result) => {
@@ -31,12 +36,13 @@ const AdminComponent = () => {
   const deleteAppointment = async (event, appointment) => {
     try {
       const response = await fetch(
-        "http://localhost:4001/api/appointment/delete-by-id",
+        "https://medi-life-clinic.herokuapp.com/api/appointment/delete-by-id",
         {
-          method: "POST",
+          method: "DELETE",
           headers: authHeaders,
           body: JSON.stringify({
             id: appointment._id,
+            isAdmin: localAdmin,
           }),
         }
       );
@@ -57,17 +63,17 @@ const AdminComponent = () => {
   const deleteDoctor = async (event, doctor) => {
     try {
       const response = await fetch(
-        "http://localhost:4001/api/doctor/delete-by-id",
+        "https://medi-life-clinic.herokuapp.com/api/doctor/delete-by-id",
         {
-          method: "POST",
+          method: "DELETE",
           headers: authHeaders,
           body: JSON.stringify({
             id: doctor._id,
+            isAdmin: localAdmin,
           }),
         }
       );
       const responseData = await response.json();
-      console.log(responseData);
       if (responseData.success == true) {
         const updatedDoctors = doctors.filter(
           (doctor) => doctor._id !== responseData.data._id
@@ -77,24 +83,23 @@ const AdminComponent = () => {
       }
     } catch (error) {
       toast.error("Error Deleting Doctor");
-      console.log(error);
     }
   };
 
   const deleteUser = async (event, user) => {
     try {
       const response = await fetch(
-        "http://localhost:4001/api/user/delete-by-id",
+        "https://medi-life-clinic.herokuapp.com/api/user/delete-by-id",
         {
-          method: "POST",
+          method: "DELETE",
           headers: authHeaders,
           body: JSON.stringify({
             id: user._id,
+            isAdmin: localAdmin,
           }),
         }
       );
       const responseData = await response.json();
-      console.log(responseData);
       if (responseData.success == true) {
         const updatedUsers = users.filter(
           (user) => user._id !== responseData.data._id
@@ -104,16 +109,75 @@ const AdminComponent = () => {
       }
     } catch (error) {
       toast.error("Error Deleting User");
-      console.log(error);
     }
   };
-  console.log(appointments);
-  console.log(doctors);
-  console.log(users);
+
+  const checkAvailability = async (event, appointment) => {
+    try {
+      const response = await fetch(
+        "https://medi-life-clinic.herokuapp.com/api/appointment/check-availability",
+        {
+          method: "POST",
+          headers: authHeaders,
+          body: JSON.stringify({
+            doctorId: appointment.doctorId,
+            date: date,
+            time: time,
+          }),
+        }
+      );
+
+      const result = await response.json();
+
+      if (result.success) {
+        upDateBooking(appointment);
+      } else {
+        toast.error(result.message);
+      }
+    } catch (err) {
+      toast.error("Something went wrong");
+    }
+  };
+
+  // Update Booking
+  const upDateBooking = async (appointment) => {
+    try {
+      const response = await fetch(
+        "https://medi-life-clinic.herokuapp.com/api/appointment/update-by-id",
+        {
+          method: "PUT",
+          headers: authHeaders,
+          body: JSON.stringify({
+            id: appointment._id,
+            date: date,
+            time: time,
+            isAdmin: localAdmin,
+          }),
+        }
+      );
+      const responseData = await response.json();
+      if (responseData.success == true) {
+        const updatedAppointments = appointments.filter(
+          (appointment) => appointment._id !== responseData.data._id
+        );
+        setAppointments(updatedAppointments);
+        toast.success("Booking Updated Successfully");
+      }
+    } catch (error) {
+      toast.error("Error Updating Booking");
+    }
+  };
+
+  // DatePicker
+  const onChange = (value, dateString) => {
+    const dateSplit = dateString.split(" ")[0];
+    const timeSplit = dateString.split(" ")[1];
+    return setDate(dateSplit), setTime(timeSplit);
+  };
 
   return (
     <>
-      <div className="global-admin-container">
+      <div className="admin-layout">
         <div className="main-heading">
           <h1>
             {/* {location.pathname === '/appointments' ? 'Your Appointments' : 'Meet our doctors'} */}
@@ -121,9 +185,8 @@ const AdminComponent = () => {
           </h1>
         </div>
 
-        <div className="map-container">
+        <div className="admin-section">
           {/* <div className='scrollable-container'> */}
-
           <section className="admin-appointments">
             <h2>Appointments</h2>
             {appointments.map((appointment) => {
@@ -134,6 +197,28 @@ const AdminComponent = () => {
                   <p>Specialization: {appointment.doctorInfo.specialization}</p>
                   <p>Date: {appointment.date}</p>
                   <p>Time: {appointment.time}</p>
+                  {/* THIS HAS TO CHANGE CANNOT NEST DatePicker in <p> tag */}
+                  <p>
+                    <DatePicker
+                      className="update-picker"
+                      placeholder="Update Booking Time"
+                      format="DD-MM-YYYY HH:mm"
+                      onChange={onChange}
+                      minuteStep={60}
+                      disabledHours={() => [
+                        0, 1, 2, 3, 4, 5, 6, 7, 8, 17, 18, 19, 20, 21, 22, 23,
+                        24,
+                      ]}
+                      hideDisabledOptions={true}
+                      showTime={{ defaultValue: dayjs("09:00", "HH:mm") }}
+                    />
+                  </p>
+                  <button
+                    onClick={(event) => checkAvailability(event, appointment)}
+                    className="admin-appointment-button"
+                  >
+                    Update Appointment
+                  </button>
                   <section className="button-section">
                     <button
                       className="admin-appointment-button"
@@ -148,7 +233,7 @@ const AdminComponent = () => {
           </section>
 
           <section className="admin-appointments">
-            <h2>Doctors</h2>
+            <h2 data-testid="h2-doctors">Doctors</h2>
             {doctors.map((doctor) => {
               return (
                 <div className="single-appointment">
@@ -171,7 +256,7 @@ const AdminComponent = () => {
           </section>
 
           <section className="admin-appointments">
-            <h2>Users</h2>
+            <h2 data-testid="h2-users">Users</h2>
             {users.map((user) => {
               return (
                 <div className="single-appointment">
