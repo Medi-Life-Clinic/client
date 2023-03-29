@@ -1,4 +1,5 @@
 import { toast } from "react-toastify";
+
 // variable that stores headers for requests
 export const authHeaders = () => ({
   'Content-Type': 'application/json',
