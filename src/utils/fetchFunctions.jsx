@@ -1,10 +1,10 @@
 import { toast } from "react-toastify";
-// variable that stores headers for requests
 
+// variable that stores headers for requests
 export const authHeaders = () => ({
-    'Content-Type': 'application/json',
-    'Accept': 'application/json',
-    'Authorization': "Bearer " + localStorage.getItem("token"),
+  'Content-Type': 'application/json',
+  'Accept': 'application/json',
+  'Authorization': "Bearer " + localStorage.getItem("token"),
 })
 
 // get apointments by user id
@@ -14,7 +14,7 @@ export const getAppointments = async () => {
       "https://medi-life-clinic.herokuapp.com/api/appointment/get-all-by-user-id",
       {
         method: "POST",
-        headers: authHeaders,
+        headers: authHeaders(),
         body: JSON.stringify({
           userId: localStorage.getItem("userId"),
         }),
@@ -33,7 +33,7 @@ export const getAllAppointments = async () => {
     const response = await fetch(
       "https://medi-life-clinic.herokuapp.com/api/appointment/get-all",
       {
-        headers: authHeaders,
+        headers: authHeaders(),
       }
     );
     const responseData = await response.json();
@@ -49,7 +49,7 @@ export const fetchDoctors = async () => {
     const response = await fetch(
       "https://medi-life-clinic.herokuapp.com/api/doctor/get-all",
       {
-        headers: authHeaders,
+        headers: authHeaders(),
       }
     );
     const responseData = await response.json();
@@ -65,7 +65,7 @@ export const fetchUsers = async () => {
     const response = await fetch(
       "https://medi-life-clinic.herokuapp.com/api/user/get-all",
       {
-        headers: authHeaders,
+        headers: authHeaders(),
       }
     );
     const responseData = await response.json();
